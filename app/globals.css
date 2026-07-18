@@ -116,6 +116,17 @@
     --radius-4xl: calc(var(--radius) * 2.6);
 }
 
+@theme {
+    --color-cream: #f0f0ed;
+    --color-cream-dark: #e9e9e6;
+    --color-ink: #1d1d1d;
+    --color-sage: #adbc84;
+    --color-sage-dark: #91a065;
+    --color-sage-light: #cdd8ad;
+    --color-body: #6f6f6c;
+    --color-line: #e4e4e0;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

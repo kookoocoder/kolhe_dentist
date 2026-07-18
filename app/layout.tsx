@@ -1,17 +1,18 @@
-import { Geist, Geist_Mono, Public_Sans, Roboto } from "next/font/google"
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
 
 import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
-import { cn } from "@/lib/utils";
+import { Navbar } from "@/components/site/navbar"
+import { Footer } from "@/components/site/footer"
+import { cn } from "@/lib/utils"
 
-const robotoHeading = Roboto({subsets:['latin'],variable:'--font-heading'});
+const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
-const publicSans = Public_Sans({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-})
+export const metadata: Metadata = {
+  title: "Northgate Family Dental | Gentle Dental Care in Helsinki",
+  description:
+    "Gentle, unhurried dentistry for the whole family in Helsinki. New patients welcome, same-week appointments.",
+}
 
 export default function RootLayout({
   children,
@@ -19,13 +20,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", publicSans.variable, robotoHeading.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" className={cn("antialiased font-sans", inter.variable)}>
+      <body className="bg-white text-ink">
+        <Navbar />
+        <main>{children}</main>
+        <Footer />
       </body>
     </html>
   )
