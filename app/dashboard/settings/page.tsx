@@ -1,10 +1,7 @@
 "use client"
 
-import { useState } from "react"
-import { Check, User } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Switch } from "@/components/ui/switch"
 import {
   Select,
   SelectContent,
@@ -12,23 +9,54 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { Switch } from "@/components/ui/switch"
+import { Check, User } from "lucide-react"
+import { useState } from "react"
 
 const TABS = ["Profile", "Notifications", "Preferences"]
 
 const NOTIFICATION_OPTIONS = [
-  { key: "digests", label: "Email digests", description: "A daily summary of club activity in your inbox." },
-  { key: "leaseExpiry", label: "Membership expiry alerts", description: "Get notified 60 days before a plan ends." },
-  { key: "payments", label: "Payment reminders", description: "Alerts for upcoming and overdue dues or vendor bills." },
-  { key: "reports", label: "Weekly reports", description: "Receive a weekly club performance report every Monday." },
-  { key: "updates", label: "Product updates", description: "Occasional news about new features and improvements." },
+  {
+    key: "digests",
+    label: "Email digests",
+    description: "A daily summary of club activity in your inbox.",
+  },
+  {
+    key: "leaseExpiry",
+    label: "Membership expiry alerts",
+    description: "Get notified 60 days before a plan ends.",
+  },
+  {
+    key: "payments",
+    label: "Payment reminders",
+    description: "Alerts for upcoming and overdue dues or vendor bills.",
+  },
+  {
+    key: "reports",
+    label: "Weekly reports",
+    description: "Receive a weekly club performance report every Monday.",
+  },
+  {
+    key: "updates",
+    label: "Product updates",
+    description: "Occasional news about new features and improvements.",
+  },
 ]
 
 export default function SettingsPage() {
   const [tab, setTab] = useState("Profile")
-  const [profile, setProfile] = useState({ name: "Jane Cooper", email: "jane@voltfit.com", company: "VoltFit Group" })
+  const [profile, setProfile] = useState({
+    name: "Jane Cooper",
+    email: "jane@voltfit.com",
+    company: "VoltFit Group",
+  })
   const [saved, setSaved] = useState(false)
   const [notifications, setNotifications] = useState<Record<string, boolean>>({
-    digests: true, leaseExpiry: true, payments: true, reports: false, updates: false,
+    digests: true,
+    leaseExpiry: true,
+    payments: true,
+    reports: false,
+    updates: false,
   })
   const [currency, setCurrency] = useState("USD")
   const [dateFormat, setDateFormat] = useState("MM/DD/YYYY")
@@ -70,15 +98,25 @@ export default function SettingsPage() {
           <div className="mt-5 flex flex-col gap-4">
             <div className="space-y-1">
               <label className="text-xs font-medium text-muted-foreground">Full name</label>
-              <Input value={profile.name} onChange={(e) => setProfile((p) => ({ ...p, name: e.target.value }))} />
+              <Input
+                value={profile.name}
+                onChange={(e) => setProfile((p) => ({ ...p, name: e.target.value }))}
+              />
             </div>
             <div className="space-y-1">
               <label className="text-xs font-medium text-muted-foreground">Email</label>
-              <Input type="email" value={profile.email} onChange={(e) => setProfile((p) => ({ ...p, email: e.target.value }))} />
+              <Input
+                type="email"
+                value={profile.email}
+                onChange={(e) => setProfile((p) => ({ ...p, email: e.target.value }))}
+              />
             </div>
             <div className="space-y-1">
               <label className="text-xs font-medium text-muted-foreground">Company</label>
-              <Input value={profile.company} onChange={(e) => setProfile((p) => ({ ...p, company: e.target.value }))} />
+              <Input
+                value={profile.company}
+                onChange={(e) => setProfile((p) => ({ ...p, company: e.target.value }))}
+              />
             </div>
             <Button
               onClick={handleSave}
@@ -123,7 +161,9 @@ export default function SettingsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   {["USD", "EUR", "GBP"].map((c) => (
-                    <SelectItem key={c} value={c}>{c}</SelectItem>
+                    <SelectItem key={c} value={c}>
+                      {c}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>
@@ -136,7 +176,9 @@ export default function SettingsPage() {
                 </SelectTrigger>
                 <SelectContent>
                   {["MM/DD/YYYY", "DD/MM/YYYY", "YYYY-MM-DD"].map((f) => (
-                    <SelectItem key={f} value={f}>{f}</SelectItem>
+                    <SelectItem key={f} value={f}>
+                      {f}
+                    </SelectItem>
                   ))}
                 </SelectContent>
               </Select>

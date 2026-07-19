@@ -1,10 +1,10 @@
 "use client"
 
-import { motion, useInView } from "framer-motion"
-import { useRef } from "react"
 import { Container, Reveal } from "@/components/site/ui"
 import { WHY_US } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import { motion, useInView } from "framer-motion"
+import { useRef } from "react"
 
 function Card({
   item,

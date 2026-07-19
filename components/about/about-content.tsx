@@ -1,8 +1,8 @@
 "use client"
 
-import { GraduationCap, Award, Sparkles } from "lucide-react"
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { TEAM } from "@/lib/data"
+import { Award, GraduationCap, Sparkles } from "lucide-react"
 
 const CREDENTIALS = [
   {

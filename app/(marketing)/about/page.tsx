@@ -1,5 +1,5 @@
-import type { Metadata } from "next"
 import { AboutContent } from "@/components/about/about-content"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About Dr. Sarah Lindgren | Northgate Family Dental",

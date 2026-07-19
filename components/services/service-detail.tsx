@@ -1,9 +1,9 @@
 "use client"
 
-import Link from "next/link"
-import { ChevronRight } from "lucide-react"
 import { Container, PillButton, Reveal, SectionLabel } from "@/components/site/ui"
 import { PHONE, PHONE_HREF, type Service } from "@/lib/data"
+import { ChevronRight } from "lucide-react"
+import Link from "next/link"
 
 const HERO_IMAGES: Record<string, string> = {
   "teeth-whitening": "/images/whitening-hero.jpg",

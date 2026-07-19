@@ -1,12 +1,12 @@
 "use client"
 
-import Link from "next/link"
-import { useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
-import { ArrowRight, Check, Plus } from "lucide-react"
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { FAQS, SERVICES } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import { AnimatePresence, motion } from "framer-motion"
+import { ArrowRight, Check, Plus } from "lucide-react"
+import Link from "next/link"
+import { useState } from "react"
 
 const FIRST_VISIT = [
   {

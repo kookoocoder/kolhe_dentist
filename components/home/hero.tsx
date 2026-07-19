@@ -1,10 +1,10 @@
 "use client"
 
-import Link from "next/link"
-import { motion } from "framer-motion"
-import { ArrowUpRight, MapPin, Phone } from "lucide-react"
 import { FacebookIcon, InstagramIcon } from "@/components/site/social-icons"
 import { Container } from "@/components/site/ui"
+import { motion } from "framer-motion"
+import { ArrowUpRight, MapPin, Phone } from "lucide-react"
+import Link from "next/link"
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },

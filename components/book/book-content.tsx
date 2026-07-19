@@ -1,11 +1,13 @@
 "use client"
 
-import { useState } from "react"
-import { AnimatePresence, motion } from "framer-motion"
-import { ArrowUpRight, Check, ChevronDown } from "lucide-react"
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { PHONE, PHONE_HREF } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import { useMutation } from "convex/react"
+import { AnimatePresence, motion } from "framer-motion"
+import { ArrowUpRight, Check, ChevronDown } from "lucide-react"
+import { useState } from "react"
+import { api } from "../../convex/_generated/api"
 
 const REASONS = [
   "New patient check-up",
@@ -60,6 +62,8 @@ const inputClass = (hasError?: string) =>
   )
 
 export function BookContent() {
+  const createAppointment = useMutation(api.appointments.create)
+
   const [values, setValues] = useState({
     name: "",
     phone: "",
@@ -92,11 +96,22 @@ export function BookContent() {
     return e
   }
 
-  const onSubmit = (e: React.FormEvent) => {
+  const onSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     const errs = validate()
     setErrors(errs)
-    if (Object.keys(errs).length === 0) setSubmitted(true)
+    if (Object.keys(errs).length > 0) return
+
+    await createAppointment({
+      name: values.name.trim(),
+      phone: values.phone.trim(),
+      email: values.email.trim(),
+      reason: values.reason,
+      preferredDate: values.day,
+      preferredTime: values.time,
+      notes: values.notes.trim(),
+    })
+    setSubmitted(true)
   }
 
   return (

@@ -1,5 +1,5 @@
-import type { Metadata } from "next"
 import { BookContent } from "@/components/book/book-content"
+import type { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Book an Appointment | Northgate Family Dental",

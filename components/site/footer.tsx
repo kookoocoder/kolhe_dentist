@@ -1,12 +1,12 @@
 "use client"
 
-import Link from "next/link"
+import { ADDRESS, EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
+import { cn } from "@/lib/utils"
 import Image from "next/image"
+import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { FacebookIcon, InstagramIcon } from "./social-icons"
-import { ADDRESS, EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
 import { Container, PillButton, Reveal, SectionLabel } from "./ui"
-import { cn } from "@/lib/utils"
 
 const CTA_COPY: Record<string, { label: string; title: string; body: string; after?: string }> = {
   default: {

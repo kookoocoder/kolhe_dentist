@@ -1,11 +1,11 @@
 "use client"
 
-import useEmblaCarousel from "embla-carousel-react"
-import { useCallback, useEffect, useState } from "react"
-import { ChevronLeft, ChevronRight, Star, UserRound } from "lucide-react"
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { TESTIMONIALS } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import useEmblaCarousel from "embla-carousel-react"
+import { ChevronLeft, ChevronRight, Star, UserRound } from "lucide-react"
+import { useCallback, useEffect, useState } from "react"
 
 export function Testimonials() {
   const [emblaRef, emblaApi] = useEmblaCarousel({

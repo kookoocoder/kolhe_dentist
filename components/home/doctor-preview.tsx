@@ -1,8 +1,8 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowUpRight } from "lucide-react"
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
+import { ArrowUpRight } from "lucide-react"
+import Link from "next/link"
 
 const BADGES = ["DDS", "Board Certified", "16 Years Experience", "University of Helsinki"]
 

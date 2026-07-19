@@ -1,5 +1,5 @@
-import { Navbar } from "@/components/site/navbar"
 import { Footer } from "@/components/site/footer"
+import { Navbar } from "@/components/site/navbar"
 
 export default function MarketingLayout({
   children,

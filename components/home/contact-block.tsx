@@ -1,9 +1,9 @@
 "use client"
 
-import { ArrowUpRight } from "lucide-react"
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { ADDRESS, HOURS, PHONE, PHONE_HREF } from "@/lib/data"
 import { cn } from "@/lib/utils"
+import { ArrowUpRight } from "lucide-react"
 
 function isOpenToday() {
   const now = new Date()
