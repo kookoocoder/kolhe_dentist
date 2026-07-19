@@ -25,18 +25,16 @@ export function PillButton({
       className={cn(
         "group inline-flex items-center gap-2.5 rounded-full py-2.5 pl-6 pr-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] transition-colors duration-300",
         variant === "sage" && "bg-sage text-ink hover:bg-sage-dark",
-        variant === "white" &&
-          "border border-line bg-white text-ink hover:bg-cream",
-        variant === "outline" &&
-          "border border-line bg-transparent text-ink hover:bg-cream",
-        className
+        variant === "white" && "border border-line bg-white text-ink hover:bg-cream",
+        variant === "outline" && "border border-line bg-transparent text-ink hover:bg-cream",
+        className,
       )}
     >
       <span>{children}</span>
       <span
         className={cn(
           "flex size-7 items-center justify-center rounded-full transition-transform duration-300 group-hover:rotate-45",
-          iconBg ?? (variant === "sage" ? "bg-white" : "bg-sage")
+          iconBg ?? (variant === "sage" ? "bg-white" : "bg-sage"),
         )}
       >
         <ArrowUpRight className="size-3.5 text-ink" strokeWidth={2.2} />
@@ -54,10 +52,7 @@ export function SectionLabel({
 }) {
   return (
     <p
-      className={cn(
-        "text-[11px] font-medium uppercase tracking-[0.18em] text-body/70",
-        className
-      )}
+      className={cn("text-[11px] font-medium uppercase tracking-[0.18em] text-body/70", className)}
     >
       {children}
     </p>
@@ -98,8 +93,6 @@ export function Container({
   className?: string
 }) {
   return (
-    <div className={cn("mx-auto w-full max-w-[1200px] px-5 md:px-10", className)}>
-      {children}
-    </div>
+    <div className={cn("mx-auto w-full max-w-[1200px] px-5 md:px-10", className)}>{children}</div>
   )
 }

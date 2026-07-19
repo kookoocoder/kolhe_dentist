@@ -37,8 +37,8 @@ export function HomeHero() {
             transition={{ duration: 0.7, delay: 0.16 }}
             className="mt-5 max-w-md text-[14px] leading-relaxed text-body"
           >
-            Gentle, unhurried dentistry for the whole family, serving Helsinki
-            since 2008. Same-week appointments available.
+            Gentle, unhurried dentistry for the whole family, serving Helsinki since 2008. Same-week
+            appointments available.
           </motion.p>
           <motion.div
             {...fadeUp}
@@ -105,19 +105,11 @@ export function HomeHero() {
             className="absolute bottom-5 left-4 hidden items-center gap-3 rounded-full bg-white py-2 pl-2 pr-5 shadow-sm sm:flex md:bottom-7 md:left-6"
           >
             <span className="flex size-9 items-center justify-center overflow-hidden rounded-full bg-cream-dark">
-              <img
-                src="/images/team-anika.jpg"
-                alt=""
-                className="size-full object-cover"
-              />
+              <img src="/images/team-anika.jpg" alt="" className="size-full object-cover" />
             </span>
             <span>
-              <span className="block text-[12px] font-semibold leading-tight">
-                Message us
-              </span>
-              <span className="block text-[11px] leading-tight text-body">
-                Reception
-              </span>
+              <span className="block text-[12px] font-semibold leading-tight">Message us</span>
+              <span className="block text-[11px] leading-tight text-body">Reception</span>
             </span>
           </motion.div>
 
@@ -127,9 +119,7 @@ export function HomeHero() {
             transition={{ duration: 0.7, delay: 1.2 }}
             className="absolute bottom-5 right-4 hidden items-center gap-3 sm:flex md:bottom-7 md:right-6"
           >
-            <span className="text-[11px] font-medium text-white/90">
-              Join us!
-            </span>
+            <span className="text-[11px] font-medium text-white/90">Join us!</span>
             <a
               href="#"
               aria-label="Instagram"

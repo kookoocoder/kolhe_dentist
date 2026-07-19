@@ -40,7 +40,7 @@ export function ServiceDetail({ service }: { service: Service }) {
             <p className="mt-4 text-[14px] text-body">
               {service.slug === "teeth-whitening"
                 ? "Professional, lasting results in a single appointment."
-                : service.description.split(". ")[0] + "."}
+                : `${service.description.split(". ")[0]}.`}
             </p>
             <div className="mt-7">
               <PillButton href="/book">Book This Service</PillButton>
@@ -61,9 +61,7 @@ export function ServiceDetail({ service }: { service: Service }) {
             <Reveal delay={0.1}>
               <article className="space-y-10">
                 <div>
-                  <h2 className="text-[22px] font-medium tracking-tight">
-                    Overview
-                  </h2>
+                  <h2 className="text-[22px] font-medium tracking-tight">Overview</h2>
                   <div className="mt-4 space-y-4 text-[14px] leading-relaxed text-body">
                     {service.overview.map((p) => (
                       <p key={p}>{p}</p>
@@ -71,9 +69,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-[22px] font-medium tracking-tight">
-                    The benefits
-                  </h2>
+                  <h2 className="text-[22px] font-medium tracking-tight">The benefits</h2>
                   <ul className="mt-4 space-y-2.5">
                     {service.benefits.map((b) => (
                       <li
@@ -87,9 +83,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                   </ul>
                 </div>
                 <div>
-                  <h2 className="text-[22px] font-medium tracking-tight">
-                    What to expect
-                  </h2>
+                  <h2 className="text-[22px] font-medium tracking-tight">What to expect</h2>
                   <div className="mt-4 space-y-4 text-[14px] leading-relaxed text-body">
                     {service.expect.map((p) => (
                       <p key={p}>{p}</p>
@@ -97,12 +91,8 @@ export function ServiceDetail({ service }: { service: Service }) {
                   </div>
                 </div>
                 <div>
-                  <h2 className="text-[22px] font-medium tracking-tight">
-                    Is it right for me?
-                  </h2>
-                  <p className="mt-4 text-[14px] leading-relaxed text-body">
-                    {service.fit}
-                  </p>
+                  <h2 className="text-[22px] font-medium tracking-tight">Is it right for me?</h2>
+                  <p className="mt-4 text-[14px] leading-relaxed text-body">{service.fit}</p>
                 </div>
               </article>
             </Reveal>
@@ -111,11 +101,7 @@ export function ServiceDetail({ service }: { service: Service }) {
               <aside className="lg:sticky lg:top-24">
                 <div className="rounded-[24px] bg-cream p-5 md:p-6">
                   <div className="overflow-hidden rounded-[16px]">
-                    <img
-                      src={sidebarImage}
-                      alt=""
-                      className="aspect-[3/2] w-full object-cover"
-                    />
+                    <img src={sidebarImage} alt="" className="aspect-[3/2] w-full object-cover" />
                   </div>
                   <SectionLabel className="mt-6">Price</SectionLabel>
                   <p className="mt-2 border-b border-line pb-5 text-[28px] font-medium tracking-tight">
@@ -139,10 +125,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                   >
                     {PHONE}
                   </a>
-                  <PillButton
-                    href="/book"
-                    className="mt-6 w-full justify-center"
-                  >
+                  <PillButton href="/book" className="mt-6 w-full justify-center">
                     Book Now
                   </PillButton>
                 </div>

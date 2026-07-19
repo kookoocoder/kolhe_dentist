@@ -19,16 +19,12 @@ function Card({
     <Reveal delay={delay} className={className}>
       <div className="rounded-[18px] bg-cream p-6 transition-colors duration-300 hover:bg-cream-dark">
         <div className="flex items-start justify-between">
-          <h3 className="text-[15px] font-semibold tracking-tight">
-            {item.title}
-          </h3>
+          <h3 className="text-[15px] font-semibold tracking-tight">{item.title}</h3>
           <span className="rounded-md bg-white px-1.5 py-0.5 text-[10px] font-medium text-body">
             {item.n}
           </span>
         </div>
-        <p className="mt-3 max-w-[210px] text-[13px] leading-relaxed text-body">
-          {item.text}
-        </p>
+        <p className="mt-3 max-w-[210px] text-[13px] leading-relaxed text-body">{item.text}</p>
       </div>
     </Reveal>
   )

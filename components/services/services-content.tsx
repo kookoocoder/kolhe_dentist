@@ -46,7 +46,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
         <span
           className={cn(
             "flex size-8 shrink-0 items-center justify-center rounded-full bg-cream transition-transform duration-300",
-            open && "rotate-45"
+            open && "rotate-45",
           )}
         >
           <Plus className="size-4" strokeWidth={2} />
@@ -61,9 +61,7 @@ function FaqItem({ q, a }: { q: string; a: string }) {
             transition={{ duration: 0.3 }}
             className="overflow-hidden"
           >
-            <p className="max-w-2xl pb-5 text-[13px] leading-relaxed text-body">
-              {a}
-            </p>
+            <p className="max-w-2xl pb-5 text-[13px] leading-relaxed text-body">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -82,8 +80,8 @@ export function ServicesContent() {
               Care for every stage of life
             </h1>
             <p className="mt-5 max-w-md text-[14px] leading-relaxed text-body">
-              Comprehensive, gentle dentistry, from routine check-ups to
-              cosmetic treatments. Transparent pricing, no surprises.
+              Comprehensive, gentle dentistry, from routine check-ups to cosmetic treatments.
+              Transparent pricing, no surprises.
             </p>
           </Reveal>
 
@@ -102,16 +100,12 @@ export function ServicesContent() {
                     />
                   </div>
                   <div className="flex flex-1 flex-col p-5">
-                    <h3 className="text-[15px] font-semibold leading-snug">
-                      {s.title}
-                    </h3>
+                    <h3 className="text-[15px] font-semibold leading-snug">{s.title}</h3>
                     <p className="mt-2.5 line-clamp-4 text-[12.5px] leading-relaxed text-body">
                       {s.description}
                     </p>
                     <div className="mt-auto flex items-center justify-between pt-5">
-                      <span className="text-[13px] font-semibold">
-                        {s.price}
-                      </span>
+                      <span className="text-[13px] font-semibold">{s.price}</span>
                       <span className="flex size-8 items-center justify-center rounded-full bg-cream transition-colors duration-300 group-hover:bg-sage">
                         <ArrowRight
                           className="size-3.5 transition-colors group-hover:text-white"
@@ -139,15 +133,9 @@ export function ServicesContent() {
             {FIRST_VISIT.map((step, i) => (
               <Reveal key={step.n} delay={0.05 + i * 0.08}>
                 <div className="h-full rounded-[18px] bg-cream p-6 md:p-7">
-                  <span className="text-[13px] font-semibold text-sage-dark">
-                    {step.n}
-                  </span>
-                  <h3 className="mt-3 text-[16px] font-semibold">
-                    {step.title}
-                  </h3>
-                  <p className="mt-3 text-[13px] leading-relaxed text-body">
-                    {step.text}
-                  </p>
+                  <span className="text-[13px] font-semibold text-sage-dark">{step.n}</span>
+                  <h3 className="mt-3 text-[16px] font-semibold">{step.title}</h3>
+                  <p className="mt-3 text-[13px] leading-relaxed text-body">{step.text}</p>
                 </div>
               </Reveal>
             ))}
@@ -178,9 +166,8 @@ export function ServicesContent() {
               <div className="flex h-full flex-col justify-center rounded-[18px] bg-white p-7 md:p-9">
                 <SectionLabel>Our promise</SectionLabel>
                 <p className="mt-4 text-[15px] leading-relaxed">
-                  We provide a written cost estimate before any treatment
-                  begins. You approve it, then we proceed. We will never start
-                  work without your agreement on cost.
+                  We provide a written cost estimate before any treatment begins. You approve it,
+                  then we proceed. We will never start work without your agreement on cost.
                 </p>
               </div>
             </Reveal>

@@ -46,9 +46,7 @@ function Field({
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-[12px] font-medium text-ink">
-        {label}
-      </label>
+      <label className="mb-1.5 block text-[12px] font-medium text-ink">{label}</label>
       {children}
       {error && <p className="mt-1.5 text-[11.5px] text-red-500">{error}</p>}
     </div>
@@ -58,7 +56,7 @@ function Field({
 const inputClass = (hasError?: string) =>
   cn(
     "w-full rounded-xl border bg-white px-4 py-2.5 text-[13px] text-ink placeholder:text-body/60 outline-none transition-colors focus:border-sage-dark",
-    hasError ? "border-red-400" : "border-line"
+    hasError ? "border-red-400" : "border-line",
   )
 
 export function BookContent() {
@@ -74,12 +72,9 @@ export function BookContent() {
   const [errors, setErrors] = useState<Errors>({})
   const [submitted, setSubmitted] = useState(false)
 
-  const set = (key: keyof typeof values) =>
-    (
-      e: React.ChangeEvent<
-        HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
-      >
-    ) => {
+  const set =
+    (key: keyof typeof values) =>
+    (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
       setValues((v) => ({ ...v, [key]: e.target.value }))
       setErrors((err) => ({ ...err, [key]: undefined }))
     }
@@ -113,16 +108,14 @@ export function BookContent() {
             Book your appointment
           </h1>
           <p className="mt-5 max-w-sm text-[14px] leading-relaxed text-body">
-            We&rsquo;ll confirm by phone or email within one business day. Your
-            spot is reserved only after we speak.
+            We&rsquo;ll confirm by phone or email within one business day. Your spot is reserved
+            only after we speak.
           </p>
         </Reveal>
 
         <div className="mt-14 grid gap-10 lg:grid-cols-[1fr_360px] lg:gap-16">
           <Reveal delay={0.08}>
-            <h2 className="text-[22px] font-medium tracking-tight">
-              Request an appointment
-            </h2>
+            <h2 className="text-[22px] font-medium tracking-tight">Request an appointment</h2>
 
             <AnimatePresence mode="wait">
               {submitted ? (
@@ -135,21 +128,14 @@ export function BookContent() {
                   <span className="mx-auto flex size-12 items-center justify-center rounded-full bg-sage">
                     <Check className="size-5 text-white" strokeWidth={2.5} />
                   </span>
-                  <h3 className="mt-5 text-[18px] font-semibold">
-                    Request received
-                  </h3>
+                  <h3 className="mt-5 text-[18px] font-semibold">Request received</h3>
                   <p className="mx-auto mt-2 max-w-sm text-[13px] leading-relaxed text-body">
-                    Thank you, {values.name.split(" ")[0]}. We&rsquo;ll call or
-                    email within one business day to confirm your appointment.
+                    Thank you, {values.name.split(" ")[0]}. We&rsquo;ll call or email within one
+                    business day to confirm your appointment.
                   </p>
                 </motion.div>
               ) : (
-                <motion.form
-                  key="form"
-                  onSubmit={onSubmit}
-                  noValidate
-                  className="mt-6 space-y-5"
-                >
+                <motion.form key="form" onSubmit={onSubmit} noValidate className="mt-6 space-y-5">
                   <Field label="Full Name" error={errors.name}>
                     <input
                       className={inputClass(errors.name)}
@@ -232,8 +218,7 @@ export function BookContent() {
                     </span>
                   </button>
                   <p className="text-[12px] text-body">
-                    We&rsquo;ll never share your information with anyone
-                    outside this practice.
+                    We&rsquo;ll never share your information with anyone outside this practice.
                   </p>
                 </motion.form>
               )}
@@ -247,9 +232,7 @@ export function BookContent() {
                   {INFO_BLOCKS.map((b) => (
                     <div key={b.title}>
                       <h3 className="text-[15px] font-semibold">{b.title}</h3>
-                      <p className="mt-2 text-[13px] leading-relaxed text-body">
-                        {b.text}
-                      </p>
+                      <p className="mt-2 text-[13px] leading-relaxed text-body">{b.text}</p>
                     </div>
                   ))}
                   <div>
@@ -267,18 +250,15 @@ export function BookContent() {
                   <div>
                     <h3 className="text-[15px] font-semibold">Find us</h3>
                     <p className="mt-2 text-[13px] leading-relaxed text-body">
-                      Northgate Family Dental, 14 Maple Street, Helsinki 00100.
-                      Free parking in the rear car park, 2 minutes from Kallio
-                      metro station.
+                      Northgate Family Dental, 14 Maple Street, Helsinki 00100. Free parking in the
+                      rear car park, 2 minutes from Kallio metro station.
                     </p>
                   </div>
                 </div>
               </div>
 
               <div className="rounded-[24px] bg-ink p-7 md:p-8">
-                <h3 className="text-[15px] font-semibold text-white">
-                  Dental emergency?
-                </h3>
+                <h3 className="text-[15px] font-semibold text-white">Dental emergency?</h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-white/60">
                   Call us directly, we keep same-day slots for urgent care.
                 </p>

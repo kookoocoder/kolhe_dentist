@@ -40,9 +40,9 @@ export function DoctorPreview() {
 
           <Reveal delay={0.15}>
             <p className="text-[13px] leading-relaxed text-body md:text-right">
-              Dr. Lindgren built her practice around a single belief: that
-              nervous patients deserve more time, not less. She has practised
-              gentle, unhurried dentistry in Helsinki since 2008.
+              Dr. Lindgren built her practice around a single belief: that nervous patients deserve
+              more time, not less. She has practised gentle, unhurried dentistry in Helsinki since
+              2008.
             </p>
             <div className="mt-6 flex md:justify-end">
               <Link

@@ -41,14 +41,14 @@ export function Navbar() {
             <button
               className={cn(
                 "flex items-center gap-1.5 rounded-full bg-cream px-4 py-2 text-[13px] font-medium transition-colors hover:bg-cream-dark",
-                pathname.startsWith("/services") && "text-sage-dark"
+                pathname.startsWith("/services") && "text-sage-dark",
               )}
             >
               Services
               <ChevronDown
                 className={cn(
                   "size-3.5 transition-transform duration-300",
-                  servicesOpen && "rotate-180"
+                  servicesOpen && "rotate-180",
                 )}
               />
             </button>
@@ -95,7 +95,7 @@ export function Navbar() {
               href={l.href}
               className={cn(
                 "rounded-full px-3.5 py-2 text-[13px] font-medium transition-colors hover:text-sage-dark",
-                pathname === l.href && "text-sage-dark"
+                pathname === l.href && "text-sage-dark",
               )}
             >
               {l.label}

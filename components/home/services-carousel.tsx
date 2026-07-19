@@ -21,10 +21,7 @@ function ImageCard({
   return (
     <Link
       href={href}
-      className={cn(
-        "group relative block overflow-hidden rounded-[18px]",
-        className
-      )}
+      className={cn("group relative block overflow-hidden rounded-[18px]", className)}
     >
       <img
         src={image}
@@ -32,13 +29,11 @@ function ImageCard({
         className="absolute inset-0 size-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
       <div className="absolute inset-0 bg-gradient-to-b from-black/35 via-transparent to-transparent" />
-      <span className="absolute left-5 top-4 text-[14px] font-medium text-white">
-        {title}
-      </span>
+      <span className="absolute left-5 top-4 text-[14px] font-medium text-white">{title}</span>
       <span
         className={cn(
           "absolute bottom-4 right-4 flex size-8 items-center justify-center rounded-full transition-transform duration-300 group-hover:translate-x-0.5",
-          arrowSage ? "bg-sage" : "bg-white"
+          arrowSage ? "bg-sage" : "bg-white",
         )}
       >
         <ArrowRight
@@ -99,9 +94,7 @@ export function ServicesCarousel() {
               href="/services/emergency-care"
               className="group relative block h-32 rounded-[18px] bg-ink p-5 transition-colors duration-300 hover:bg-black"
             >
-              <span className="block text-[14px] font-medium text-white">
-                Emergency Care
-              </span>
+              <span className="block text-[14px] font-medium text-white">Emergency Care</span>
               <span className="mt-1 block text-[12px] text-white/50">
                 Same-day slots, call us first
               </span>
@@ -115,9 +108,7 @@ export function ServicesCarousel() {
               href="/services/paediatric-care"
               className="group relative block h-32 rounded-[18px] bg-sage-light p-5 transition-colors duration-300 hover:bg-sage"
             >
-              <span className="block text-[14px] font-medium text-ink">
-                Paediatric Care
-              </span>
+              <span className="block text-[14px] font-medium text-ink">Paediatric Care</span>
               <span className="mt-1 block text-[12px] text-ink/60">
                 Gentle dentistry from age 3
               </span>
@@ -131,12 +122,8 @@ export function ServicesCarousel() {
               href="/services"
               className="group relative block h-32 rounded-[18px] border border-line bg-white p-5 transition-colors duration-300 hover:bg-cream"
             >
-              <span className="block text-[14px] font-medium text-ink">
-                See all treatments
-              </span>
-              <span className="mt-1 block text-[12px] text-body">
-                8 services available
-              </span>
+              <span className="block text-[14px] font-medium text-ink">See all treatments</span>
+              <span className="mt-1 block text-[12px] text-body">8 services available</span>
               <span className="absolute bottom-4 right-4 flex size-8 items-center justify-center rounded-full bg-sage transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="size-3.5 text-white" strokeWidth={2} />
               </span>

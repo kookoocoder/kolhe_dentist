@@ -45,18 +45,11 @@ export function Testimonials() {
           <div className="mt-8 overflow-hidden" ref={emblaRef}>
             <div className="-ml-5 flex touch-pan-y">
               {TESTIMONIALS.map((t) => (
-                <div
-                  key={t.name}
-                  className="min-w-0 flex-[0_0_100%] pl-5 md:flex-[0_0_50%]"
-                >
+                <div key={t.name} className="min-w-0 flex-[0_0_100%] pl-5 md:flex-[0_0_50%]">
                   <figure className="flex h-full flex-col rounded-[18px] bg-cream p-7 md:p-8">
                     <div className="flex gap-1">
                       {Array.from({ length: 5 }).map((_, i) => (
-                        <Star
-                          key={i}
-                          className="size-3.5 fill-sage text-sage"
-                          strokeWidth={1.5}
-                        />
+                        <Star key={i} className="size-3.5 fill-sage text-sage" strokeWidth={1.5} />
                       ))}
                     </div>
                     <blockquote className="mt-5 text-[14px] leading-relaxed text-ink">
@@ -67,12 +60,8 @@ export function Testimonials() {
                         <UserRound className="size-4 text-sage-dark" strokeWidth={2} />
                       </span>
                       <span>
-                        <span className="block text-[13px] font-semibold">
-                          {t.name}
-                        </span>
-                        <span className="block text-[12px] text-body">
-                          {t.date}
-                        </span>
+                        <span className="block text-[13px] font-semibold">{t.name}</span>
+                        <span className="block text-[12px] text-body">{t.date}</span>
                       </span>
                     </figcaption>
                   </figure>
@@ -87,7 +76,7 @@ export function Testimonials() {
               onClick={() => emblaApi?.scrollPrev()}
               className={cn(
                 "flex size-9 items-center justify-center rounded-full bg-cream transition-colors hover:bg-cream-dark",
-                !canPrev && "opacity-50"
+                !canPrev && "opacity-50",
               )}
             >
               <ChevronLeft className="size-4" />
@@ -97,7 +86,7 @@ export function Testimonials() {
               onClick={() => emblaApi?.scrollNext()}
               className={cn(
                 "flex size-9 items-center justify-center rounded-full bg-cream transition-colors hover:bg-cream-dark",
-                !canNext && "opacity-50"
+                !canNext && "opacity-50",
               )}
             >
               <ChevronRight className="size-4" />

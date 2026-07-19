@@ -41,8 +41,8 @@ export function AboutContent() {
               Meet Dr. Sarah Lindgren
             </h1>
             <p className="mt-5 max-w-md text-[14px] leading-relaxed text-body">
-              General &amp; Cosmetic Dentist · DDS, University of Helsinki ·
-              Practising gentle dentistry in Helsinki since 2008.
+              General &amp; Cosmetic Dentist · DDS, University of Helsinki · Practising gentle
+              dentistry in Helsinki since 2008.
             </p>
           </Reveal>
 
@@ -59,9 +59,7 @@ export function AboutContent() {
                   <span className="block text-[12px] font-semibold leading-tight">
                     Dr. Sarah Lindgren
                   </span>
-                  <span className="block text-[11px] leading-tight text-body">
-                    DDS · Helsinki
-                  </span>
+                  <span className="block text-[11px] leading-tight text-body">DDS · Helsinki</span>
                 </span>
               </div>
             </div>
@@ -78,24 +76,21 @@ export function AboutContent() {
             <div>
               <Reveal delay={0.05}>
                 <blockquote className="text-[22px] font-medium leading-snug tracking-tight md:text-[28px]">
-                  &ldquo;My approach is simple: slow down, listen first,
-                  explain everything, and never recommend something I
-                  wouldn&rsquo;t do for my own family.&rdquo;
+                  &ldquo;My approach is simple: slow down, listen first, explain everything, and
+                  never recommend something I wouldn&rsquo;t do for my own family.&rdquo;
                 </blockquote>
               </Reveal>
               <Reveal delay={0.12}>
                 <div className="mt-8 max-w-xl space-y-5 text-[14px] leading-relaxed text-body">
                   <p>
-                    I grew up watching my grandmother avoid the dentist because
-                    she was scared. By the time she finally went, the problem
-                    was serious, and it didn&rsquo;t have to be. That&rsquo;s
-                    the reason I became a dentist, and the reason I practise
-                    the way I do.
+                    I grew up watching my grandmother avoid the dentist because she was scared. By
+                    the time she finally went, the problem was serious, and it didn&rsquo;t have to
+                    be. That&rsquo;s the reason I became a dentist, and the reason I practise the
+                    way I do.
                   </p>
                   <p>
-                    Outside the practice, I coach my daughter&rsquo;s football
-                    team on Saturday mornings, which is partly why we keep
-                    Saturday hours.
+                    Outside the practice, I coach my daughter&rsquo;s football team on Saturday
+                    mornings, which is partly why we keep Saturday hours.
                   </p>
                 </div>
               </Reveal>
@@ -123,9 +118,7 @@ export function AboutContent() {
                     <h3 className="text-[14px] font-semibold">{c.title}</h3>
                   </div>
                   {c.highlight && (
-                    <p className="mt-5 text-[30px] font-medium text-sage">
-                      {c.highlight}
-                    </p>
+                    <p className="mt-5 text-[30px] font-medium text-sage">{c.highlight}</p>
                   )}
                   <ul className="mt-4 space-y-3">
                     {c.items.map((item) => (
@@ -167,9 +160,7 @@ export function AboutContent() {
                   <p className="mt-0.5 text-[11px] font-medium uppercase tracking-[0.1em] text-body/70">
                     {m.role}
                   </p>
-                  <p className="mt-3 text-[13px] leading-relaxed text-body">
-                    {m.bio}
-                  </p>
+                  <p className="mt-3 text-[13px] leading-relaxed text-body">{m.bio}</p>
                 </div>
               </Reveal>
             ))}
@@ -185,9 +176,8 @@ export function AboutContent() {
               A space designed for comfort
             </h2>
             <p className="mt-4 max-w-lg text-[14px] leading-relaxed text-body">
-              Renovated in 2022 with patient comfort at the centre of every
-              decision: natural light, plants, and warm materials, because a
-              calm space leads to a calmer appointment.
+              Renovated in 2022 with patient comfort at the centre of every decision: natural light,
+              plants, and warm materials, because a calm space leads to a calmer appointment.
             </p>
           </Reveal>
           <div className="mt-8 grid gap-5 md:grid-cols-5">

@@ -8,10 +8,7 @@ import { ADDRESS, EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
 import { Container, PillButton, Reveal, SectionLabel } from "./ui"
 import { cn } from "@/lib/utils"
 
-const CTA_COPY: Record<
-  string,
-  { label: string; title: string; body: string; after?: string }
-> = {
+const CTA_COPY: Record<string, { label: string; title: string; body: string; after?: string }> = {
   default: {
     label: "Ready?",
     title: "Ready to feel taken care of?",
@@ -45,11 +42,7 @@ export function FooterCta() {
       <Container>
         <Reveal>
           <div className="flex flex-col items-center rounded-[28px] bg-ink px-6 py-16 text-center md:py-20">
-            {copy.label && (
-              <SectionLabel className="mb-4 text-white/50">
-                {copy.label}
-              </SectionLabel>
-            )}
+            {copy.label && <SectionLabel className="mb-4 text-white/50">{copy.label}</SectionLabel>}
             <h2 className="text-3xl font-medium tracking-tight text-white md:text-[40px]">
               {copy.title}
             </h2>
@@ -59,9 +52,7 @@ export function FooterCta() {
             <PillButton href="/book" className="mt-8">
               Book Appointment
             </PillButton>
-            {copy.after && (
-              <p className="mt-5 text-[13px] text-white/50">{copy.after}</p>
-            )}
+            {copy.after && <p className="mt-5 text-[13px] text-white/50">{copy.after}</p>}
           </div>
         </Reveal>
       </Container>
@@ -106,9 +97,7 @@ export function Footer() {
                   />
                 </span>
               </Link>
-              <p className="mt-4 text-[13px] text-body">
-                Gentle care for the whole family.
-              </p>
+              <p className="mt-4 text-[13px] text-body">Gentle care for the whole family.</p>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
               <div>
@@ -120,7 +109,7 @@ export function Footer() {
                         href={l.href}
                         className={cn(
                           "text-[13px] text-ink transition-colors hover:text-sage-dark",
-                          pathname === l.href && "text-sage-dark"
+                          pathname === l.href && "text-sage-dark",
                         )}
                       >
                         {l.label}
@@ -154,10 +143,7 @@ export function Footer() {
                     </a>
                   </li>
                   <li>
-                    <a
-                      href={`mailto:${EMAIL}`}
-                      className="hover:text-sage-dark"
-                    >
+                    <a href={`mailto:${EMAIL}`} className="hover:text-sage-dark">
                       {EMAIL}
                     </a>
                   </li>

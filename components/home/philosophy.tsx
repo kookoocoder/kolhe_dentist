@@ -19,16 +19,13 @@ export function Philosophy() {
           <Reveal delay={0.05}>
             <h2 className="max-w-xl text-[26px] font-medium leading-snug tracking-tight md:text-[30px]">
               We believe going to the dentist{" "}
-              <span className="text-sage-dark">
-                shouldn&rsquo;t feel like a chore.
-              </span>
+              <span className="text-sage-dark">shouldn&rsquo;t feel like a chore.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="text-[13px] leading-relaxed text-body">
-              We built our practice around one idea: care that feels human.
-              Gentle, unhurried, and focused entirely on you. No rushing, no
-              jargon, no surprises.
+              We built our practice around one idea: care that feels human. Gentle, unhurried, and
+              focused entirely on you. No rushing, no jargon, no surprises.
             </p>
           </Reveal>
         </div>
@@ -40,9 +37,7 @@ export function Philosophy() {
                 className="py-6 sm:px-8 sm:first:pl-2"
                 style={{ paddingLeft: i === 0 ? undefined : undefined }}
               >
-                <h3 className="text-[19px] font-semibold tracking-tight">
-                  {s.title}
-                </h3>
+                <h3 className="text-[19px] font-semibold tracking-tight">{s.title}</h3>
                 <p className="mt-1.5 text-[12px] text-body">{s.text}</p>
               </div>
             ))}
