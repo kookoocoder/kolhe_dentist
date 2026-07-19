@@ -2,8 +2,6 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 
 import "./globals.css"
-import { Navbar } from "@/components/site/navbar"
-import { Footer } from "@/components/site/footer"
 import { cn } from "@/lib/utils"
 import { ConvexClientProvider } from "./ConvexClientProvider"
 
@@ -23,11 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={cn("antialiased font-sans", inter.variable)}>
       <body className="bg-white text-ink">
-        <ConvexClientProvider>
-          <Navbar />
-          <main>{children}</main>
-          <Footer />
-        </ConvexClientProvider>
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   )
