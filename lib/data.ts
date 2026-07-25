@@ -1,16 +1,58 @@
-export const PHONE = "+358 40 123 4567"
-export const PHONE_HREF = "tel:+358401234567"
-export const ADDRESS = "14 Maple Street, Helsinki 00100"
-export const EMAIL = "hello@northgate.com"
+export const PHONE = "+91 9923387272"
+export const PHONE_HREF = "tel:+919923387272"
+export const ADDRESS = "Flat No 1, Santkrupa Apartment, Pipeline Road, Nalegaon, Ahmednagar - 414001"
+export const EMAIL = "info@drkolhesdental.com"
 
 export const HOURS = [
-  { day: "Monday", time: "8:00 – 18:00" },
-  { day: "Tuesday", time: "8:00 – 18:00" },
-  { day: "Wednesday", time: "8:00 – 18:00" },
-  { day: "Thursday", time: "8:00 – 18:00" },
-  { day: "Friday", time: "8:00 – 17:00" },
-  { day: "Saturday", time: "9:00 – 14:00" },
+  { day: "Monday", time: "9:00 – 19:00" },
+  { day: "Tuesday", time: "9:00 – 19:00" },
+  { day: "Wednesday", time: "9:00 – 19:00" },
+  { day: "Thursday", time: "9:00 – 19:00" },
+  { day: "Friday", time: "9:00 – 19:00" },
+  { day: "Saturday", time: "9:00 – 19:00" },
   { day: "Sunday", time: "Closed" },
+]
+
+export type Location = {
+  name: string
+  address: string
+  phone: string
+  phoneHref: string
+  googleMaps: string
+  website?: string
+  hours?: string
+}
+
+export const LOCATIONS: Location[] = [
+  {
+    name: "Smile Maker's – Ahmednagar",
+    address:
+      "Flat No 1, Santkrupa Apartment, Pipeline Road, Nalegaon, Ahmednagar - 414001 (Opposite Morya Mangal Karyalay)",
+    phone: "+91 9923387272",
+    phoneHref: "tel:+919923387272",
+    googleMaps: "https://goo.gl/quEqiG",
+    hours: "Mon–Sat: 9:00 AM – 7:00 PM, Sunday: Closed",
+  },
+  {
+    name: "Dr. Kolhe's Dental Clinic – Viman Nagar, Pune",
+    address:
+      "Office No 105, Finswell, Novotel Hotel, Sakore Nagar, Viman Nagar, Pune, Maharashtra 411014",
+    phone: "+91 9923387272",
+    phoneHref: "tel:+919923387272",
+    googleMaps: "https://g.co/kgs/vTZQgj",
+    website: "http://www.fly4smiles.com/",
+    hours: "Mon–Sat: 9:00 AM – 7:00 PM, Sunday: Closed",
+  },
+  {
+    name: "Dr. Kolhe's Dental Clinic – Kharadi, Pune",
+    address:
+      "Office No 26, B-Wing, 3rd Floor, Cityvista Downtown, Fountain Road, Kharadi, Pune, Maharashtra 411014",
+    phone: "+91 9923387272",
+    phoneHref: "tel:+919923387272",
+    googleMaps: "https://maps.app.goo.gl/usMnbkttiqV2dqV16?g_st=iwb",
+    website: "https://drkolhesdental.com/",
+    hours: "Mon–Sat: 9:00 AM – 7:00 PM, Sunday: Closed",
+  },
 ]
 
 export type Service = {
@@ -33,10 +75,10 @@ export const SERVICES: Service[] = [
     short: "General Check-up",
     description:
       "A thorough examination and professional clean. We check everything, explain what we find, and keep records so you can track your dental health over time.",
-    price: "From €75",
+    price: "From ₹500",
     image: "/images/service-checkup.jpg",
     overview: [
-      "A complete examination of your teeth, gums, and mouth, followed by a professional clean and polish, all in a single unhurried visit.",
+      "A complete examination of your teeth, gums, and mouth, followed by a professional clean and polish, all in a single visit.",
       "We keep detailed records at every visit, so you can see how your dental health develops over time and catch small issues before they grow.",
     ],
     benefits: [
@@ -52,76 +94,100 @@ export const SERVICES: Service[] = [
     fit: "Everyone benefits from a regular check-up. We recommend a visit every six to twelve months, depending on your dental health.",
   },
   {
-    slug: "digital-x-rays",
-    title: "Digital X-Rays",
-    short: "Digital X-Rays",
+    slug: "laser-dentistry",
+    title: "Laser Dentistry",
+    short: "Laser Dentistry",
     description:
-      "Fast, accurate digital imaging that uses up to 90% less radiation than traditional X-rays. Essential for catching issues early, before they become painful or expensive.",
-    price: "From €45",
-    image: "/images/service-xray.jpg",
+      "Advanced, minimally invasive laser treatments that reduce pain, speed healing, and eliminate the need for traditional drills in many procedures.",
+    price: "From ₹2,000",
+    image: "/images/service-checkup.jpg",
     overview: [
-      "Our digital X-ray system produces detailed images instantly, using up to 90% less radiation than traditional film X-rays.",
-      "Images appear on screen within seconds, so we can walk you through exactly what we see, together, during the same appointment.",
+      "Our clinic is equipped with advanced dental lasers that allow for precise, minimally invasive treatments across a wide range of procedures.",
+      "Laser dentistry often means less pain, reduced bleeding, faster healing, and in many cases, no need for anaesthetic injections.",
     ],
     benefits: [
-      "Up to 90% less radiation than film X-rays",
-      "Instant results, reviewed together on screen",
-      "Catches issues before they become painful",
-      "Digital records stored securely for comparison",
+      "Minimally invasive with faster recovery",
+      "Often no anaesthetic injections required",
+      "Reduced bleeding and swelling",
+      "Precise treatment with minimal discomfort",
     ],
     expect: [
-      "The imaging itself takes only a few minutes and is completely painless. You simply bite gently on a small sensor.",
-      "We review the images with you immediately and explain anything we find in plain language.",
+      "During a laser procedure you may feel gentle warmth or a slight tingling, but most patients report significantly less discomfort than traditional methods.",
+      "Healing is typically faster than conventional treatment, and you can return to your normal routine the same day in most cases.",
     ],
-    fit: "X-rays are recommended for new patients and periodically after that. We only take them when there is a clear clinical reason.",
+    fit: "Laser dentistry is suitable for patients of all ages. Ask us during your check-up whether laser treatment could benefit your specific needs.",
   },
   {
-    slug: "teeth-whitening",
-    title: "Teeth Whitening",
-    short: "Teeth Whitening",
+    slug: "dental-implants",
+    title: "Dental Implants",
+    short: "Dental Implants",
     description:
-      "Professional-grade whitening that delivers real, lasting results. Several shades lighter in a single 60-minute session, calibrated to your enamel sensitivity.",
-    price: "From €290",
-    image: "/images/service-whitening.jpg",
+      "The most natural-looking, long-lasting tooth replacement available. A permanent solution that looks, feels, and functions like a real tooth.",
+    price: "From ₹25,000",
+    image: "/images/service-implants.jpg",
     overview: [
-      "Our professional whitening lightens teeth by several shades in a single 60-minute session, using a gel calibrated to your enamel sensitivity for an even, comfortable result.",
-      "Unlike over-the-counter kits, professional whitening is applied precisely and monitored throughout, so you get a brighter, natural-looking result without the patchiness or sensitivity that DIY treatments can cause.",
+      "A dental implant is a permanent replacement tooth anchored directly into the jaw. It looks, feels, and functions like a real tooth.",
+      "Dr. Kunal Kolhe has extensive training in implantology with over 1,000 successful implant and full mouth rehabilitation cases.",
     ],
     benefits: [
-      "Noticeable results in a single visit",
-      "A shade matched to look natural, not artificial",
-      "Gel strength adjusted to your sensitivity",
-      "A take-home kit available to maintain your results",
+      "The most natural-looking replacement available",
+      "Permanent, no removal or adhesives",
+      "Protects the jawbone from deterioration",
+      "Expert care from a specialist implantologist",
     ],
     expect: [
-      "We start by protecting your gums, then apply the whitening gel and let you relax in the chair. You'll see the difference the same day, and there's no downtime afterwards.",
-      "Results typically last 12 to 18 months with normal care. Easing off coffee, red wine, and smoking in the first few days helps the colour settle and last longer.",
+      "Treatment happens in stages over a few months: placement, healing, and finally the crown. We plan everything with digital imaging first.",
+      "Most patients are surprised how manageable each stage is. We'll give you a full written plan and timeline before anything begins.",
     ],
-    fit: "Whitening works best on natural teeth and won't change the colour of crowns or fillings. We'll check your teeth first and give you an honest view of the result you can expect before you commit.",
+    fit: "If you're missing a tooth or facing an extraction, an implant is usually the best long-term solution. We'll assess your suitability at a consultation.",
   },
   {
-    slug: "dental-fillings",
-    title: "Dental Fillings",
-    short: "Dental Fillings",
+    slug: "full-mouth-rehabilitation",
+    title: "Full Mouth Rehabilitation",
+    short: "Full Mouth Rehab",
     description:
-      "Tooth-coloured composite fillings that look natural and last. We match the shade to your existing teeth, so most patients can't spot them afterwards.",
-    price: "From €120",
-    image: "/images/service-fillings.jpg",
+      "A comprehensive treatment plan to restore the function, health, and appearance of your entire mouth. Customised to each patient's unique needs.",
+    price: "On consultation",
+    image: "/images/service-checkup.jpg",
     overview: [
-      "We use modern tooth-coloured composite materials that bond to your tooth and blend in with your natural shade.",
-      "Most fillings are completed in a single visit, and we take the time to make sure your bite feels completely natural before you leave.",
+      "Full mouth rehabilitation is a customised plan that combines multiple treatments to restore all teeth in both jaws, improving function and aesthetics.",
+      "With over 1,000 completed cases, Dr. Kunal Kolhe brings deep expertise in planning and executing complex rehabilitation cases.",
     ],
     benefits: [
-      "Colour-matched to your natural teeth",
-      "Completed in a single visit",
-      "Durable, modern composite materials",
-      "Comfortable, carefully checked bite",
+      "Restores full chewing function and comfort",
+      "Improves facial aesthetics and smile",
+      "Tailored plan combining implants, crowns, and bridges",
+      "Transformative results from a specialist prosthodontist",
     ],
     expect: [
-      "We numb the area gently, remove the decay, and place the filling, usually in under an hour.",
-      "You may feel some numbness for a few hours afterwards, but you can return to your day right away.",
+      "We begin with a detailed assessment including digital scans and imaging. Your personalised plan is explained step by step before treatment starts.",
+      "Treatment is typically carried out over multiple visits. We work with you to prioritise comfort and convenience throughout the process.",
     ],
-    fit: "If you have a cavity, a chipped tooth, or an old filling that needs replacing, a composite filling is usually the simplest and most natural-looking solution.",
+    fit: "If you have multiple damaged, worn, or missing teeth and want a comprehensive solution, full mouth rehabilitation may be the ideal approach.",
+  },
+  {
+    slug: "digital-smile-designing",
+    title: "Digital Smile Designing",
+    short: "Smile Design",
+    description:
+      "See your new smile before treatment begins. Digital technology lets us design and preview your ideal smile, so you know exactly what to expect.",
+    price: "From ₹5,000",
+    image: "/images/service-checkup.jpg",
+    overview: [
+      "Digital Smile Designing uses advanced imaging software to create a visual preview of your ideal smile before any treatment begins.",
+      "This technology allows us to plan precise changes to tooth shape, size, and alignment, and share the expected outcome with you upfront.",
+    ],
+    benefits: [
+      "Preview your new smile before committing",
+      "Precise, predictable results",
+      "Collaborative planning with your input",
+      "Tailored to your facial features and preferences",
+    ],
+    expect: [
+      "We take photographs and digital scans of your teeth, then design your new smile on screen. You can see and approve the plan before treatment starts.",
+      "Depending on the plan, treatment may involve veneers, bonding, whitening, or alignment, and is typically completed in two to four visits.",
+    ],
+    fit: "If you want to improve the appearance of your smile with certainty about the outcome, Digital Smile Designing gives you full control over the result.",
   },
   {
     slug: "root-canal",
@@ -129,11 +195,11 @@ export const SERVICES: Service[] = [
     short: "Root Canal",
     description:
       "Modern root canal treatment is nothing like its reputation. We work slowly and carefully, and you're in control throughout.",
-    price: "From €490",
+    price: "From ₹5,000",
     image: "/images/service-rootcanal.jpg",
     overview: [
       "Modern root canal treatment is nothing like its reputation. With today's techniques and anaesthetics, most patients describe it as no worse than a filling.",
-      "We work slowly and carefully, explain each step, and you're in control throughout, if you need a break, we stop.",
+      "We work slowly and carefully, explain each step, and you're in control throughout. If you need a break, we stop.",
     ],
     benefits: [
       "Saves your natural tooth",
@@ -148,37 +214,13 @@ export const SERVICES: Service[] = [
     fit: "If you have a deep infection or persistent toothache, a root canal can save the tooth and end the pain. We'll always explain your options honestly first.",
   },
   {
-    slug: "dental-implants",
-    title: "Dental Implants",
-    short: "Dental Implants",
-    description:
-      "The most natural-looking, long-lasting tooth replacement available. A permanent solution that looks, feels, and functions like a real tooth.",
-    price: "From €1,200",
-    image: "/images/service-implants.jpg",
-    overview: [
-      "A dental implant is a permanent replacement tooth anchored directly into the jaw. It looks, feels, and functions like a real tooth.",
-      "Dr. Lindgren has advanced training in implant dentistry and will walk you through every stage, from planning to the final crown.",
-    ],
-    benefits: [
-      "The most natural-looking replacement available",
-      "Permanent, no removal or adhesives",
-      "Protects the jawbone from deterioration",
-      "Care from a dentist with advanced implant training",
-    ],
-    expect: [
-      "Treatment happens in stages over a few months: placement, healing, and finally the crown. We plan everything with digital imaging first.",
-      "Most patients are surprised how manageable each stage is. We'll give you a full written plan and timeline before anything begins.",
-    ],
-    fit: "If you're missing a tooth or facing an extraction, an implant is usually the best long-term solution. We'll assess your suitability honestly at a consultation.",
-  },
-  {
-    slug: "paediatric-care",
-    title: "Paediatric Dentistry",
-    short: "Paediatric Care",
+    slug: "pediatric-dentistry",
+    title: "Pediatric Dentistry",
+    short: "Pediatric Care",
     description:
       "We see children from age 3. Our team is experienced with nervous young patients: calm, gentle, and in no rush. Building good habits early makes everything easier.",
-    price: "From €65",
-    image: "/images/service-paediatric.jpg",
+    price: "From ₹500",
+    image: "/images/service-checkup.jpg",
     overview: [
       "We see children from age 3, and we specialise in making their early dental visits calm and even fun.",
       "Our team is experienced with nervous young patients: no rushing, no pressure, and plenty of patience. Building good habits early makes everything easier later.",
@@ -187,7 +229,7 @@ export const SERVICES: Service[] = [
       "Gentle first visits from age 3",
       "A team trained for nervous children",
       "Focus on prevention and good habits",
-      "Saturday appointments for busy families",
+      "Convenient locations across Ahmednagar and Pune",
     ],
     expect: [
       "First visits are short and gentle, often just a look around and a chat, so your child leaves feeling good about the dentist.",
@@ -196,131 +238,119 @@ export const SERVICES: Service[] = [
     fit: "Every child benefits from early, positive dental visits. If your child is anxious or has had a bad experience elsewhere, we're especially happy to help.",
   },
   {
-    slug: "emergency-care",
-    title: "Emergency Care",
-    short: "Emergency Care",
+    slug: "cosmetic-dentistry",
+    title: "Cosmetic Dentistry",
+    short: "Cosmetic",
     description:
-      "Toothache, a broken tooth, or a lost filling? We keep same-day slots for urgent situations. Call us first and we'll get you in as quickly as possible.",
-    price: "Same-day",
-    image: "/images/clinic-room.jpg",
+      "Enhance your smile with professional whitening, veneers, and cosmetic bonding. Subtle changes that make a big difference in confidence.",
+    price: "From ₹3,000",
+    image: "/images/service-checkup.jpg",
     overview: [
-      "Toothache, a broken tooth, or a lost filling? We keep same-day slots for urgent situations, including Saturday mornings.",
-      "Call us first and we'll get you in as quickly as possible, usually within hours.",
+      "Our cosmetic treatments include professional whitening, porcelain veneers, and tooth-coloured bonding, designed to enhance your natural smile.",
+      "Every cosmetic plan is personalised. We focus on natural-looking results that complement your facial features and personality.",
     ],
     benefits: [
-      "Same-day slots reserved for emergencies",
-      "Open Saturday mornings",
-      "Honest pricing, no emergency surcharge surprises",
-      "Immediate pain relief prioritised",
+      "Professional-grade whitening for a brighter smile",
+      "Veneers and bonding for shape and alignment fixes",
+      "Natural-looking, personalised results",
+      "Confidence-boosting smile transformations",
     ],
     expect: [
-      "Call us and describe what's happening. We'll tell you honestly how urgent it is and get you in as soon as we can.",
-      "The first visit focuses on stopping the pain and stabilising the problem. Any further treatment is planned with you, never rushed.",
+      "We start with a consultation to understand your goals. Digital imaging lets you preview the expected result before any treatment.",
+      "Many cosmetic treatments are completed in one to three visits, depending on the plan we create together.",
     ],
-    fit: "If you're in pain, don't wait. Even if you're not sure it's an emergency, call us, we'd rather tell you it can wait than have you suffer over a weekend.",
+    fit: "If you want to brighten, reshape, or refine your smile, our cosmetic treatments can help you achieve natural, lasting results.",
   },
 ]
 
 export const TESTIMONIALS = [
   {
     quote:
-      "I've been terrified of dentists my whole life. Dr. Lindgren's team changed that completely. I actually look forward to my cleanings now.",
-    name: "Maria K.",
+      "Dr. Kunal Kolhe did my full mouth rehabilitation and the results are incredible. I can eat and smile confidently for the first time in years. Truly life-changing.",
+    name: "Rajesh P.",
     date: "March 2025",
   },
   {
     quote:
-      "We've brought our whole family here for four years. The way they handle our kids, patient, gentle, never a big deal, is exactly what we needed.",
-    name: "Thomas R.",
+      "My daughter was terrified of dental visits, but Dr. Kirti was so patient and gentle. Now she looks forward to her check-ups. We couldn't be happier.",
+    name: "Sneha M.",
     date: "January 2025",
   },
   {
     quote:
-      "I had an emergency on a Saturday morning. They fit me in within two hours, fixed the problem, and didn't overcharge me.",
-    name: "Aino P.",
+      "I was nervous about dental implants, but the team at Viman Nagar made the whole process smooth and painless. The laser treatment was a game changer — almost no swelling.",
+    name: "Amit Sharma",
     date: "November 2024",
   },
   {
     quote:
-      "Booked online in minutes and got a same-week appointment. Modern, calm, and genuinely friendly staff.",
-    name: "Petri M.",
+      "We visited the Kharadi clinic for the first time. Modern, clean, and the doctors took the time to explain everything. Highly recommended for families.",
+    name: "Priya Deshpande",
     date: "September 2024",
   },
 ]
 
 export const TEAM = [
   {
-    name: "Emma Virtanen",
-    role: "Practice Manager",
-    bio: "The first face you'll see. Emma remembers everyone's name, and their dog's too.",
-    image: "/images/team-emma.jpg",
+    name: "Dr. Kirti Kolhe",
+    role: "Consultant Dental Surgeon | Laser Dentist",
+    bio: "Co-Founder & Director with advanced training in Laser Dentistry. Passionate about preventive care and community oral health initiatives.",
+    image: "/images/dr-kirti-kolhe-standing.jpg",
   },
   {
-    name: "Mikko Hämäläinen",
-    role: "Dental Hygienist",
-    bio: "Makes cleans feel genuinely relaxing. Our go-to for gentle deep cleans and gum care.",
-    image: "/images/team-mikko.jpg",
-  },
-  {
-    name: "Anika Salminen",
-    role: "Dental Assistant",
-    bio: "Keeps everything running smoothly, the reason our appointments never run late.",
-    image: "/images/team-anika.jpg",
-  },
-  {
-    name: "Lauri Korhonen",
-    role: "Dental Hygienist",
-    bio: "Specialises in paediatric care. Exceptional with nervous children, patient and calm.",
-    image: "/images/team-lauri.jpg",
+    name: "Dr. Kunal Kolhe",
+    role: "Consultant Prosthodontist | Implantologist",
+    bio: "Founder & Director with 16+ years of experience and over 1,000 full mouth rehabilitation cases. Specialist in implants and advanced prosthodontics.",
+    image: "/images/dr-kunal-kolhe-standing.png",
   },
 ]
 
 export const WHY_US = [
   {
     n: "01",
-    title: "Gentle Approach",
-    text: "We move at your pace. No rushing, no pressure, ever.",
+    title: "Laser Dentistry Expertise",
+    text: "Advanced, minimally invasive laser treatments that reduce pain and speed healing.",
   },
   {
     n: "02",
-    title: "Your Time Matters",
-    text: "We run on schedule. If we are ever more than 10 minutes late, we will tell you.",
+    title: "16+ Years Experience",
+    text: "Trusted by thousands of patients across Ahmednagar and Pune.",
   },
   {
     n: "03",
-    title: "Saturday Hours",
-    text: "Open Saturdays since 2011, because weekday mornings do not suit everyone.",
+    title: "Multiple Locations",
+    text: "3 conveniently located clinics in Ahmednagar and Pune for easy access.",
   },
   {
     n: "04",
-    title: "Modern Technology",
-    text: "Digital X-rays, same-day crowns, and paperless check-in.",
+    title: "Evidence-Based Care",
+    text: "Modern, ethical dentistry using the latest technology and proven techniques.",
   },
 ]
 
 export const FAQS = [
   {
-    q: "Do you accept new patients?",
-    a: "Yes, we're always welcoming new patients and their families. You don't need a referral, just book online or give us a call.",
+    q: "Do I need a referral to visit?",
+    a: "No referral is needed. You can book directly by phone or visit any of our three locations. We're always welcoming new patients.",
   },
   {
-    q: "Do I need a referral to book?",
-    a: "No referral is needed. You can book directly online or by phone, and we'll take it from there.",
+    q: "Which locations do you have?",
+    a: "We have three clinics: Smile Maker's in Ahmednagar, and Dr. Kolhe's Dental Clinic in Viman Nagar and Kharadi, Pune. All clinics are open Mon–Sat, 9 AM to 7 PM.",
   },
   {
     q: "What if I have dental anxiety?",
-    a: "You're in good company, many of our patients came to us anxious. Tell us when you book, and we'll schedule extra time so nothing feels rushed. You control the pace at every visit.",
+    a: "You're in good company — many of our patients came to us anxious. Our laser treatments are often painless and needle-free, and our team takes the time to make you feel comfortable.",
   },
   {
-    q: "How long does a first appointment take?",
-    a: "Plan for about an hour. Your first visit is mostly conversation and a gentle examination, we want to understand your history before anything else.",
+    q: "Do you offer dental implants?",
+    a: "Yes. Dr. Kunal Kolhe is a specialist implantologist with extensive experience in basal implantology and immediate loading implants. Book a consultation for a personalised assessment.",
   },
   {
-    q: "Is parking available?",
-    a: "Yes, free parking is available in the rear car park. We're also 2 minutes from Kallio metro station.",
+    q: "Is laser dentistry really painless?",
+    a: "Laser dentistry significantly reduces discomfort compared to traditional methods. Many procedures require no anaesthetic injection at all. It's one of the key advantages of our clinic.",
   },
   {
-    q: "Do you see children?",
-    a: "We see children from age 3, and our team is especially good with nervous young patients. Gentle, patient, and never in a rush.",
+    q: "What are your working hours?",
+    a: "All three locations are open Monday to Saturday, 9:00 AM to 7:00 PM. We are closed on Sundays.",
   },
 ]

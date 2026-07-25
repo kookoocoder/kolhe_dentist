@@ -116,7 +116,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                   <div className="mt-4">
                     <p className="text-[12px] font-semibold">Hours</p>
                     <p className="mt-1 text-[12.5px] text-body">
-                      Mon–Fri 8:00–18:00 · Sat 9:00–14:00
+                      Mon–Sat 9:00–19:00 · Sun Closed
                     </p>
                   </div>
                   <a

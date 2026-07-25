@@ -1,11 +1,11 @@
 "use client"
 
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
-import { PHONE, PHONE_HREF } from "@/lib/data"
+import { LOCATIONS } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { useMutation } from "convex/react"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowUpRight, Check, ChevronDown } from "lucide-react"
+import { ArrowUpRight, Check, ChevronDown, MapPin, Phone } from "lucide-react"
 import { useState } from "react"
 import { api } from "../../convex/_generated/api"
 
@@ -14,41 +14,38 @@ const REASONS = [
   "Routine cleaning",
   "Teeth whitening",
   "Filling or restoration",
+  "Dental implants",
+  "Laser dentistry",
+  "Full mouth rehabilitation",
   "Emergency (I'm in pain)",
 ]
 
 const TIMES = [
-  "Morning (8:00 – 12:00)",
+  "Morning (9:00 – 12:00)",
   "Afternoon (12:00 – 16:00)",
-  "Late afternoon (16:00 – 18:00)",
+  "Late afternoon (16:00 – 19:00)",
   "Saturday morning (9:00 – 13:00)",
-]
-
-const INFO_BLOCKS = [
-  {
-    title: "Confirmed by phone",
-    text: "We call or email to confirm every booking. Your time is locked in only after we've spoken.",
-  },
-  {
-    title: "Easy to reschedule",
-    text: "Cancel or reschedule any time, no fee, no questions. We just ask for as much notice as you can give.",
-  },
 ]
 
 type Errors = Partial<Record<string, string>>
 
 function Field({
   label,
+  required,
   error,
   children,
 }: {
   label: string
+  required?: boolean
   error?: string
   children: React.ReactNode
 }) {
   return (
     <div>
-      <label className="mb-1.5 block text-[12px] font-medium text-ink">{label}</label>
+      <label className="mb-1.5 block text-[12px] font-medium text-ink">
+        {label}
+        {required && <span className="ml-0.5 text-red-500">*</span>}
+      </label>
       {children}
       {error && <p className="mt-1.5 text-[11.5px] text-red-500">{error}</p>}
     </div>
@@ -65,6 +62,7 @@ export function BookContent() {
   const createAppointment = useMutation(api.appointments.create)
 
   const [values, setValues] = useState({
+    clinic: "",
     name: "",
     phone: "",
     email: "",
@@ -76,6 +74,8 @@ export function BookContent() {
   const [errors, setErrors] = useState<Errors>({})
   const [submitted, setSubmitted] = useState(false)
 
+  const selectedClinic = LOCATIONS.find((l) => l.name === values.clinic)
+
   const set =
     (key: keyof typeof values) =>
     (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
@@ -85,6 +85,7 @@ export function BookContent() {
 
   const validate = (): Errors => {
     const e: Errors = {}
+    if (!values.clinic) e.clinic = "Please select a clinic."
     if (values.name.trim().length < 2) e.name = "Please enter your full name."
     if (!/^[+\d][\d\s\-()]{6,}$/.test(values.phone.trim()))
       e.phone = "Please enter a valid phone number."
@@ -103,6 +104,7 @@ export function BookContent() {
     if (Object.keys(errs).length > 0) return
 
     await createAppointment({
+      clinic: values.clinic,
       name: values.name.trim(),
       phone: values.phone.trim(),
       email: values.email.trim(),
@@ -146,12 +148,45 @@ export function BookContent() {
                   <h3 className="mt-5 text-[18px] font-semibold">Request received</h3>
                   <p className="mx-auto mt-2 max-w-sm text-[13px] leading-relaxed text-body">
                     Thank you, {values.name.split(" ")[0]}. We&rsquo;ll call or email within one
-                    business day to confirm your appointment.
+                    business day to confirm your appointment at{" "}
+                    <span className="font-medium text-ink">{values.clinic.split(" – ")[0]}</span>.
                   </p>
                 </motion.div>
               ) : (
                 <motion.form key="form" onSubmit={onSubmit} noValidate className="mt-6 space-y-5">
-                  <Field label="Full Name" error={errors.name}>
+                  {/* Clinic Selector — mandatory, first field */}
+                  <Field label="Select Clinic" required error={errors.clinic}>
+                    <div className="relative">
+                      <select
+                        className={cn(
+                          inputClass(errors.clinic),
+                          "appearance-none pr-10",
+                          !values.clinic && "text-body/60",
+                        )}
+                        value={values.clinic}
+                        onChange={set("clinic")}
+                      >
+                        <option value="" disabled>
+                          Choose a clinic location…
+                        </option>
+                        {LOCATIONS.map((loc) => (
+                          <option key={loc.name} value={loc.name}>
+                            {loc.name}
+                          </option>
+                        ))}
+                      </select>
+                      <ChevronDown className="pointer-events-none absolute right-4 top-1/2 size-3.5 -translate-y-1/2 text-body" />
+                    </div>
+                    {/* Show selected clinic's address inline */}
+                    {selectedClinic && (
+                      <p className="mt-2 text-[12px] leading-relaxed text-body">
+                        <MapPin className="mr-1 inline size-3" />
+                        {selectedClinic.address}
+                      </p>
+                    )}
+                  </Field>
+
+                  <Field label="Full Name" required error={errors.name}>
                     <input
                       className={inputClass(errors.name)}
                       placeholder="Your full name"
@@ -159,16 +194,16 @@ export function BookContent() {
                       onChange={set("name")}
                     />
                   </Field>
-                  <Field label="Phone Number" error={errors.phone}>
+                  <Field label="Phone Number" required error={errors.phone}>
                     <input
                       type="tel"
                       className={inputClass(errors.phone)}
-                      placeholder="+358 XX XXX XXXX"
+                      placeholder="+91 XXXXX XXXXX"
                       value={values.phone}
                       onChange={set("phone")}
                     />
                   </Field>
-                  <Field label="Email Address" error={errors.email}>
+                  <Field label="Email Address" required error={errors.email}>
                     <input
                       type="email"
                       className={inputClass(errors.email)}
@@ -191,7 +226,7 @@ export function BookContent() {
                       <ChevronDown className="pointer-events-none absolute right-4 top-1/2 size-3.5 -translate-y-1/2 text-body" />
                     </div>
                   </Field>
-                  <Field label="Preferred Day" error={errors.day}>
+                  <Field label="Preferred Day" required error={errors.day}>
                     <input
                       type="date"
                       className={inputClass(errors.day)}
@@ -233,7 +268,7 @@ export function BookContent() {
                     </span>
                   </button>
                   <p className="text-[12px] text-body">
-                    We&rsquo;ll never share your information with anyone outside this practice.
+                    We&rsquo;ll never share your information with anyone outside the practice.
                   </p>
                 </motion.form>
               )}
@@ -242,47 +277,79 @@ export function BookContent() {
 
           <Reveal delay={0.16}>
             <div className="space-y-5">
+              {/* All clinic locations */}
               <div className="rounded-[24px] bg-cream p-7 md:p-8">
-                <div className="space-y-7">
-                  {INFO_BLOCKS.map((b) => (
-                    <div key={b.title}>
-                      <h3 className="text-[15px] font-semibold">{b.title}</h3>
-                      <p className="mt-2 text-[13px] leading-relaxed text-body">{b.text}</p>
-                    </div>
-                  ))}
-                  <div>
-                    <h3 className="text-[15px] font-semibold">Rather call?</h3>
-                    <p className="mt-2 text-[13px] text-body">
-                      Mon–Fri: 8:00 – 18:00 · Sat: 9:00 – 14:00
-                    </p>
-                    <a
-                      href={PHONE_HREF}
-                      className="mt-2 block text-[16px] font-semibold tracking-tight hover:text-sage-dark"
-                    >
-                      {PHONE}
-                    </a>
-                  </div>
-                  <div>
-                    <h3 className="text-[15px] font-semibold">Find us</h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-body">
-                      Northgate Family Dental, 14 Maple Street, Helsinki 00100. Free parking in the
-                      rear car park, 2 minutes from Kallio metro station.
-                    </p>
-                  </div>
+                <h3 className="text-[15px] font-semibold">Our Clinics</h3>
+                <div className="mt-5 space-y-5">
+                  {LOCATIONS.map((loc) => {
+                    const isSelected = values.clinic === loc.name
+                    return (
+                      <div
+                        key={loc.name}
+                        className={cn(
+                          "rounded-[14px] border p-4 transition-colors",
+                          isSelected
+                            ? "border-sage bg-white"
+                            : "border-line bg-white/60",
+                        )}
+                      >
+                        <div className="flex items-start gap-2.5">
+                          <span
+                            className={cn(
+                              "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full",
+                              isSelected ? "bg-sage" : "bg-cream",
+                            )}
+                          >
+                            {isSelected && <Check className="size-3 text-white" strokeWidth={2.5} />}
+                          </span>
+                          <div className="min-w-0">
+                            <h4 className="text-[13px] font-semibold leading-tight">{loc.name}</h4>
+                            <p className="mt-1.5 text-[12px] leading-relaxed text-body">
+                              {loc.address}
+                            </p>
+                            <a
+                              href={loc.phoneHref}
+                              className="mt-1.5 flex items-center gap-1.5 text-[12px] font-medium text-ink hover:text-sage-dark"
+                            >
+                              <Phone className="size-3" />
+                              {loc.phone}
+                            </a>
+                            {loc.website && (
+                              <a
+                                href={loc.website}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-1 block text-[11px] text-sage-dark hover:underline"
+                              >
+                                {loc.website.replace(/^https?:\/\//, "")}
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
 
               <div className="rounded-[24px] bg-ink p-7 md:p-8">
                 <h3 className="text-[15px] font-semibold text-white">Dental emergency?</h3>
                 <p className="mt-2 text-[13px] leading-relaxed text-white/60">
-                  Call us directly, we keep same-day slots for urgent care.
+                  Call the clinic nearest to you directly — we keep same-day slots for urgent care.
                 </p>
-                <a
-                  href={PHONE_HREF}
-                  className="mt-3 block text-[16px] font-semibold tracking-tight text-sage hover:text-sage-light"
-                >
-                  {PHONE}
-                </a>
+                <div className="mt-4 space-y-3">
+                  {LOCATIONS.map((loc) => (
+                    <div key={loc.name}>
+                      <p className="text-[11px] font-medium text-white/40">{loc.name.split(" – ")[1] || loc.name}</p>
+                      <a
+                        href={loc.phoneHref}
+                        className="text-[15px] font-semibold tracking-tight text-sage hover:text-sage-light"
+                      >
+                        {loc.phone}
+                      </a>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </Reveal>

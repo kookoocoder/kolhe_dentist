@@ -16,7 +16,7 @@ export async function generateMetadata({
   const service = SERVICES.find((s) => s.slug === slug)
   if (!service) return {}
   return {
-    title: `${service.short} | Northgate Family Dental, Helsinki`,
+    title: `${service.short} | Dr. Kolhe's Dental Clinic`,
     description: service.description,
   }
 }

@@ -19,9 +19,9 @@ export function Navbar() {
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 md:px-10">
         <Link href="/" className="flex items-center gap-1.5">
           <span className="text-[15px] font-bold leading-[1.05] tracking-tight">
-            NorthGate
+            Dr. Kolhe&apos;s
             <br />
-            Dental{" "}
+            Dental Clinic{" "}
             <Image
               src="/images/logo-tooth.png"
               alt=""
@@ -114,7 +114,7 @@ export function Navbar() {
             </span>
           </Link>
           <a
-            href="tel:+358401234567"
+            href="tel:+919923387272"
             aria-label="Call us"
             className="flex size-10 items-center justify-center rounded-full border border-line bg-white transition-colors hover:bg-cream"
           >

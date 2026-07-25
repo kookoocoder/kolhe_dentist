@@ -1,6 +1,6 @@
 "use client"
 
-import { ADDRESS, EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
+import { ADDRESS, EMAIL, LOCATIONS, PHONE, PHONE_HREF } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
@@ -16,7 +16,7 @@ const CTA_COPY: Record<string, { label: string; title: string; body: string; aft
   },
   about: {
     label: "Ready?",
-    title: "Book your first visit with Dr. Lindgren",
+    title: "Book your first visit with Dr. Kolhe's Dental Clinic",
     body: "New patients welcome. No referral required.",
     after: `Or call us: ${PHONE}`,
   },
@@ -68,10 +68,10 @@ const QUICK_LINKS = [
 ]
 
 const SERVICE_LINKS = [
-  { label: "General Dentistry", href: "/services/general-check-up" },
-  { label: "Teeth Whitening", href: "/services/teeth-whitening" },
+  { label: "Laser Dentistry", href: "/services/laser-dentistry" },
   { label: "Dental Implants", href: "/services/dental-implants" },
-  { label: "Emergency Care", href: "/services/emergency-care" },
+  { label: "Full Mouth Rehab", href: "/services/full-mouth-rehabilitation" },
+  { label: "Cosmetic Dentistry", href: "/services/cosmetic-dentistry" },
 ]
 
 export function Footer() {
@@ -85,9 +85,9 @@ export function Footer() {
             <div>
               <Link href="/" className="inline-flex items-center">
                 <span className="text-[15px] font-bold leading-[1.05] tracking-tight">
-                  NorthGate
+                  Dr. Kolhe&apos;s
                   <br />
-                  Dental{" "}
+                  Dental Clinic{" "}
                   <Image
                     src="/images/logo-tooth.png"
                     alt=""
@@ -97,7 +97,7 @@ export function Footer() {
                   />
                 </span>
               </Link>
-              <p className="mt-4 text-[13px] text-body">Gentle care for the whole family.</p>
+              <p className="mt-4 text-[13px] text-body">Healthy Smile, Healthy Life</p>
             </div>
             <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
               <div>
@@ -135,8 +135,14 @@ export function Footer() {
               </div>
               <div>
                 <SectionLabel className="mb-4">Visit Us</SectionLabel>
-                <ul className="space-y-2.5 text-[13px] text-ink">
-                  <li>{ADDRESS.replace(" 00100", "")}</li>
+                <ul className="space-y-4 text-[13px] text-ink">
+                  {LOCATIONS.map((loc) => (
+                    <li key={loc.name}>
+                      <span className="font-medium text-ink">{loc.name}</span>
+                      <br />
+                      <span className="text-body">{loc.address}</span>
+                    </li>
+                  ))}
                   <li>
                     <a href={PHONE_HREF} className="hover:text-sage-dark">
                       {PHONE}
@@ -147,13 +153,12 @@ export function Footer() {
                       {EMAIL}
                     </a>
                   </li>
-                  <li>Mon–Fri: 8:00–18:00</li>
                 </ul>
               </div>
             </div>
           </div>
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line py-6 text-[12px] text-body sm:flex-row">
-            <p>© 2026 Northgate Family Dental. All rights reserved.</p>
+            <p>© 2026 Dr. Kolhe's Dental Clinic. All rights reserved.</p>
             <div className="flex items-center gap-5">
               <Link href="#" className="hover:text-ink">
                 Privacy

@@ -42,7 +42,8 @@ export default function AppointmentsPage() {
         !search ||
         a.name.toLowerCase().includes(search.toLowerCase()) ||
         a.email.toLowerCase().includes(search.toLowerCase()) ||
-        a.phone.includes(search)
+        a.phone.includes(search) ||
+        a.clinic?.toLowerCase().includes(search.toLowerCase())
       return matchesTab && matchesSearch
     })
   }, [appointments, tab, search])
@@ -94,10 +95,11 @@ export default function AppointmentsPage() {
       <div className="rounded-[20px] bg-card p-5 shadow-sm">
         <div className="grid grid-cols-12 gap-4 border-b border-border pb-3">
           <p className="col-span-2 text-xs font-medium text-muted-foreground">Patient</p>
+          <p className="col-span-2 text-xs font-medium text-muted-foreground">Clinic</p>
           <p className="col-span-2 text-xs font-medium text-muted-foreground">Phone</p>
-          <p className="col-span-2 text-xs font-medium text-muted-foreground">Email</p>
+          <p className="col-span-1 text-xs font-medium text-muted-foreground">Email</p>
           <p className="col-span-2 text-xs font-medium text-muted-foreground">Reason</p>
-          <p className="col-span-2 text-xs font-medium text-muted-foreground">Date</p>
+          <p className="col-span-1 text-xs font-medium text-muted-foreground">Date</p>
           <p className="col-span-2 text-xs font-medium text-muted-foreground">Status</p>
         </div>
 
@@ -114,10 +116,11 @@ export default function AppointmentsPage() {
                 className="grid grid-cols-12 items-center gap-4 -mx-2 cursor-pointer rounded-xl px-2 py-3 transition-colors hover:bg-muted/60"
               >
                 <p className="col-span-2 truncate text-sm font-medium">{appt.name}</p>
+                <p className="col-span-2 truncate text-sm text-muted-foreground">{appt.clinic?.split(" – ")[1] || appt.clinic || "—"}</p>
                 <p className="col-span-2 truncate text-sm text-muted-foreground">{appt.phone}</p>
-                <p className="col-span-2 truncate text-sm text-muted-foreground">{appt.email}</p>
+                <p className="col-span-1 truncate text-sm text-muted-foreground">{appt.email}</p>
                 <p className="col-span-2 truncate text-sm text-muted-foreground">{appt.reason}</p>
-                <p className="col-span-2 text-sm text-muted-foreground">{appt.preferredDate}</p>
+                <p className="col-span-1 text-sm text-muted-foreground">{appt.preferredDate}</p>
                 <div className="col-span-2">
                   <span
                     className={`inline-flex items-center rounded-full px-2.5 py-0.5 text-xs font-semibold ${STATUS_STYLES[appt.status] || ""}`}
@@ -142,6 +145,10 @@ export default function AppointmentsPage() {
                 <div>
                   <p className="text-xs font-medium text-muted-foreground">Patient Name</p>
                   <p className="mt-1 text-sm font-medium">{selected.name}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-medium text-muted-foreground">Clinic</p>
+                  <p className="mt-1 text-sm font-medium">{selected.clinic}</p>
                 </div>
                 <div>
                   <p className="text-xs font-medium text-muted-foreground">Phone</p>

@@ -20,6 +20,7 @@ export const create = mutation({
     name: v.string(),
     phone: v.string(),
     email: v.string(),
+    clinic: v.string(),
     reason: v.string(),
     preferredDate: v.string(),
     preferredTime: v.string(),

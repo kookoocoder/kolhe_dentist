@@ -21,24 +21,23 @@ export function HomeHero() {
             transition={{ duration: 0.6 }}
             className="text-[11px] font-medium uppercase tracking-[0.18em] text-body/70"
           >
-            General · Cosmetic · Family Dentistry
+            Laser · Implant · Cosmetic · Family Dentistry
           </motion.p>
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.7, delay: 0.08 }}
             className="mt-5 text-[44px] font-medium leading-[1.04] tracking-[-0.02em] md:text-[64px]"
           >
-            Exceptional care,
+            Healthy Smile,
             <br />
-            from the first hello
+            Healthy Life
           </motion.h1>
           <motion.p
             {...fadeUp}
             transition={{ duration: 0.7, delay: 0.16 }}
             className="mt-5 max-w-md text-[14px] leading-relaxed text-body"
           >
-            Gentle, unhurried dentistry for the whole family, serving Helsinki since 2008. Same-week
-            appointments available.
+            Expert dental care across Ahmednagar &amp; Pune. Advanced laser dentistry, implants, and cosmetic treatments by Dr. Kunal Kolhe and Dr. Kirti Kolhe.
           </motion.p>
           <motion.div
             {...fadeUp}
@@ -55,7 +54,7 @@ export function HomeHero() {
               </span>
             </Link>
             <a
-              href="tel:+358401234567"
+              href="tel:+919923387272"
               className="flex items-center gap-2.5 rounded-full border border-line bg-white px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-300 hover:bg-cream"
             >
               <Phone className="size-3.5" strokeWidth={2} />
@@ -93,7 +92,7 @@ export function HomeHero() {
                 We&rsquo;re here!
               </span>
               <span className="block text-[11px] leading-tight text-body">
-                14 Maple Street, Helsinki
+                Ahilyanagar &amp; Pune
               </span>
             </span>
           </motion.div>
@@ -105,11 +104,11 @@ export function HomeHero() {
             className="absolute bottom-5 left-4 hidden items-center gap-3 rounded-full bg-white py-2 pl-2 pr-5 shadow-sm sm:flex md:bottom-7 md:left-6"
           >
             <span className="flex size-9 items-center justify-center overflow-hidden rounded-full bg-cream-dark">
-              <img src="/images/team-anika.jpg" alt="" className="size-full object-cover" />
+              <img src="/images/dr-kirti-kolhe-closeup.jpg" alt="" className="size-full object-cover" />
             </span>
             <span>
               <span className="block text-[12px] font-semibold leading-tight">Message us</span>
-              <span className="block text-[11px] leading-tight text-body">Reception</span>
+              <span className="block text-[11px] leading-tight text-body">We&rsquo;ll reply soon</span>
             </span>
           </motion.div>
 

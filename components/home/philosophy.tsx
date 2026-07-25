@@ -3,9 +3,9 @@
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 
 const STATS = [
-  { title: "Since 2008", text: "Caring for Helsinki families" },
-  { title: "4.9 rating", text: "Averaged across patient reviews" },
-  { title: "Same week", text: "Appointments, Saturdays included" },
+  { title: "3 Centres", text: "Ahmednagar & Pune" },
+  { title: "1,000+", text: "Successful full mouth rehabilitations" },
+  { title: "Evidence-Based", text: "Modern, ethical dentistry" },
 ]
 
 export function Philosophy() {
@@ -18,14 +18,15 @@ export function Philosophy() {
         <div className="mt-6 grid gap-8 md:grid-cols-[1fr_280px] md:gap-16">
           <Reveal delay={0.05}>
             <h2 className="max-w-xl text-[26px] font-medium leading-snug tracking-tight md:text-[30px]">
-              We believe going to the dentist{" "}
-              <span className="text-sage-dark">shouldn&rsquo;t feel like a chore.</span>
+              We believe everyone deserves a healthy,
+              <span className="text-sage-dark"> confident smile.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.12}>
             <p className="text-[13px] leading-relaxed text-body">
-              We built our practice around one idea: care that feels human. Gentle, unhurried, and
-              focused entirely on you. No rushing, no jargon, no surprises.
+              Combining clinical expertise, compassion, and continuous learning to deliver exceptional
+              dental care with a personal touch. We invest in the latest technology so you receive
+              treatments that are effective, comfortable, and built to last.
             </p>
           </Reveal>
         </div>

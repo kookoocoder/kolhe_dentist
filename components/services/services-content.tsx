@@ -27,11 +27,11 @@ const FIRST_VISIT = [
 ]
 
 const INSURANCE = [
-  "Most major insurance accepted",
-  "Direct billing to your insurer available",
-  "Kela reimbursement supported",
-  "Payment plans for treatments over €500",
-  "Cash, card, and contactless accepted",
+  "All major payment methods accepted",
+  "Cash, card, UPI, and contactless accepted",
+  "Flexible payment plans available",
+  "Written cost estimate before any treatment",
+  "Transparent pricing, no hidden charges",
 ]
 
 function FaqItem({ q, a }: { q: string; a: string }) {
@@ -147,7 +147,7 @@ export function ServicesContent() {
         <Container>
           <div className="grid gap-10 rounded-[24px] bg-cream p-7 md:grid-cols-2 md:p-12">
             <Reveal>
-              <SectionLabel>Insurance &amp; Payment</SectionLabel>
+              <SectionLabel>Payment & Pricing</SectionLabel>
               <h2 className="mt-4 text-[28px] font-medium tracking-tight md:text-[34px]">
                 No surprises. Ever.
               </h2>
