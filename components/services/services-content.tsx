@@ -4,7 +4,7 @@ import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { FAQS, SERVICES } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowRight, Check, Plus } from "lucide-react"
+import { ArrowRight, Plus } from "lucide-react"
 import Link from "next/link"
 import { useState } from "react"
 
@@ -26,13 +26,7 @@ const FIRST_VISIT = [
   },
 ]
 
-const INSURANCE = [
-  "All major payment methods accepted",
-  "Cash, card, UPI, and contactless accepted",
-  "Flexible payment plans available",
-  "Written cost estimate before any treatment",
-  "Transparent pricing, no hidden charges",
-]
+
 
 function FaqItem({ q, a }: { q: string; a: string }) {
   const [open, setOpen] = useState(false)
@@ -81,7 +75,6 @@ export function ServicesContent() {
             </h1>
             <p className="mt-5 max-w-md text-[14px] leading-relaxed text-body">
               Comprehensive, gentle dentistry, from routine check-ups to cosmetic treatments.
-              Transparent pricing, no surprises.
             </p>
           </Reveal>
 
@@ -104,8 +97,7 @@ export function ServicesContent() {
                     <p className="mt-2.5 line-clamp-4 text-[12.5px] leading-relaxed text-body">
                       {s.description}
                     </p>
-                    <div className="mt-auto flex items-center justify-between pt-5">
-                      <span className="text-[13px] font-semibold">{s.price}</span>
+                    <div className="mt-auto flex justify-end pt-5">
                       <span className="flex size-8 items-center justify-center rounded-full bg-cream transition-colors duration-300 group-hover:bg-sage">
                         <ArrowRight
                           className="size-3.5 transition-colors group-hover:text-white"
@@ -143,37 +135,7 @@ export function ServicesContent() {
         </Container>
       </section>
 
-      <section className="bg-white pb-16 md:pb-24">
-        <Container>
-          <div className="grid gap-10 rounded-[24px] bg-cream p-7 md:grid-cols-2 md:p-12">
-            <Reveal>
-              <SectionLabel>Payment & Pricing</SectionLabel>
-              <h2 className="mt-4 text-[28px] font-medium tracking-tight md:text-[34px]">
-                No surprises. Ever.
-              </h2>
-              <ul className="mt-7 space-y-3.5">
-                {INSURANCE.map((item) => (
-                  <li key={item} className="flex items-center gap-3">
-                    <span className="flex size-6 items-center justify-center rounded-full bg-sage">
-                      <Check className="size-3 text-white" strokeWidth={2.5} />
-                    </span>
-                    <span className="text-[13.5px]">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </Reveal>
-            <Reveal delay={0.1}>
-              <div className="flex h-full flex-col justify-center rounded-[18px] bg-white p-7 md:p-9">
-                <SectionLabel>Our promise</SectionLabel>
-                <p className="mt-4 text-[15px] leading-relaxed">
-                  We provide a written cost estimate before any treatment begins. You approve it,
-                  then we proceed. We will never start work without your agreement on cost.
-                </p>
-              </div>
-            </Reveal>
-          </div>
-        </Container>
-      </section>
+
 
       <section className="bg-white pb-14 md:pb-20">
         <Container>

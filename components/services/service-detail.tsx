@@ -103,16 +103,7 @@ export function ServiceDetail({ service }: { service: Service }) {
                   <div className="overflow-hidden rounded-[16px]">
                     <img src={sidebarImage} alt="" className="aspect-[3/2] w-full object-cover" />
                   </div>
-                  <SectionLabel className="mt-6">Price</SectionLabel>
-                  <p className="mt-2 border-b border-line pb-5 text-[28px] font-medium tracking-tight">
-                    {service.price}
-                  </p>
-                  <div className="mt-5">
-                    <p className="text-[12px] font-semibold">Insurance</p>
-                    <p className="mt-1 text-[12.5px] leading-relaxed text-body">
-                      We&rsquo;ll confirm your coverage before anything begins.
-                    </p>
-                  </div>
+
                   <div className="mt-4">
                     <p className="text-[12px] font-semibold">Hours</p>
                     <p className="mt-1 text-[12.5px] text-body">

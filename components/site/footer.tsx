@@ -98,8 +98,12 @@ export function Footer() {
                 </span>
               </Link>
               <p className="mt-4 text-[13px] text-body">Healthy Smile, Healthy Life</p>
+              <div className="mt-4 flex flex-col gap-1.5 text-[13px] text-ink">
+                <a href={PHONE_HREF} className="hover:text-sage-dark">{PHONE}</a>
+                <a href={`mailto:${EMAIL}`} className="hover:text-sage-dark">{EMAIL}</a>
+              </div>
             </div>
-            <div className="grid grid-cols-2 gap-8 sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-8">
               <div>
                 <SectionLabel className="mb-4">Quick Links</SectionLabel>
                 <ul className="space-y-2.5">
@@ -133,39 +137,31 @@ export function Footer() {
                   ))}
                 </ul>
               </div>
-              <div>
-                <SectionLabel className="mb-4">Visit Us</SectionLabel>
-                <ul className="space-y-4 text-[13px] text-ink">
-                  {LOCATIONS.map((loc) => (
-                    <li key={loc.name}>
-                      <span className="font-medium text-ink">{loc.name}</span>
-                      <br />
-                      <span className="text-body">{loc.address}</span>
-                    </li>
-                  ))}
-                  <li>
-                    <a href={PHONE_HREF} className="hover:text-sage-dark">
-                      {PHONE}
-                    </a>
-                  </li>
-                  <li>
-                    <a href={`mailto:${EMAIL}`} className="hover:text-sage-dark">
-                      {EMAIL}
-                    </a>
-                  </li>
-                </ul>
-              </div>
+            </div>
+          </div>
+
+          {/* Visit Us — full-width 3-card row */}
+          <div className="mt-10 border-t border-line pt-8">
+            <SectionLabel className="mb-5">Visit Us</SectionLabel>
+            <div className="grid gap-3 md:grid-cols-3">
+              {LOCATIONS.map((loc) => (
+                <div key={loc.name} className="rounded-[14px] bg-cream p-4">
+                  <p className="text-[12px] font-semibold text-ink">{loc.name}</p>
+                  <a
+                    href={loc.googleMaps}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1.5 block text-[11.5px] leading-relaxed text-body transition-colors hover:text-sage-dark"
+                  >
+                    {loc.address.split(" (")[0]}
+                  </a>
+                </div>
+              ))}
             </div>
           </div>
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line py-6 text-[12px] text-body sm:flex-row">
             <p>© 2026 Dr. Kolhe's Dental Clinic. All rights reserved.</p>
             <div className="flex items-center gap-5">
-              <Link href="#" className="hover:text-ink">
-                Privacy
-              </Link>
-              <Link href="#" className="hover:text-ink">
-                Refund Policy
-              </Link>
               <div className="flex items-center gap-2">
                 <a
                   href="#"

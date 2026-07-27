@@ -5,7 +5,7 @@ import { LOCATIONS } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { useMutation } from "convex/react"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowUpRight, Check, ChevronDown, MapPin, Phone } from "lucide-react"
+import { ArrowUpRight, Check, ChevronDown, Clock, MapPin, Phone } from "lucide-react"
 import { useState } from "react"
 import { api } from "../../convex/_generated/api"
 
@@ -279,51 +279,70 @@ export function BookContent() {
             <div className="space-y-5">
               {/* All clinic locations */}
               <div className="rounded-[24px] bg-cream p-7 md:p-8">
-                <h3 className="text-[15px] font-semibold">Our Clinics</h3>
-                <div className="mt-5 space-y-5">
-                  {LOCATIONS.map((loc) => {
+                <div className="flex items-center justify-between">
+                  <h3 className="text-[15px] font-semibold">Our Clinics</h3>
+                  <span className="rounded-full bg-white px-2.5 py-0.5 text-[11px] font-medium text-body">
+                    3 locations
+                  </span>
+                </div>
+                <div className="mt-5 space-y-3">
+                  {LOCATIONS.map((loc, idx) => {
                     const isSelected = values.clinic === loc.name
                     return (
                       <div
                         key={loc.name}
                         className={cn(
-                          "rounded-[14px] border p-4 transition-colors",
+                          "overflow-hidden rounded-[14px] border bg-white transition-all duration-200",
                           isSelected
-                            ? "border-sage bg-white"
-                            : "border-line bg-white/60",
+                            ? "border-sage shadow-sm shadow-sage/10"
+                            : "border-line",
                         )}
                       >
-                        <div className="flex items-start gap-2.5">
-                          <span
+                        <div
+                          className={cn(
+                            "flex items-start gap-3 p-4",
+                            isSelected && "border-l-[3px] border-l-sage",
+                          )}
+                        >
+                          <div
                             className={cn(
-                              "mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full",
-                              isSelected ? "bg-sage" : "bg-cream",
+                              "mt-0.5 flex size-7 shrink-0 items-center justify-center rounded-full text-[10px] font-bold",
+                              isSelected ? "bg-sage text-white" : "bg-cream text-body",
                             )}
                           >
-                            {isSelected && <Check className="size-3 text-white" strokeWidth={2.5} />}
-                          </span>
-                          <div className="min-w-0">
-                            <h4 className="text-[13px] font-semibold leading-tight">{loc.name}</h4>
-                            <p className="mt-1.5 text-[12px] leading-relaxed text-body">
-                              {loc.address}
-                            </p>
-                            <a
-                              href={loc.phoneHref}
-                              className="mt-1.5 flex items-center gap-1.5 text-[12px] font-medium text-ink hover:text-sage-dark"
-                            >
-                              <Phone className="size-3" />
-                              {loc.phone}
-                            </a>
-                            {loc.website && (
-                              <a
-                                href={loc.website}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="mt-1 block text-[11px] text-sage-dark hover:underline"
-                              >
-                                {loc.website.replace(/^https?:\/\//, "")}
-                              </a>
+                            {isSelected ? (
+                              <Check className="size-3.5" strokeWidth={2.5} />
+                            ) : (
+                              `0${idx + 1}`
                             )}
+                          </div>
+                          <div className="min-w-0 flex-1">
+                            <h4 className="text-[13px] font-semibold leading-tight">
+                              {loc.name}
+                            </h4>
+                            <a
+                              href={loc.googleMaps}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-1 block text-[12px] leading-relaxed text-body transition-colors hover:text-sage-dark"
+                            >
+                              {loc.address}
+                            </a>
+                            <div className="mt-2 flex flex-wrap items-center gap-3">
+                              <a
+                                href={loc.phoneHref}
+                                className="flex items-center gap-1 text-[11.5px] font-medium text-ink hover:text-sage-dark"
+                              >
+                                <Phone className="size-3" />
+                                {loc.phone}
+                              </a>
+                              {loc.hours && (
+                                <span className="flex items-center gap-1 rounded-full bg-cream px-2.5 py-0.5 text-[10.5px] text-body/70">
+                                  <Clock className="size-3" />
+                                  Mon–Sat 9–7
+                                </span>
+                              )}
+                            </div>
                           </div>
                         </div>
                       </div>

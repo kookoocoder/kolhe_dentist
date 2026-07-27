@@ -2,65 +2,7 @@
 
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { LOCATIONS } from "@/lib/data"
-import { Award, GraduationCap, Sparkles, MapPin } from "lucide-react"
-
-const DR_KUNAL_CREDENTIALS = [
-  {
-    icon: GraduationCap,
-    title: "Education",
-    items: ["BDS + MDS in Prosthodontics, Crown & Bridge, and Oral Implantology"],
-  },
-  {
-    icon: Award,
-    title: "Experience & Memberships",
-    items: [
-      "16+ years clinical experience",
-      "1,000+ full mouth rehabilitation cases",
-      "District Oral Health Chairman, Rotary District 3132 (2026–27)",
-      "Member, Rotary Club of Ahilyanagar Central",
-      "Member, BNI Ajinkya Chapter, Pune",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Specialisations",
-    items: [
-      "Full Mouth Rehabilitation",
-      "Basal Implantology",
-      "Immediate Loading Dental Implants",
-      "Digital Smile Designing",
-      "Advanced Prosthodontics",
-    ],
-  },
-]
-
-const DR_KIRTI_CREDENTIALS = [
-  {
-    icon: GraduationCap,
-    title: "Education",
-    items: ["BDS with advanced training in Laser Dentistry"],
-  },
-  {
-    icon: Award,
-    title: "Experience & Memberships",
-    items: [
-      "Co-Founder & Director, Dr. Kolhe's Dental Clinic",
-      "Active member, Rotary Club of Ahilyanagar Central",
-      "Regular participant, national & international CDE programmes",
-    ],
-  },
-  {
-    icon: Sparkles,
-    title: "Specialisations",
-    items: [
-      "Laser Dentistry",
-      "Cosmetic Dentistry",
-      "Preventive Dentistry",
-      "Pediatric Dental Care",
-      "Gum Care & Smile Enhancement",
-    ],
-  },
-]
+import { MapPin } from "lucide-react"
 
 export function AboutContent() {
   return (
@@ -82,11 +24,11 @@ export function AboutContent() {
           </Reveal>
 
           <Reveal delay={0.15} y={40}>
-            <div className="relative mt-10 overflow-hidden rounded-[24px]">
+            <div className="relative mt-14 overflow-hidden rounded-[24px]">
               <img
                 src="/images/dr-kirti-kunal-together.png"
                 alt="Dr. Kirti Kolhe and Dr. Kunal Kolhe"
-                className="aspect-[4/3] w-full object-cover md:aspect-[1064/460]"
+                className="aspect-[4/3] w-full object-cover object-top md:aspect-[16/9]"
               />
             </div>
           </Reveal>
@@ -94,32 +36,60 @@ export function AboutContent() {
       </section>
 
       {/* Section 2 — Dr. Kunal Kolhe */}
-      <section className="bg-white pb-16 md:pb-24">
+      <section className="bg-white pb-16 pt-4 md:pb-20">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[280px_1fr] md:gap-20">
+          <Reveal>
+            <SectionLabel>Our Doctors</SectionLabel>
+          </Reveal>
+
+          <div className="mt-8 grid items-start gap-8 md:grid-cols-[300px_1fr] md:gap-14">
+            {/* Photo */}
             <Reveal>
-              <SectionLabel>Our Doctors</SectionLabel>
+              <div className="overflow-hidden rounded-[24px]">
+                <img
+                  src="/images/dr-kunal-kolhe-standing.png"
+                  alt="Dr. Kunal Kolhe"
+                  className="aspect-[3/4] w-full object-cover object-top"
+                />
+              </div>
             </Reveal>
-            <div>
-              <Reveal delay={0.05}>
-                <div className="flex items-start gap-6">
-                  <img
-                    src="/images/dr-kunal-kolhe-standing.png"
-                    alt="Dr. Kunal Kolhe"
-                    className="h-48 w-36 shrink-0 rounded-[18px] object-cover md:h-64 md:w-48"
-                  />
+
+            {/* Info */}
+            <div className="pt-1">
+              <Reveal delay={0.07}>
+                <h2 className="text-[28px] font-medium leading-tight tracking-tight md:text-[36px]">
+                  Dr. Kunal Kolhe, MDS
+                </h2>
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-sage-dark">
+                  Consultant Prosthodontist &amp; Implantologist &middot; Founder &amp; Director
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.12}>
+                <div className="mt-6 flex flex-wrap gap-8 border-y border-line py-5">
                   <div>
-                    <h2 className="text-[26px] font-medium tracking-tight md:text-[32px]">
-                      Dr. Kunal Kolhe, MDS
-                    </h2>
-                    <p className="mt-1 text-[13px] font-medium uppercase tracking-[0.08em] text-body/70">
-                      Consultant Prosthodontist &amp; Implantologist · Founder &amp; Director
+                    <p className="text-[28px] font-semibold leading-none tracking-tight">16+</p>
+                    <p className="mt-1.5 text-[10.5px] uppercase tracking-wide text-body">
+                      Years Experience
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[28px] font-semibold leading-none tracking-tight">1,000+</p>
+                    <p className="mt-1.5 text-[10.5px] uppercase tracking-wide text-body">
+                      Cases Completed
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[28px] font-semibold leading-none tracking-tight">5L+</p>
+                    <p className="mt-1.5 text-[10.5px] uppercase tracking-wide text-body">
+                      Check-ups Facilitated
                     </p>
                   </div>
                 </div>
               </Reveal>
-              <Reveal delay={0.12}>
-                <div className="mt-8 max-w-xl space-y-5 text-[14px] leading-relaxed text-body">
+
+              <Reveal delay={0.17}>
+                <div className="mt-6 space-y-4 text-[14px] leading-relaxed text-body">
                   <p>
                     Dr. Kunal Kolhe is a specialist prosthodontist and implantologist with over 16
                     years of clinical experience. He holds an MDS in Prosthodontics, Crown &amp;
@@ -141,72 +111,61 @@ export function AboutContent() {
               </Reveal>
             </div>
           </div>
-        </Container>
-      </section>
 
-      {/* Dr. Kunal Credentials */}
-      <section className="bg-white pb-16 md:pb-24">
-        <Container>
-          <div className="grid gap-4 md:grid-cols-3">
-            {DR_KUNAL_CREDENTIALS.map((c, i) => (
-              <Reveal key={c.title} delay={0.05 + i * 0.07}>
-                <div className="h-full rounded-[18px] bg-cream p-6 md:p-7">
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-8 items-center justify-center rounded-full bg-sage/40">
-                      <c.icon className="size-4 text-sage-dark" strokeWidth={2} />
-                    </span>
-                    <h3 className="text-[14px] font-semibold">{c.title}</h3>
-                  </div>
-                  <ul className="mt-4 space-y-3">
-                    {c.items.map((item) => (
-                      <li
-                        key={item}
-                        className="border-b border-line pb-3 text-[13px] leading-relaxed text-body last:border-b-0 last:pb-0"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </section>
 
       {/* Section 3 — Dr. Kirti Kolhe */}
-      <section className="bg-white pb-16 md:pb-24">
+      <section className="bg-white pb-16 pt-4 md:pb-20">
         <Container>
-          <div className="grid gap-10 md:grid-cols-[280px_1fr] md:gap-20">
+          <div className="mt-0 grid items-start gap-8 md:grid-cols-[300px_1fr] md:gap-14">
+            {/* Photo */}
             <Reveal>
-              <SectionLabel>In Her Words</SectionLabel>
+              <div className="overflow-hidden rounded-[24px]">
+                <img
+                  src="/images/dr-kirti-kolhe-standing.jpg"
+                  alt="Dr. Kirti Kolhe"
+                  className="aspect-[3/4] w-full object-cover object-top"
+                />
+              </div>
             </Reveal>
-            <div>
-              <Reveal delay={0.05}>
-                <div className="flex items-start gap-6">
-                  <img
-                    src="/images/dr-kirti-kolhe-standing.jpg"
-                    alt="Dr. Kirti Kolhe"
-                    className="h-48 w-36 shrink-0 rounded-[18px] object-cover md:h-64 md:w-48"
-                  />
+
+            {/* Info */}
+            <div className="pt-1">
+              <Reveal delay={0.07}>
+                <h2 className="text-[28px] font-medium leading-tight tracking-tight md:text-[36px]">
+                  Dr. Kirti Kolhe, BDS
+                </h2>
+                <p className="mt-2 text-[11px] font-semibold uppercase tracking-[0.1em] text-sage-dark">
+                  Consultant Dental Surgeon &middot; Laser Dentist &middot; Co-Founder &amp; Director
+                </p>
+              </Reveal>
+
+              <Reveal delay={0.12}>
+                <div className="mt-6 flex flex-wrap gap-8 border-y border-line py-5">
                   <div>
-                    <h2 className="text-[26px] font-medium tracking-tight md:text-[32px]">
-                      Dr. Kirti Kolhe, BDS
-                    </h2>
-                    <p className="mt-1 text-[13px] font-medium uppercase tracking-[0.08em] text-body/70">
-                      Consultant Dental Surgeon · Laser Dentist · Co-Founder &amp; Director
+                    <p className="text-[28px] font-semibold leading-none tracking-tight">BDS</p>
+                    <p className="mt-1.5 text-[10.5px] uppercase tracking-wide text-body">
+                      Dental Surgeon
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[28px] font-semibold leading-none tracking-tight">3</p>
+                    <p className="mt-1.5 text-[10.5px] uppercase tracking-wide text-body">
+                      Clinic Locations
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-[28px] font-semibold leading-none tracking-tight">Laser+</p>
+                    <p className="mt-1.5 text-[10.5px] uppercase tracking-wide text-body">
+                      Advanced Certified
                     </p>
                   </div>
                 </div>
               </Reveal>
-              <Reveal delay={0.12}>
-                <blockquote className="mt-8 text-[22px] font-medium leading-snug tracking-tight md:text-[28px]">
-                  &ldquo;Healthy Smile, Healthy Life — that&rsquo;s the belief that drives
-                  everything we do at our clinics.&rdquo;
-                </blockquote>
-              </Reveal>
-              <Reveal delay={0.18}>
-                <div className="mt-8 max-w-xl space-y-5 text-[14px] leading-relaxed text-body">
+
+              <Reveal delay={0.17}>
+                <div className="mt-6 space-y-4 text-[14px] leading-relaxed text-body">
                   <p>
                     Dr. Kirti Kolhe is a BDS-qualified dental surgeon with advanced training in laser
                     dentistry. As Co-Founder &amp; Director of Dr. Kolhe&rsquo;s Dental Clinic, she
@@ -221,39 +180,20 @@ export function AboutContent() {
                     at the forefront of modern dental practice.
                   </p>
                 </div>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {["Laser Dentistry", "Cosmetic Dentistry", "Preventive Dentistry", "Pediatric Dental Care", "Gum Care & Smile Enhancement"].map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full bg-sage/15 px-3 py-1 text-[11px] font-medium text-sage-dark"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </Reveal>
             </div>
           </div>
-        </Container>
-      </section>
 
-      {/* Dr. Kirti Credentials */}
-      <section className="bg-white pb-16 md:pb-24">
-        <Container>
-          <div className="grid gap-4 md:grid-cols-3">
-            {DR_KIRTI_CREDENTIALS.map((c, i) => (
-              <Reveal key={c.title} delay={0.05 + i * 0.07}>
-                <div className="h-full rounded-[18px] bg-cream p-6 md:p-7">
-                  <div className="flex items-center gap-3">
-                    <span className="flex size-8 items-center justify-center rounded-full bg-sage/40">
-                      <c.icon className="size-4 text-sage-dark" strokeWidth={2} />
-                    </span>
-                    <h3 className="text-[14px] font-semibold">{c.title}</h3>
-                  </div>
-                  <ul className="mt-4 space-y-3">
-                    {c.items.map((item) => (
-                      <li
-                        key={item}
-                        className="border-b border-line pb-3 text-[13px] leading-relaxed text-body last:border-b-0 last:pb-0"
-                      >
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </Container>
       </section>
 
@@ -292,7 +232,7 @@ export function AboutContent() {
                     <span className="flex size-8 items-center justify-center rounded-full bg-sage/40">
                       <MapPin className="size-4 text-sage-dark" strokeWidth={2} />
                     </span>
-                    <h3 className="text-[14px] font-semibold">{loc.name}</h3>
+                    <h3 className="text-[13px] font-semibold leading-tight">{loc.name}</h3>
                   </div>
                   <p className="mt-4 text-[13px] leading-relaxed text-body">{loc.address}</p>
                   {loc.hours && (
@@ -308,16 +248,6 @@ export function AboutContent() {
                       <MapPin className="size-3" />
                       Directions
                     </a>
-                    {loc.website && (
-                      <a
-                        href={loc.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-1.5 text-[12px] font-medium text-body transition-colors hover:bg-cream"
-                      >
-                        Website
-                      </a>
-                    )}
                   </div>
                 </div>
               </Reveal>

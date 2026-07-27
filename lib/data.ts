@@ -60,7 +60,6 @@ export type Service = {
   title: string
   short: string
   description: string
-  price: string
   image: string
   overview: string[]
   benefits: string[]
@@ -75,7 +74,6 @@ export const SERVICES: Service[] = [
     short: "General Check-up",
     description:
       "A thorough examination and professional clean. We check everything, explain what we find, and keep records so you can track your dental health over time.",
-    price: "From ₹500",
     image: "/images/service-checkup.jpg",
     overview: [
       "A complete examination of your teeth, gums, and mouth, followed by a professional clean and polish, all in a single visit.",
@@ -99,7 +97,6 @@ export const SERVICES: Service[] = [
     short: "Laser Dentistry",
     description:
       "Advanced, minimally invasive laser treatments that reduce pain, speed healing, and eliminate the need for traditional drills in many procedures.",
-    price: "From ₹2,000",
     image: "/images/service-checkup.jpg",
     overview: [
       "Our clinic is equipped with advanced dental lasers that allow for precise, minimally invasive treatments across a wide range of procedures.",
@@ -123,7 +120,6 @@ export const SERVICES: Service[] = [
     short: "Dental Implants",
     description:
       "The most natural-looking, long-lasting tooth replacement available. A permanent solution that looks, feels, and functions like a real tooth.",
-    price: "From ₹25,000",
     image: "/images/service-implants.jpg",
     overview: [
       "A dental implant is a permanent replacement tooth anchored directly into the jaw. It looks, feels, and functions like a real tooth.",
@@ -147,7 +143,6 @@ export const SERVICES: Service[] = [
     short: "Full Mouth Rehab",
     description:
       "A comprehensive treatment plan to restore the function, health, and appearance of your entire mouth. Customised to each patient's unique needs.",
-    price: "On consultation",
     image: "/images/service-checkup.jpg",
     overview: [
       "Full mouth rehabilitation is a customised plan that combines multiple treatments to restore all teeth in both jaws, improving function and aesthetics.",
@@ -171,7 +166,6 @@ export const SERVICES: Service[] = [
     short: "Smile Design",
     description:
       "See your new smile before treatment begins. Digital technology lets us design and preview your ideal smile, so you know exactly what to expect.",
-    price: "From ₹5,000",
     image: "/images/service-checkup.jpg",
     overview: [
       "Digital Smile Designing uses advanced imaging software to create a visual preview of your ideal smile before any treatment begins.",
@@ -195,7 +189,6 @@ export const SERVICES: Service[] = [
     short: "Root Canal",
     description:
       "Modern root canal treatment is nothing like its reputation. We work slowly and carefully, and you're in control throughout.",
-    price: "From ₹5,000",
     image: "/images/service-rootcanal.jpg",
     overview: [
       "Modern root canal treatment is nothing like its reputation. With today's techniques and anaesthetics, most patients describe it as no worse than a filling.",
@@ -219,7 +212,6 @@ export const SERVICES: Service[] = [
     short: "Pediatric Care",
     description:
       "We see children from age 3. Our team is experienced with nervous young patients: calm, gentle, and in no rush. Building good habits early makes everything easier.",
-    price: "From ₹500",
     image: "/images/service-checkup.jpg",
     overview: [
       "We see children from age 3, and we specialise in making their early dental visits calm and even fun.",
@@ -243,7 +235,6 @@ export const SERVICES: Service[] = [
     short: "Cosmetic",
     description:
       "Enhance your smile with professional whitening, veneers, and cosmetic bonding. Subtle changes that make a big difference in confidence.",
-    price: "From ₹3,000",
     image: "/images/service-checkup.jpg",
     overview: [
       "Our cosmetic treatments include professional whitening, porcelain veneers, and tooth-coloured bonding, designed to enhance your natural smile.",
