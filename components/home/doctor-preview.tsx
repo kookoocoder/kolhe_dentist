@@ -8,17 +8,6 @@ import Link from "next/link"
 
 const DOCTORS = [
   {
-    name: "Dr. Kirti Kolhe, BDS",
-    title: "Consultant Dental Surgeon | Laser Dentist",
-    brief:
-      "Co-Founder & Director of Dr. Kolhe's Dental Clinic with advanced training in Laser Dentistry. Passionate about creating positive dental experiences.",
-    image: "/images/dr-kirti-kolhe-closeup.jpg",
-    alt: "Dr. Kirti Kolhe",
-    badges: ["BDS", "Laser Dentist", "Co-Founder & Director"],
-    stat: { value: "8+", label: "Years Experience" },
-    imageLeft: true,
-  },
-  {
     name: "Dr. Kunal Kolhe, MDS",
     title: "Consultant Prosthodontist | Implantologist",
     brief:
@@ -28,6 +17,17 @@ const DOCTORS = [
     badges: ["MDS", "Implantologist", "16+ Years Experience", "1,000+ Cases"],
     stat: { value: "1,000+", label: "Successful Cases" },
     imageLeft: false,
+  },
+  {
+    name: "Dr. Kirti Kolhe, BDS",
+    title: "Consultant Dental Surgeon | Laser Dentist",
+    brief:
+      "Co-Founder & Director of Dr. Kolhe's Dental Clinic with advanced training in Laser Dentistry. Passionate about creating positive dental experiences.",
+    image: "/images/dr-kirti-kolhe-closeup.jpg",
+    alt: "Dr. Kirti Kolhe",
+    badges: ["BDS", "Laser Dentist", "Co-Founder & Director"],
+    stat: { value: "8+", label: "Years Experience" },
+    imageLeft: true,
   },
 ]
 
