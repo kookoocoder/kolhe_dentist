@@ -79,12 +79,12 @@ export function ServicesCarousel() {
               <ImageCard
                 href="/services/digital-x-rays"
                 title="Digital X-Rays"
-                image="/images/service-xray.jpg"
+                image="/images/service-xray2.jpg"
               />
               <ImageCard
                 href="/services/dental-fillings"
                 title="Dental Fillings"
-                image="/images/clinic-room.jpg"
+                image="/images/service-fillings.jpg"
               />
             </div>
           </Reveal>
@@ -123,7 +123,7 @@ export function ServicesCarousel() {
               className="group relative block h-32 rounded-[18px] border border-line bg-white p-5 transition-colors duration-300 hover:bg-cream"
             >
               <span className="block text-[14px] font-medium text-ink">See all treatments</span>
-              <span className="mt-1 block text-[12px] text-body">8 services available</span>
+              <span className="mt-1 block text-[12px] text-body">13 services available</span>
               <span className="absolute bottom-4 right-4 flex size-8 items-center justify-center rounded-full bg-sage transition-transform duration-300 group-hover:rotate-45">
                 <ArrowUpRight className="size-3.5 text-white" strokeWidth={2} />
               </span>

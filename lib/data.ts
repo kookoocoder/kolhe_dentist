@@ -97,7 +97,7 @@ export const SERVICES: Service[] = [
     short: "Laser Dentistry",
     description:
       "Advanced, minimally invasive laser treatments that reduce pain, speed healing, and eliminate the need for traditional drills in many procedures.",
-    image: "/images/service-checkup.jpg",
+    image: "/images/clinic-room.jpg",
     overview: [
       "Our clinic is equipped with advanced dental lasers that allow for precise, minimally invasive treatments across a wide range of procedures.",
       "Laser dentistry often means less pain, reduced bleeding, faster healing, and in many cases, no need for anaesthetic injections.",
@@ -143,7 +143,7 @@ export const SERVICES: Service[] = [
     short: "Full Mouth Rehab",
     description:
       "A comprehensive treatment plan to restore the function, health, and appearance of your entire mouth. Customised to each patient's unique needs.",
-    image: "/images/service-checkup.jpg",
+    image: "/images/practice-lounge.jpg",
     overview: [
       "Full mouth rehabilitation is a customised plan that combines multiple treatments to restore all teeth in both jaws, improving function and aesthetics.",
       "With over 1,000 completed cases, Dr. Kunal Kolhe brings deep expertise in planning and executing complex rehabilitation cases.",
@@ -166,7 +166,7 @@ export const SERVICES: Service[] = [
     short: "Smile Design",
     description:
       "See your new smile before treatment begins. Digital technology lets us design and preview your ideal smile, so you know exactly what to expect.",
-    image: "/images/service-checkup.jpg",
+    image: "/images/whitening-hero.jpg",
     overview: [
       "Digital Smile Designing uses advanced imaging software to create a visual preview of your ideal smile before any treatment begins.",
       "This technology allows us to plan precise changes to tooth shape, size, and alignment, and share the expected outcome with you upfront.",
@@ -207,12 +207,12 @@ export const SERVICES: Service[] = [
     fit: "If you have a deep infection or persistent toothache, a root canal can save the tooth and end the pain. We'll always explain your options honestly first.",
   },
   {
-    slug: "pediatric-dentistry",
+    slug: "paediatric-care",
     title: "Pediatric Dentistry",
     short: "Pediatric Care",
     description:
       "We see children from age 3. Our team is experienced with nervous young patients: calm, gentle, and in no rush. Building good habits early makes everything easier.",
-    image: "/images/service-checkup.jpg",
+    image: "/images/service-paediatric.jpg",
     overview: [
       "We see children from age 3, and we specialise in making their early dental visits calm and even fun.",
       "Our team is experienced with nervous young patients: no rushing, no pressure, and plenty of patience. Building good habits early makes everything easier later.",
@@ -235,7 +235,7 @@ export const SERVICES: Service[] = [
     short: "Cosmetic",
     description:
       "Enhance your smile with professional whitening, veneers, and cosmetic bonding. Subtle changes that make a big difference in confidence.",
-    image: "/images/service-checkup.jpg",
+    image: "/images/smile-closeup.jpg",
     overview: [
       "Our cosmetic treatments include professional whitening, porcelain veneers, and tooth-coloured bonding, designed to enhance your natural smile.",
       "Every cosmetic plan is personalised. We focus on natural-looking results that complement your facial features and personality.",
@@ -251,6 +251,50 @@ export const SERVICES: Service[] = [
       "Many cosmetic treatments are completed in one to three visits, depending on the plan we create together.",
     ],
     fit: "If you want to brighten, reshape, or refine your smile, our cosmetic treatments can help you achieve natural, lasting results.",
+  },
+  {
+    slug: "teeth-whitening",
+    title: "Teeth Whitening",
+    short: "Teeth Whitening",
+    description: "Professional whitening for a brighter, more confident smile, with results tailored to your goals.",
+    image: "/images/service-whitening.jpg",
+    overview: ["We use professional whitening to safely lift stains and brighten your natural smile.", "Your treatment is planned around your sensitivity, schedule, and desired shade."],
+    benefits: ["Noticeably brighter smile", "Professional, controlled treatment", "Plan tailored to your goals", "Advice for maintaining results"],
+    expect: ["We check your teeth and gums first, then recommend the safest whitening approach for you.", "Some temporary sensitivity is possible, and we provide clear aftercare guidance."],
+    fit: "Whitening is suitable for most adults with healthy teeth and gums. We will check your suitability first.",
+  },
+  {
+    slug: "digital-x-rays",
+    title: "Digital X-Rays",
+    short: "Digital X-Rays",
+    description: "Fast, clear digital imaging that helps us see what is happening beneath the surface and plan treatment precisely.",
+    image: "/images/service-xray2.jpg",
+    overview: ["Digital X-rays give us a detailed view of teeth, roots, bone, and areas hidden from a visual examination.", "They help us diagnose concerns early and explain findings clearly to you."],
+    benefits: ["Fast, high-quality images", "Supports accurate diagnosis", "Lower exposure than traditional film", "Better treatment planning"],
+    expect: ["The scan takes only a few minutes and is completely painless.", "We review the images with you and explain what they show before recommending next steps."],
+    fit: "X-rays are recommended when needed to investigate symptoms, monitor changes, or plan treatment safely.",
+  },
+  {
+    slug: "dental-fillings",
+    title: "Dental Fillings",
+    short: "Dental Fillings",
+    description: "Tooth-coloured fillings that repair decay and restore the strength, shape, and function of your tooth.",
+    image: "/images/service-fillings.jpg",
+    overview: ["We remove decay carefully and restore the tooth with a durable, natural-looking filling.", "Treating a cavity early helps prevent pain and more extensive treatment later."],
+    benefits: ["Preserves your natural tooth", "Tooth-coloured materials", "Comfortable, precise treatment", "Usually completed in one visit"],
+    expect: ["We numb the area, remove the decay, and shape the filling to fit your bite.", "The tooth can usually be used normally as soon as the numbness wears off."],
+    fit: "A filling is suitable for a tooth with mild to moderate decay or a small area of damage.",
+  },
+  {
+    slug: "emergency-care",
+    title: "Emergency Care",
+    short: "Emergency Care",
+    description: "Prompt, practical help for toothache, swelling, broken teeth, and other dental problems that cannot wait.",
+    image: "/images/clinic-talk.jpg",
+    overview: ["We prioritise urgent dental problems and focus first on relieving pain and protecting your health.", "After an examination, we explain your options and arrange follow-up care when needed."],
+    benefits: ["Same-day slots when available", "Pain and swelling assessment", "Clear next-step advice", "Calm care when you need it most"],
+    expect: ["Call us first so we can find the earliest appropriate appointment.", "We assess the problem, provide immediate care where possible, and explain any further treatment."],
+    fit: "Contact us promptly for severe toothache, swelling, trauma, a broken tooth, or bleeding that will not stop.",
   },
 ]
 
