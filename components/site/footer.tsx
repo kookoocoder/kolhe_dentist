@@ -5,8 +5,10 @@ import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { FacebookIcon, InstagramIcon } from "./social-icons"
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "./social-icons"
 import { Container, PillButton, Reveal, SectionLabel } from "./ui"
+const WHATSAPP_HREF =
+  "https://wa.me/919923387272?text=Hi%20Dr.%20Kolhe%27s%20Dental%20Clinic%21%20I%27d%20like%20to%20book%20an%20appointment.%20"
 
 const CTA_COPY: Record<string, { label: string; title: string; body: string; after?: string }> = {
   default: {
@@ -99,8 +101,22 @@ export function Footer() {
               </Link>
               <p className="mt-4 text-[13px] text-body">Healthy Smile, Healthy Life</p>
               <div className="mt-4 flex flex-col gap-1.5 text-[13px] text-ink">
-                <a href={PHONE_HREF} className="hover:text-sage-dark">{PHONE}</a>
-                <a href={`mailto:${EMAIL}`} className="hover:text-sage-dark">{EMAIL}</a>
+                <a href={PHONE_HREF} className="hover:text-sage-dark">
+                  {PHONE}
+                </a>
+                <p className="max-w-xs leading-relaxed text-body">{ADDRESS}</p>
+                <a href={`mailto:${EMAIL}`} className="hover:text-sage-dark">
+                  {EMAIL}
+                </a>
+                <a
+                  href={WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 inline-flex min-h-10 w-fit items-center gap-2 rounded-full bg-[#25D366] px-4 text-[12px] font-semibold text-white shadow-sm transition-[background-color,transform,box-shadow] hover:bg-[#128C7E] hover:shadow-md active:scale-[0.96]"
+                >
+                  <WhatsAppIcon className="size-4" />
+                  Message us on WhatsApp
+                </a>
               </div>
             </div>
             <div className="grid grid-cols-2 gap-8">
