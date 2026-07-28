@@ -7,8 +7,8 @@ function ThemeProvider({ children, ...props }: React.ComponentProps<typeof NextT
   return (
     <NextThemesProvider
       attribute="class"
-      defaultTheme="system"
-      enableSystem
+      defaultTheme="classic"
+      themes={["classic", "dental", "hospital", "medical", "dark"]}
       disableTransitionOnChange
       {...props}
     >
@@ -52,7 +52,7 @@ function ThemeHotkey() {
         return
       }
 
-      setTheme(resolvedTheme === "dark" ? "light" : "dark")
+      setTheme(resolvedTheme === "dark" ? "classic" : "dark")
     }
 
     window.addEventListener("keydown", onKeyDown)

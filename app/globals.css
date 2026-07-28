@@ -129,14 +129,104 @@
 }
 
 @theme {
-  --color-cream: #f0f0ed;
-  --color-cream-dark: #e9e9e6;
-  --color-ink: #1d1d1d;
-  --color-sage: #adbc84;
-  --color-sage-dark: #91a065;
-  --color-sage-light: #cdd8ad;
-  --color-body: #6f6f6c;
-  --color-line: #e4e4e0;
+  --color-cream: var(--brand-surface);
+  --color-cream-dark: var(--brand-surface-strong);
+  --color-ink: var(--brand-ink);
+  --color-sage: var(--brand-primary);
+  --color-sage-dark: var(--brand-primary-strong);
+  --color-sage-light: var(--brand-primary-soft);
+  --color-body: var(--brand-muted);
+  --color-line: var(--brand-line);
+}
+
+/* Named visual directions for the public website. */
+:root,
+.classic {
+  --brand-surface: #f0f0ed;
+  --brand-surface-strong: #e3e3df;
+  --brand-ink: #1d1d1d;
+  --brand-primary: #adbc84;
+  --brand-primary-strong: #718143;
+  --brand-primary-soft: #dce5c2;
+  --brand-muted: #6f6f6c;
+  --brand-line: #e4e4e0;
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.15 0.025 220);
+  --foreground: oklch(0.94 0.02 190);
+  --card: oklch(0.2 0.03 220);
+  --muted: oklch(0.25 0.035 220);
+  --border: oklch(0.34 0.04 220);
+  --brand-surface: #20353a;
+  --brand-surface-strong: #2c4a4f;
+  --brand-ink: #e5f5f0;
+  --brand-primary: #8fcaad;
+  --brand-primary-strong: #b2e3ca;
+  --brand-primary-soft: #375d59;
+  --brand-muted: #a8c2be;
+  --brand-line: #385358;
+  --radius: 0.625rem;
+}
+
+.dental {
+  --background: oklch(0.98 0.018 195);
+  --foreground: oklch(0.23 0.045 210);
+  --card: oklch(1 0.005 195);
+  --muted: oklch(0.94 0.025 195);
+  --border: oklch(0.86 0.045 195);
+  --brand-surface: #e7f7f6;
+  --brand-surface-strong: #cdecea;
+  --brand-ink: #153d46;
+  --brand-primary: #39b7b0;
+  --brand-primary-strong: #16827f;
+  --brand-primary-soft: #a9e1dc;
+  --brand-muted: #527278;
+  --brand-line: #c6e2e1;
+  --radius: 1rem;
+}
+
+.hospital {
+  --background: oklch(0.98 0.012 150);
+  --foreground: oklch(0.22 0.035 155);
+  --card: oklch(1 0.006 150);
+  --muted: oklch(0.94 0.025 150);
+  --border: oklch(0.86 0.04 150);
+  --brand-surface: #edf7ef;
+  --brand-surface-strong: #d6ecd9;
+  --brand-ink: #183d2b;
+  --brand-primary: #4ba66b;
+  --brand-primary-strong: #287a49;
+  --brand-primary-soft: #b9dfc2;
+  --brand-muted: #5c7865;
+  --brand-line: #cfe3d3;
+  --radius: 0.35rem;
+}
+
+.medical {
+  --background: oklch(0.98 0.012 260);
+  --foreground: oklch(0.2 0.045 265);
+  --card: oklch(1 0.004 260);
+  --muted: oklch(0.94 0.025 260);
+  --border: oklch(0.86 0.045 260);
+  --brand-surface: #eef2ff;
+  --brand-surface-strong: #dce4ff;
+  --brand-ink: #1c2b50;
+  --brand-primary: #5478d8;
+  --brand-primary-strong: #3456ae;
+  --brand-primary-soft: #b9c9f4;
+  --brand-muted: #647195;
+  --brand-line: #d3dcf5;
+  --radius: 1.35rem;
+}
+
+/* Keep legacy marketing surfaces responsive to the selected direction. */
+.dental .bg-white,
+.hospital .bg-white,
+.medical .bg-white,
+.dark .bg-white {
+  background-color: var(--background) !important;
 }
 
 @layer base {

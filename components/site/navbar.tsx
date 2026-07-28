@@ -3,11 +3,63 @@
 import { SERVICES } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
-import { ArrowUpRight, ChevronDown, Menu, Phone, X } from "lucide-react"
+import { ArrowUpRight, ChevronDown, Menu, Moon, Palette, Phone, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
+import { useTheme } from "next-themes"
+
+const themes = [
+  { id: "classic", label: "Sage", detail: "Soft sage" },
+  { id: "dental", label: "Aqua", detail: "Fresh aqua" },
+  { id: "hospital", label: "Emerald", detail: "Calm emerald" },
+  { id: "medical", label: "Cobalt", detail: "Clinical cobalt" },
+]
+
+function ThemeSwitcher() {
+  const { theme, setTheme } = useTheme()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => setMounted(true), [])
+
+  return (
+    <div className="flex items-center gap-1 rounded-full border border-line bg-cream/70 p-1" aria-label="Choose website theme">
+      <Palette className="ml-2 size-3.5 text-body" strokeWidth={1.8} />
+      {themes.map((option) => (
+        <button
+          key={option.id}
+          type="button"
+          title={option.detail}
+          aria-label={`Use ${option.label} theme`}
+          aria-pressed={mounted && theme === option.id}
+          onClick={() => setTheme(option.id)}
+          className={cn(
+            "rounded-full px-2.5 py-1.5 text-[10px] font-semibold tracking-wide transition-colors active:scale-[0.96]",
+            mounted && theme === option.id
+              ? "bg-ink text-cream shadow-sm"
+              : "text-body hover:bg-cream-dark hover:text-ink",
+          )}
+        >
+          {option.label}
+        </button>
+      ))}
+      <button
+        type="button"
+        title="Dark mode"
+        aria-label="Use dark mode"
+        aria-pressed={mounted && theme === "dark"}
+        onClick={() => setTheme(theme === "dark" ? "classic" : "dark")}
+        className={cn(
+          "flex size-7 items-center justify-center rounded-full transition-colors active:scale-[0.96]",
+          mounted && theme === "dark" ? "bg-ink text-cream" : "text-body hover:bg-cream-dark hover:text-ink",
+        )}
+      >
+        <Moon className="size-3.5" strokeWidth={1.8} />
+      </button>
+    </div>
+  )
+}
 
 export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -15,7 +67,7 @@ export function Navbar() {
   const pathname = usePathname()
 
   return (
-    <header className="sticky top-0 z-50 bg-white/90 backdrop-blur-md">
+    <header className="sticky top-0 z-50 border-b border-line/60 bg-background/90 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-[1200px] items-center justify-between px-5 md:px-10">
         <Link href="/" className="flex items-center gap-1.5">
           <span className="text-[15px] font-bold leading-[1.05] tracking-tight">
@@ -61,7 +113,7 @@ export function Navbar() {
                   transition={{ duration: 0.2 }}
                   className="absolute left-0 top-full w-64 pt-2"
                 >
-                  <div className="rounded-2xl border border-line bg-white p-2 shadow-lg shadow-black/5">
+                  <div className="rounded-2xl border border-line bg-background p-2 shadow-lg shadow-black/5">
                     {SERVICES.map((s) => (
                       <Link
                         key={s.slug}
@@ -104,6 +156,7 @@ export function Navbar() {
         </nav>
 
         <div className="hidden items-center gap-2.5 md:flex">
+          <ThemeSwitcher />
           <Link
             href="/book"
             className="group flex items-center gap-2.5 rounded-full border border-sage-dark/30 bg-sage py-2 pl-5 pr-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-300 hover:bg-sage-dark"
@@ -138,9 +191,10 @@ export function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden border-t border-line bg-white md:hidden"
+            className="overflow-hidden border-t border-line bg-background md:hidden"
           >
-            <div className="space-y-1 px-5 py-4">
+            <div className="space-y-3 px-5 py-4">
+                          <ThemeSwitcher />
               {[
                 { label: "Services", href: "/services" },
                 { label: "About", href: "/about" },
