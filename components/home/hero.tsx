@@ -71,11 +71,20 @@ export function HomeHero() {
           className="relative mt-12 aspect-4/5 overflow-hidden rounded-[24px] sm:aspect-16/10 md:aspect-1064/560"
         >
           <Image
+            src="/images/hero-mobile.png"
+            alt="Doctors at the dental and hair transplant clinic"
+            fill
+            sizes="(max-width: 639px) 100vw, 100vw"
+            loading="eager"
+            className="object-cover sm:hidden"
+          />
+          <Image
             src="/images/hero.png"
             alt="Doctors at the dental and hair transplant clinic"
             fill
+            sizes="(max-width: 639px) 100vw, 100vw"
             loading="eager"
-            className="object-cover"
+            className="hidden object-cover sm:block"
           />
 
           <motion.div
