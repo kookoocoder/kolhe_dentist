@@ -1,6 +1,6 @@
 "use client"
 
-import { SERVICES } from "@/lib/data"
+import { LOCATIONS } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
 import { ArrowUpRight, ChevronDown, Menu, Moon, Palette, Phone, X } from "lucide-react"
@@ -93,10 +93,10 @@ export function Navbar() {
             <button
               className={cn(
                 "flex items-center gap-1.5 rounded-full bg-cream px-4 py-2 text-[13px] font-medium transition-colors hover:bg-cream-dark",
-                pathname.startsWith("/services") && "text-sage-dark",
+                (pathname.startsWith("/services") || pathname.startsWith("/clinics")) && "text-sage-dark"
               )}
             >
-              Services
+              Clinics
               <ChevronDown
                 className={cn(
                   "size-3.5 transition-transform duration-300",
@@ -114,14 +114,14 @@ export function Navbar() {
                   className="absolute left-0 top-full w-64 pt-2"
                 >
                   <div className="rounded-2xl border border-line bg-background p-2 shadow-lg shadow-black/5">
-                    {SERVICES.map((s) => (
+                    {LOCATIONS.map((clinic) => (
                       <Link
-                        key={s.slug}
-                        href={`/services/${s.slug}`}
+                        key={clinic.slug}
+                        href={`/clinics/${clinic.slug}`}
                         className="block rounded-xl px-3.5 py-2 text-[13px] font-medium text-ink transition-colors hover:bg-cream"
                         onClick={() => setServicesOpen(false)}
                       >
-                        {s.short}
+                        {clinic.name}
                       </Link>
                     ))}
                     <div className="mx-2 my-1.5 border-t border-line" />
@@ -130,7 +130,7 @@ export function Navbar() {
                       className="block rounded-xl px-3.5 py-2 text-[13px] font-semibold text-sage-dark transition-colors hover:bg-cream"
                       onClick={() => setServicesOpen(false)}
                     >
-                      See all treatments
+                      View all clinics
                     </Link>
                   </div>
                 </motion.div>
@@ -196,7 +196,7 @@ export function Navbar() {
             <div className="space-y-3 px-5 py-4">
                           <ThemeSwitcher />
               {[
-                { label: "Services", href: "/services" },
+                { label: "Clinics", href: "/services" },
                 { label: "About", href: "/about" },
                 { label: "Reviews", href: "/#reviews" },
                 { label: "Contact", href: "/#contact" },

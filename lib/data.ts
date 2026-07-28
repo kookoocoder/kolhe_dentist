@@ -14,6 +14,7 @@ export const HOURS = [
 ]
 
 export type Location = {
+  slug: string
   name: string
   address: string
   phone: string
@@ -25,6 +26,7 @@ export type Location = {
 
 export const LOCATIONS: Location[] = [
   {
+    slug: "ahmednagar",
     name: "Smile Maker's – Ahmednagar",
     address:
       "Flat No 1, Santkrupa Apartment, Pipeline Road, Nalegaon, Ahmednagar - 414001 (Opposite Morya Mangal Karyalay)",
@@ -34,6 +36,7 @@ export const LOCATIONS: Location[] = [
     hours: "Mon–Sat: 9:00 AM – 7:00 PM, Sunday: Closed",
   },
   {
+    slug: "viman-nagar",
     name: "Dr. Kolhe's Dental Clinic – Viman Nagar, Pune",
     address:
       "Office No 105, Finswell, Novotel Hotel, Sakore Nagar, Viman Nagar, Pune, Maharashtra 411014",
@@ -44,6 +47,7 @@ export const LOCATIONS: Location[] = [
     hours: "Mon–Sat: 9:00 AM – 7:00 PM, Sunday: Closed",
   },
   {
+    slug: "kharadi",
     name: "Dr. Kolhe's Dental Clinic – Kharadi, Pune",
     address:
       "Office No 26, B-Wing, 3rd Floor, Cityvista Downtown, Fountain Road, Kharadi, Pune, Maharashtra 411014",

@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils"
 import { useMutation } from "convex/react"
 import { AnimatePresence, motion } from "framer-motion"
 import { ArrowUpRight, Check, ChevronDown, Clock, MapPin, Phone } from "lucide-react"
+import Link from "next/link"
 import { useState } from "react"
 import { api } from "../../convex/_generated/api"
 
@@ -317,9 +318,9 @@ export function BookContent() {
                             )}
                           </div>
                           <div className="min-w-0 flex-1">
-                            <h4 className="text-[13px] font-semibold leading-tight">
-                              {loc.name}
-                            </h4>
+                            <Link href={`/clinics/${loc.slug}`} className="group inline-flex items-center gap-1 text-[13px] font-semibold leading-tight hover:text-sage-dark">
+                              {loc.name}<ArrowUpRight className="size-3 opacity-0 transition-opacity group-hover:opacity-100" />
+                            </Link>
                             <a
                               href={loc.googleMaps}
                               target="_blank"

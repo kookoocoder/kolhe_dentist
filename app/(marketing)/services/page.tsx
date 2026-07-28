@@ -1,12 +1,11 @@
-import { ServicesContent } from "@/components/services/services-content"
+import { ClinicsContent } from "@/components/clinics/clinics-content"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
-  title: "Dental Services | Dr. Kolhe's Dental Clinic",
-  description:
-    "Expert dental services in Ahmednagar & Pune. Laser dentistry, implants, cosmetic treatments, and more by Dr. Kunal Kolhe and Dr. Kirti Kolhe. Transparent pricing, no surprises.",
+  title: "Our Clinics | Dr. Kolhe's Dental Clinic",
+  description: "Explore Dr. Kolhe's three dental clinics in Ahmednagar, Viman Nagar, and Kharadi.",
 }
 
 export default function ServicesPage() {
-  return <ServicesContent />
+  return <ClinicsContent />
 }

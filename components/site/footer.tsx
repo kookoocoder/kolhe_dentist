@@ -161,17 +161,11 @@ export function Footer() {
             <SectionLabel className="mb-5">Visit Us</SectionLabel>
             <div className="grid gap-3 md:grid-cols-3">
               {LOCATIONS.map((loc) => (
-                <div key={loc.name} className="rounded-[14px] bg-cream p-4">
-                  <p className="text-[12px] font-semibold text-ink">{loc.name}</p>
-                  <a
-                    href={loc.googleMaps}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="mt-1.5 block text-[11.5px] leading-relaxed text-body transition-colors hover:text-sage-dark"
-                  >
-                    {loc.address.split(" (")[0]}
-                  </a>
-                </div>
+                <Link key={loc.name} href={`/clinics/${loc.slug}`} className="group rounded-[18px] bg-cream p-4 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5">
+                  <p className="text-[12px] font-semibold leading-snug text-ink">{loc.name}</p>
+                  <p className="mt-2 text-[11.5px] leading-relaxed text-body">{loc.address.split(" (")[0]}</p>
+                  <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold text-sage-dark">View clinic <span className="transition-transform group-hover:translate-x-1">→</span></span>
+                </Link>
               ))}
             </div>
           </div>
