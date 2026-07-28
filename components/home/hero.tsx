@@ -4,6 +4,7 @@ import { FacebookIcon, InstagramIcon } from "@/components/site/social-icons"
 import { Container } from "@/components/site/ui"
 import { motion } from "framer-motion"
 import { ArrowUpRight, MapPin, Phone } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 const fadeUp = {
@@ -67,50 +68,15 @@ export function HomeHero() {
           initial={{ opacity: 0, y: 40, scale: 0.98 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
-          className="relative mt-12 overflow-hidden rounded-[24px]"
+          className="relative mt-12 aspect-4/5 overflow-hidden rounded-[24px] sm:aspect-16/10 md:aspect-1064/560"
         >
-          <video
-            src="/images/hero.mp4"
-            autoPlay
-            muted
-            loop
-            playsInline
-            className="aspect-[4/5] w-full object-cover sm:aspect-[16/10] md:aspect-[1064/560]"
+          <Image
+            src="/images/hero.png"
+            alt="Doctors at the dental and hair transplant clinic"
+            fill
+            loading="eager"
+            className="object-cover"
           />
-
-          <motion.div
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.9 }}
-            className="absolute left-4 top-5 hidden items-center gap-3 rounded-full bg-white py-2 pl-2 pr-5 shadow-sm sm:flex md:left-6 md:top-7"
-          >
-            <span className="flex size-9 items-center justify-center rounded-full bg-sage/30">
-              <MapPin className="size-4 text-sage-dark" strokeWidth={2} />
-            </span>
-            <span>
-              <span className="block text-[12px] font-semibold leading-tight">
-                We&rsquo;re here!
-              </span>
-              <span className="block text-[11px] leading-tight text-body">
-                Ahilyanagar &amp; Pune
-              </span>
-            </span>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 1.05 }}
-            className="absolute bottom-5 left-4 hidden items-center gap-3 rounded-full bg-white py-2 pl-2 pr-5 shadow-sm sm:flex md:bottom-7 md:left-6"
-          >
-            <span className="flex size-9 items-center justify-center overflow-hidden rounded-full bg-cream-dark">
-              <img src="/images/dr-kirti-kolhe-closeup.jpg" alt="" className="size-full object-cover" />
-            </span>
-            <span>
-              <span className="block text-[12px] font-semibold leading-tight">Message us</span>
-              <span className="block text-[11px] leading-tight text-body">We&rsquo;ll reply soon</span>
-            </span>
-          </motion.div>
 
           <motion.div
             initial={{ opacity: 0 }}
