@@ -5,12 +5,6 @@ import { LOCATIONS, SERVICES } from "@/lib/data"
 import { ArrowLeft, ArrowRight, Clock, MapPin, Phone } from "lucide-react"
 import Link from "next/link"
 
-const CLINIC_IMAGES = [
-  "/images/clinic-room.jpg",
-  "/images/practice-reception.jpg",
-  "/images/practice-lounge.jpg",
-]
-
 function ClinicCard({ clinic, index }: { clinic: (typeof LOCATIONS)[number]; index: number }) {
   return (
     <Reveal delay={index * 0.08}>
@@ -18,16 +12,6 @@ function ClinicCard({ clinic, index }: { clinic: (typeof LOCATIONS)[number]; ind
         href={`/clinics/${clinic.slug}`}
         className="group block overflow-hidden rounded-[22px] bg-cream transition-transform duration-300 hover:-translate-y-1"
       >
-        <div className="relative overflow-hidden">
-          <img
-            src={CLINIC_IMAGES[index]}
-            alt={`${clinic.name} interior`}
-            className="aspect-[1.5] w-full object-cover outline outline-1 outline-black/10 transition-transform duration-700 group-hover:scale-105"
-          />
-          <span className="absolute bottom-4 right-4 flex size-10 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:rotate-45">
-            <ArrowRight className="size-4" />
-          </span>
-        </div>
         <div className="p-6">
           <SectionLabel>Clinic {String(index + 1).padStart(2, "0")}</SectionLabel>
           <h2 className="mt-3 text-[22px] font-medium leading-tight text-wrap-balance">
@@ -134,24 +118,39 @@ export function ClinicDetail({ clinic }: { clinic: (typeof LOCATIONS)[number] })
       </section>
       <section className="bg-white py-16 md:py-24">
         <Container>
+          <Reveal>
+            <SectionLabel>Services at this clinic</SectionLabel>
+            <h2 className="mt-4 text-[30px] font-medium tracking-tight md:text-[42px]">
+              Treatments available here
+            </h2>
+          </Reveal>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {SERVICES.filter((service) => clinic.page?.serviceSlugs.includes(service.slug)).map((service, index) => (
+              <Reveal key={service.slug} delay={0.04 * (index % 4)}>
+                <Link
+                  href={`/services/${service.slug}`}
+                  className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white px-5 py-6 transition-shadow duration-300 hover:shadow-lg hover:shadow-black/5"
+                >
+                  <h3 className="text-[15px] font-semibold">{service.title}</h3>
+                  <p className="mt-2 text-[12.5px] leading-relaxed text-body line-clamp-3">
+                    {service.description}
+                  </p>
+                  <span className="mt-auto flex justify-end pt-5">
+                    <span className="flex size-8 items-center justify-center rounded-full bg-cream group-hover:bg-sage">
+                      <ArrowRight className="size-3.5 group-hover:text-white" />
+                    </span>
+                  </span>
+                </Link>
+              </Reveal>
+            ))}
+          </div>
           {clinic.page && (
-            <div className="grid gap-12 lg:grid-cols-2">
+            <div className="mt-20">
               <Reveal>
                 <SectionLabel>Why choose us</SectionLabel>
-                <ul className="mt-5 grid gap-3 text-[14px] leading-relaxed text-body sm:grid-cols-2">
+                <ul className="mt-5 grid gap-3 text-[14px] leading-relaxed text-body sm:grid-cols-2 lg:grid-cols-3">
                   {clinic.page.highlights.map((item) => (
                     <li key={item} className="rounded-xl bg-cream px-4 py-3">
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </Reveal>
-              <Reveal>
-                <SectionLabel>Treatments we offer</SectionLabel>
-                <ul className="mt-5 grid gap-3 text-[14px] leading-relaxed text-body sm:grid-cols-2">
-                  {clinic.page.treatments.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="text-sage-dark">•</span>
                       {item}
                     </li>
                   ))}
@@ -210,39 +209,7 @@ export function ClinicDetail({ clinic }: { clinic: (typeof LOCATIONS)[number] })
               </div>
             </Reveal>
           )}
-          <Reveal>
-            <SectionLabel className="mt-20">Services at this clinic</SectionLabel>
-            <h2 className="mt-4 text-[30px] font-medium tracking-tight md:text-[42px]">
-              Everything you need for a healthy smile
-            </h2>
-          </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {SERVICES.map((service, index) => (
-              <Reveal key={service.slug} delay={0.04 * (index % 4)}>
-                <Link
-                  href={`/services/${service.slug}`}
-                  className="group flex h-full flex-col overflow-hidden rounded-[18px] border border-line bg-white transition-shadow duration-300 hover:shadow-lg hover:shadow-black/5"
-                >
-                  <img
-                    src={service.image}
-                    alt={service.title}
-                    className="aspect-[4/2.8] w-full object-cover outline outline-1 outline-black/10 transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="flex flex-1 flex-col p-5">
-                    <h3 className="text-[15px] font-semibold">{service.title}</h3>
-                    <p className="mt-2 text-[12.5px] leading-relaxed text-body line-clamp-3">
-                      {service.description}
-                    </p>
-                    <span className="mt-auto flex justify-end pt-5">
-                      <span className="flex size-8 items-center justify-center rounded-full bg-cream group-hover:bg-sage">
-                        <ArrowRight className="size-3.5 group-hover:text-white" />
-                      </span>
-                    </span>
-                  </div>
-                </Link>
-              </Reveal>
-            ))}
-          </div>
+
         </Container>
       </section>
     </>

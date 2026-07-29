@@ -3,6 +3,7 @@
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 import { LOCATIONS, PHONE, PHONE_HREF } from "@/lib/data"
 import { ArrowUpRight } from "lucide-react"
+import Link from "next/link"
 
 export function ContactBlock() {
   return (
@@ -21,16 +22,23 @@ export function ContactBlock() {
         <div className="mt-8 grid gap-5 md:grid-cols-3">
           {LOCATIONS.map((loc, i) => (
             <Reveal key={loc.name} delay={0.05 + i * 0.07}>
-              <div className="flex h-full flex-col rounded-[18px] bg-cream p-6 md:p-7">
-                <h3 className="text-[15px] font-semibold tracking-tight">{loc.name}</h3>
-                <p className="mt-3 text-[13px] leading-relaxed text-body">{loc.address}</p>
+              <div className="group relative flex h-full flex-col rounded-[18px] bg-cream p-6 md:p-7 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5">
+                <Link
+                  href={`/clinics/${loc.slug}`}
+                  aria-label={`View ${loc.name}`}
+                  className="absolute inset-0 rounded-[18px]"
+                />
+                <h3 className="relative z-10 text-[15px] font-semibold tracking-tight">
+                  {loc.name}
+                </h3>
+                <p className="relative z-10 mt-3 text-[13px] leading-relaxed text-body">{loc.address}</p>
                 <a
                   href={PHONE_HREF}
-                  className="mt-4 text-[14px] font-semibold tracking-tight hover:text-sage-dark"
+                  className="relative z-10 mt-4 text-[14px] font-semibold tracking-tight hover:text-sage-dark"
                 >
                   {PHONE}
                 </a>
-                <div className="mt-auto pt-5">
+                <div className="relative z-10 mt-auto pt-5">
                   <a
                     href={loc.googleMaps}
                     target="_blank"

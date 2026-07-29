@@ -1,6 +1,6 @@
 "use client"
 
-import { ADDRESS, EMAIL, LOCATIONS, PHONE, PHONE_HREF } from "@/lib/data"
+import { ADDRESS, EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
@@ -156,19 +156,7 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Visit Us — full-width 3-card row */}
-          <div className="mt-10 border-t border-line pt-8">
-            <SectionLabel className="mb-5">Visit Us</SectionLabel>
-            <div className="grid gap-3 md:grid-cols-3">
-              {LOCATIONS.map((loc) => (
-                <Link key={loc.name} href={`/clinics/${loc.slug}`} className="group rounded-[18px] bg-cream p-4 transition-[transform,box-shadow] duration-300 hover:-translate-y-0.5 hover:shadow-md hover:shadow-black/5">
-                  <p className="text-[12px] font-semibold leading-snug text-ink">{loc.name}</p>
-                  <p className="mt-2 text-[11.5px] leading-relaxed text-body">{loc.address.split(" (")[0]}</p>
-                  <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold text-sage-dark">View clinic <span className="transition-transform group-hover:translate-x-1">→</span></span>
-                </Link>
-              ))}
-            </div>
-          </div>
+
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line py-6 text-[12px] text-body sm:flex-row">
             <p>© 2026 Dr. Kolhe's Dental Clinic. All rights reserved.</p>
             <div className="flex items-center gap-5">

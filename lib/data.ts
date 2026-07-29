@@ -28,7 +28,7 @@ export type Location = {
     headline: string
     intro: string
     highlights: string[]
-    treatments: string[]
+    serviceSlugs: string[]
     audiences?: string[]
     reasons?: string[]
     process?: string[]
@@ -63,16 +63,16 @@ export const LOCATIONS: Location[] = [
         "Easy Appointment Booking",
         "Trusted by Patients Across Maharashtra",
       ],
-      treatments: [
-        "Dental Implants",
-        "Full Mouth Rehabilitation",
-        "Smile Designing",
-        "Root Canal Treatment",
-        "Zirconia & Ceramic Crowns",
-        "Teeth Cleaning & Gum Care",
-        "Children’s Dentistry",
-        "Teeth Whitening",
-        "Emergency Dental Care",
+      serviceSlugs: [
+        "dental-implants",
+        "full-mouth-rehabilitation",
+        "digital-smile-designing",
+        "root-canal",
+        "zirconia-ceramic-crowns",
+        "teeth-cleaning-gum-care",
+        "paediatric-care",
+        "teeth-whitening",
+        "emergency-care",
       ],
       reasons: [
         "Experienced dental specialists",
@@ -117,13 +117,13 @@ export const LOCATIONS: Location[] = [
         "Post-Treatment Online Follow-up",
         "Sterilization Following International Infection Control Protocols",
       ],
-      treatments: [
-        "Advanced Dental Implants",
-        "Full Mouth Rehabilitation",
-        "Smile Makeovers",
-        "Fixed Teeth Solutions",
-        "Advanced Prosthodontics",
-        "Complex Restorative Dentistry",
+      serviceSlugs: [
+        "dental-implants",
+        "full-mouth-rehabilitation",
+        "smile-makeovers",
+        "fixed-teeth-solutions",
+        "advanced-prosthodontics",
+        "complex-restorative-dentistry",
       ],
       audiences: [
         "USA, UK, Canada, Australia and New Zealand",
@@ -173,16 +173,16 @@ export const LOCATIONS: Location[] = [
         "Easy Online Appointment Booking",
         "Family-Friendly Environment",
       ],
-      treatments: [
-        "Dental Implants",
-        "Smile Designing",
-        "Root Canal Treatment",
-        "Teeth Cleaning & Gum Care",
-        "Zirconia & Ceramic Crowns",
-        "Clear Aligners & Braces",
-        "Children’s Dentistry",
-        "Teeth Whitening",
-        "Emergency Dental Care",
+      serviceSlugs: [
+        "dental-implants",
+        "digital-smile-designing",
+        "root-canal",
+        "teeth-cleaning-gum-care",
+        "zirconia-ceramic-crowns",
+        "clear-aligners-braces",
+        "paediatric-care",
+        "teeth-whitening",
+        "emergency-care",
       ],
       audiences: [
         "Employees of EON IT Park and WTC professionals",
@@ -214,6 +214,37 @@ export type Service = {
   expect: string[]
   fit: string
 }
+
+const ADDITIONAL_SERVICES: Service[] = [
+  ["zirconia-ceramic-crowns", "Zirconia & Ceramic Crowns"],
+  ["teeth-cleaning-gum-care", "Teeth Cleaning & Gum Care"],
+  ["smile-makeovers", "Smile Makeovers"],
+  ["fixed-teeth-solutions", "Fixed Teeth Solutions"],
+  ["advanced-prosthodontics", "Advanced Prosthodontics"],
+  ["complex-restorative-dentistry", "Complex Restorative Dentistry"],
+  ["clear-aligners-braces", "Clear Aligners & Braces"],
+].map(([slug, title]) => ({
+  slug,
+  title,
+  short: title,
+  description: `Personalized ${title.toLowerCase()} planned around your needs, comfort, and long-term oral health.`,
+  image: "/images/clinic-room.jpg",
+  overview: [
+    `Our ${title.toLowerCase()} service is planned after a detailed examination and a clear discussion of your goals.`,
+    "We explain the available options, expected timeline, and costs before treatment begins.",
+  ],
+  benefits: [
+    "Personalized treatment planning",
+    "Clear explanation of every step",
+    "Modern techniques and materials",
+    "Comfort-focused clinical care",
+  ],
+  expect: [
+    "We begin with an examination and discuss your concerns, priorities, and desired outcome.",
+    "You receive a clear plan and can ask questions before deciding how to proceed.",
+  ],
+  fit: `This service may suit patients who need ${title.toLowerCase()} or want to understand their treatment options.`,
+}))
 
 export const SERVICES: Service[] = [
   {
@@ -492,6 +523,7 @@ export const SERVICES: Service[] = [
     ],
     fit: "Contact us promptly for severe toothache, swelling, trauma, a broken tooth, or bleeding that will not stop.",
   },
+  ...ADDITIONAL_SERVICES,
 ]
 
 export const TESTIMONIALS = [
