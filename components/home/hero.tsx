@@ -29,9 +29,9 @@ export function HomeHero() {
             transition={{ duration: 0.7, delay: 0.08 }}
             className="mt-5 text-[44px] font-medium leading-[1.04] tracking-[-0.02em] md:text-[64px]"
           >
-            Healthy Smile,
+            Daant hain…
             <br />
-            Healthy Life
+            toh baat hain…..
           </motion.h1>
           <motion.p
             {...fadeUp}

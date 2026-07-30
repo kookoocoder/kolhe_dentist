@@ -94,7 +94,7 @@ export function Footer() {
                   className="h-12 w-auto"
                 />
               </Link>
-              <p className="mt-4 text-[13px] text-body">Healthy Smile, Healthy Life</p>
+              <p className="mt-4 text-[13px] text-body">Daant hain… toh baat hain…..</p>
               <div className="mt-4 flex flex-col gap-1.5 text-[13px] text-ink">
                 <a href={PHONE_HREF} className="hover:text-sage-dark">
                   {PHONE}
