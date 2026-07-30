@@ -69,9 +69,10 @@ export function ClinicDetail({ clinic }: { clinic: (typeof LOCATIONS)[number] })
           <img
             src={clinic.heroImage}
             alt={`${clinic.name} interior`}
-            className="size-full object-cover opacity-100"
+            className="size-full object-cover opacity-20 md:opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-cream/10" />
+          <div className="absolute inset-0 bg-cream/95 md:hidden" />
+          <div className="absolute inset-0 hidden bg-gradient-to-r from-cream via-cream/70 to-cream/10 md:block" />
         </div>
         <Container>
           <Reveal>
