@@ -120,6 +120,47 @@
 
 
 
+@keyframes appointment-attention {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(113, 129, 67, 0);
+  }
+  8% {
+    opacity: 0.55;
+    transform: scale(0.98);
+  }
+  16% {
+    opacity: 1;
+    transform: scale(1.04);
+    box-shadow: 0 0 0 10px rgba(113, 129, 67, 0.2);
+  }
+  24% {
+    opacity: 0.6;
+    transform: scale(0.99);
+  }
+  32% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(113, 129, 67, 0);
+  }
+}
+
+.appointment-attention {
+  animation: appointment-attention 1.6s ease-in-out infinite;
+}
+
+.appointment-attention:hover {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .appointment-attention {
+    animation: none;
+  }
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;

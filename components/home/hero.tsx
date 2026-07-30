@@ -1,18 +1,35 @@
 "use client"
 
-import { FacebookIcon, InstagramIcon } from "@/components/site/social-icons"
+
 import { Container } from "@/components/site/ui"
 import { motion } from "framer-motion"
-import { ArrowUpRight, MapPin, Phone } from "lucide-react"
+import { ArrowLeft, ArrowRight, ArrowUpRight, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useEffect, useState } from "react"
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
   animate: { opacity: 1, y: 0 },
 }
 
+const HERO_SLIDES = [
+  { src: "/images/hero.png", alt: "Doctors at Dr. Kolhe's Dental Clinic" },
+  { src: "/images/dr-kunal-kolhe-closeup.png", alt: "Dr. Kunal Kolhe" },
+  { src: "/images/dr-kirti-kolhe-closeup.jpg", alt: "Dr. Kirti Kolhe" },
+]
+
 export function HomeHero() {
+  const [activeSlide, setActiveSlide] = useState(0)
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)
+    }, 4500)
+
+    return () => window.clearInterval(timer)
+  }, [])
+
   return (
     <section className="bg-white pb-6 pt-12 md:pt-16">
       <Container>
@@ -29,9 +46,9 @@ export function HomeHero() {
             transition={{ duration: 0.7, delay: 0.08 }}
             className="mt-5 text-[44px] font-medium leading-[1.04] tracking-[-0.02em] md:text-[64px]"
           >
-            Daant hain…
+            दात हैं…
             <br />
-            toh baat hain…..
+            तो बात हैं…..
           </motion.h1>
           <motion.p
             {...fadeUp}
@@ -47,7 +64,7 @@ export function HomeHero() {
           >
             <Link
               href="/book"
-              className="group flex items-center gap-2.5 rounded-full bg-sage py-2.5 pl-6 pr-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-300 hover:bg-sage-dark"
+              className="group appointment-attention flex items-center gap-2.5 rounded-full bg-sage py-2.5 pl-6 pr-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink transition-[background-color,transform] duration-300 hover:bg-sage-dark  active:scale-[0.96]"
             >
               Book Appointment
               <span className="flex size-7 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:rotate-45">
@@ -70,45 +87,52 @@ export function HomeHero() {
           transition={{ duration: 0.9, delay: 0.3, ease: [0.21, 0.47, 0.32, 0.98] }}
           className="relative mt-12 aspect-4/5 overflow-hidden rounded-[24px] sm:aspect-16/10 md:aspect-1064/560"
         >
-          <Image
-            src="/images/hero-mobile.png"
-            alt="Doctors at the dental and hair transplant clinic"
-            fill
-            sizes="(max-width: 639px) 100vw, 100vw"
-            loading="eager"
-            className="object-cover sm:hidden"
-          />
-          <Image
-            src="/images/hero.png"
-            alt="Doctors at the dental and hair transplant clinic"
-            fill
-            sizes="(max-width: 639px) 100vw, 100vw"
-            loading="eager"
-            className="hidden object-cover sm:block"
-          />
+          <div className="absolute inset-0" aria-live="polite">
+            {HERO_SLIDES.map((slide, index) => (
+              <Image
+                key={slide.src}
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                sizes="(max-width: 639px) 100vw, 100vw"
+                priority={index === 0}
+                className={`object-contain transition-opacity duration-1000 ${index === activeSlide ? "opacity-100" : "opacity-0"}`}
+              />
+            ))}
+          </div>
+          <div className="absolute inset-x-0 bottom-4 flex items-center justify-between px-4 md:bottom-6 md:px-6">
+            <div className="flex gap-1.5" aria-label="Hero image slides">
+              {HERO_SLIDES.map((slide, index) => (
+                <button
+                  key={slide.src}
+                  type="button"
+                  aria-label={`Show ${slide.alt}`}
+                  aria-current={index === activeSlide}
+                  onClick={() => setActiveSlide(index)}
+                  className={`h-1 rounded-full transition-[width,background-color] duration-300 ${index === activeSlide ? "w-8 bg-white" : "w-2 bg-white/55 hover:bg-white/80"}`}
+                />
+              ))}
+            </div>
+            <div className="flex gap-1.5">
+              <button
+                type="button"
+                aria-label="Previous hero image"
+                onClick={() => setActiveSlide((current) => (current - 1 + HERO_SLIDES.length) % HERO_SLIDES.length)}
+                className="flex size-8 items-center justify-center rounded-full bg-black/20 text-white/90 backdrop-blur-sm transition-[background-color,transform] hover:bg-black/35 active:scale-[0.96]"
+              >
+                <ArrowLeft className="size-3.5" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next hero image"
+                onClick={() => setActiveSlide((current) => (current + 1) % HERO_SLIDES.length)}
+                className="flex size-8 items-center justify-center rounded-full bg-black/20 text-white/90 backdrop-blur-sm transition-[background-color,transform] hover:bg-black/35 active:scale-[0.96]"
+              >
+                <ArrowRight className="size-3.5" />
+              </button>
+            </div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 0.7, delay: 1.2 }}
-            className="absolute bottom-5 right-4 hidden items-center gap-3 sm:flex md:bottom-7 md:right-6"
-          >
-            <span className="text-[11px] font-medium text-white/90">Join us!</span>
-            <a
-              href="#"
-              aria-label="Instagram"
-              className="flex size-8 items-center justify-center rounded-full bg-white/95 transition-transform hover:scale-105"
-            >
-              <InstagramIcon className="size-3.5" />
-            </a>
-            <a
-              href="#"
-              aria-label="Facebook"
-              className="flex size-8 items-center justify-center rounded-full bg-white/95 transition-transform hover:scale-105"
-            >
-              <FacebookIcon className="size-3.5" />
-            </a>
-          </motion.div>
         </motion.div>
       </Container>
     </section>

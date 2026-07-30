@@ -65,14 +65,13 @@ export function ClinicDetail({ clinic }: { clinic: (typeof LOCATIONS)[number] })
   return (
     <>
       <section className="relative isolate overflow-hidden bg-cream pb-14 pt-12 md:pb-20 md:pt-16">
-        <div className="absolute inset-y-0 right-0 -z-10 w-full md:w-[58%]">
+        <div className="absolute inset-y-0 right-0 -z-10 hidden w-[58%] md:block">
           <img
             src={clinic.heroImage}
             alt={`${clinic.name} interior`}
-            className="size-full object-cover opacity-20 md:opacity-100"
+            className="size-full object-cover"
           />
-          <div className="absolute inset-0 bg-cream/95 md:hidden" />
-          <div className="absolute inset-0 hidden bg-gradient-to-r from-cream via-cream/70 to-cream/10 md:block" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-cream/10" />
         </div>
         <Container>
           <Reveal>
@@ -87,6 +86,14 @@ export function ClinicDetail({ clinic }: { clinic: (typeof LOCATIONS)[number] })
             <h1 className="mt-4 max-w-3xl text-[38px] font-medium leading-[1.05] tracking-[-0.02em] md:text-[64px]">
               {clinic.page?.headline ?? "Care tailored to your smile"}
             </h1>
+            <div className="relative mt-8 aspect-[4/3] overflow-hidden rounded-[22px] shadow-[0_18px_45px_rgba(29,29,29,0.12)] md:hidden">
+              <img
+                src={clinic.heroImage}
+                alt={`${clinic.name} interior`}
+                className="size-full object-cover"
+              />
+              <div className="pointer-events-none absolute inset-0 ring-1 ring-black/10 ring-inset" />
+            </div>
             <p className="mt-6 max-w-2xl text-[15px] leading-relaxed text-body">
               {clinic.page?.intro}
             </p>

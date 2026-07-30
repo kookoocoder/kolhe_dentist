@@ -103,7 +103,7 @@ export function Navbar() {
         <div className="hidden items-center gap-2.5 md:flex">
           <Link
             href="/book"
-            className="group flex items-center gap-2.5 rounded-full border border-sage-dark/30 bg-sage py-2 pl-5 pr-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-300 hover:bg-sage-dark"
+            className="group appointment-attention flex items-center gap-2.5 rounded-full border border-sage-dark/30 bg-sage py-2 pl-5 pr-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-300 hover:bg-sage-dark"
           >
             Book Appointment
             <span className="flex size-6 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:rotate-45">

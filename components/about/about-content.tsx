@@ -18,7 +18,7 @@ export function AboutContent() {
             <p className="mt-5 max-w-xl text-[14px] leading-relaxed text-body">
               A leading dental clinic with three locations across Ahmednagar and Pune, led by
               Dr. Kunal Kolhe and Dr. Kirti Kolhe. Specialising in laser dentistry, implants, and
-              comprehensive oral care with a commitment to the philosophy: &ldquo;Daant hain… toh baat hain…..&rdquo;
+              comprehensive oral care with a commitment to the philosophy: &ldquo;दात हैं… तो बात हैं…..&rdquo;
             </p>
           </Reveal>
 
@@ -102,7 +102,7 @@ export function AboutContent() {
                     Club of Ahilyanagar Central and BNI Ajinkya Chapter, Pune.
                   </p>
                   <p>
-                    Through his initiative &ldquo;Daant hain… toh baat hain…..&rdquo;, Dr. Kunal has facilitated
+                    Through his initiative &ldquo;दात हैं… तो बात हैं…..&rdquo;, Dr. Kunal has facilitated
                     over 5,00,000 dental check-ups across Maharashtra, driving awareness about oral
                     health in communities statewide.
                   </p>
@@ -202,7 +202,7 @@ export function AboutContent() {
           <Reveal>
             <SectionLabel>Our Philosophy</SectionLabel>
             <h2 className="mt-4 text-[30px] font-medium tracking-tight md:text-[36px]">
-              Daant hain… toh baat hain…..
+              दात हैं… तो बात हैं…..
             </h2>
             <p className="mt-4 max-w-lg text-[14px] leading-relaxed text-body">
               At Dr. Kolhe&rsquo;s Dental Clinic, we believe that a healthy smile is the foundation

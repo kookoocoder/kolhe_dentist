@@ -1,7 +1,7 @@
 "use client"
 
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
-import { LOCATIONS, PHONE, PHONE_HREF } from "@/lib/data"
+import { LOCATIONS } from "@/lib/data"
 import { ArrowUpRight } from "lucide-react"
 import Link from "next/link"
 
@@ -33,10 +33,10 @@ export function ContactBlock() {
                 </h3>
                 <p className="relative z-10 mt-3 text-[13px] leading-relaxed text-body">{loc.address}</p>
                 <a
-                  href={PHONE_HREF}
+                  href={loc.phoneHref}
                   className="relative z-10 mt-4 text-[14px] font-semibold tracking-tight hover:text-sage-dark"
                 >
-                  {PHONE}
+                  {loc.phone}
                 </a>
                 <div className="relative z-10 mt-auto pt-5">
                   <a

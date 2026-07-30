@@ -1,7 +1,5 @@
-export const PHONE = "+91 9923387272"
-export const PHONE_HREF = "tel:+919923387272"
-export const ADDRESS =
-  "Flat No 1, Santkrupa Apartment, Pipeline Road, Nalegaon, Ahmednagar - 414001"
+export const PHONE = "+91 9639639950"
+export const PHONE_HREF = "tel:+919639639950"
 export const EMAIL = "info@drkolhesdental.com"
 
 export const HOURS = [
@@ -97,8 +95,8 @@ export const LOCATIONS: Location[] = [
     name: "Dr. Kolhe's Dental Clinic – Viman Nagar, Pune",
     address:
       "Office No 105, Finswell, Novotel Hotel, Sakore Nagar, Viman Nagar, Pune, Maharashtra 411014",
-    phone: "+91 96396 39950",
-    phoneHref: "tel:+919639639950",
+    phone: "+918421112148",
+    phoneHref: "tel:+918421112148",
     googleMaps: "https://g.co/kgs/vTZQgj",
     heroImage: "/clinic image.webp",
     page: {

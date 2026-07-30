@@ -1,14 +1,14 @@
 "use client"
 
-import { ADDRESS, EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
+import { EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { FacebookIcon, InstagramIcon, WhatsAppIcon } from "./social-icons"
+import { WhatsAppIcon } from "./social-icons"
 import { Container, PillButton, Reveal, SectionLabel } from "./ui"
 const WHATSAPP_HREF =
-  "https://wa.me/919923387272?text=Hi%20Dr.%20Kolhe%27s%20Dental%20Clinic%21%20I%27d%20like%20to%20book%20an%20appointment.%20"
+  "https://wa.me/919639639950?text=Hi%20Dr.%20Kolhe%27s%20Dental%20Clinic%21%20I%27d%20like%20to%20book%20an%20appointment.%20"
 
 const CTA_COPY: Record<string, { label: string; title: string; body: string; after?: string }> = {
   default: {
@@ -51,7 +51,7 @@ export function FooterCta() {
             <p className="mt-4 whitespace-pre-line text-[14px] leading-relaxed text-white/60">
               {copy.body}
             </p>
-            <PillButton href="/book" className="mt-8">
+            <PillButton href="/book" className="appointment-attention mt-8">
               Book Appointment
             </PillButton>
             {copy.after && <p className="mt-5 text-[13px] text-white/50">{copy.after}</p>}
@@ -94,12 +94,11 @@ export function Footer() {
                   className="h-12 w-auto"
                 />
               </Link>
-              <p className="mt-4 text-[13px] text-body">Daant hain… toh baat hain…..</p>
+              <p className="mt-4 text-[13px] text-body">दात हैं… तो बात हैं…..</p>
               <div className="mt-4 flex flex-col gap-1.5 text-[13px] text-ink">
                 <a href={PHONE_HREF} className="hover:text-sage-dark">
                   {PHONE}
                 </a>
-                <p className="max-w-xs leading-relaxed text-body">{ADDRESS}</p>
                 <a href={`mailto:${EMAIL}`} className="hover:text-sage-dark">
                   {EMAIL}
                 </a>
@@ -154,24 +153,6 @@ export function Footer() {
 
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line py-6 text-[12px] text-body sm:flex-row">
             <p>© 2026 Dr. Kolhe's Dental Clinic. All rights reserved.</p>
-            <div className="flex items-center gap-5">
-              <div className="flex items-center gap-2">
-                <a
-                  href="#"
-                  aria-label="Instagram"
-                  className="flex size-8 items-center justify-center rounded-full border border-line transition-colors hover:bg-cream"
-                >
-                  <InstagramIcon className="size-3.5" />
-                </a>
-                <a
-                  href="#"
-                  aria-label="Facebook"
-                  className="flex size-8 items-center justify-center rounded-full border border-line transition-colors hover:bg-cream"
-                >
-                  <FacebookIcon className="size-3.5" />
-                </a>
-              </div>
-            </div>
           </div>
         </Container>
       </footer>
