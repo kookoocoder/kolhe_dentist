@@ -113,7 +113,7 @@ export function HomeHero() {
                 />
               ))}
             </div>
-            <div className="flex gap-1.5">
+            <div className="absolute left-1/2 flex -translate-x-1/2 gap-1.5 md:static md:translate-x-0">
               <button
                 type="button"
                 aria-label="Previous hero image"
