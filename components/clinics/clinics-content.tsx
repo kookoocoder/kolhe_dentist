@@ -65,13 +65,13 @@ export function ClinicDetail({ clinic }: { clinic: (typeof LOCATIONS)[number] })
   return (
     <>
       <section className="relative isolate overflow-hidden bg-cream pb-14 pt-12 md:pb-20 md:pt-16">
-        <div className="absolute inset-y-0 right-0 -z-10 hidden w-[58%] md:block">
+        <div className="absolute inset-y-0 right-0 -z-10 w-full md:w-[58%]">
           <img
-            src="/images/clinic-room.jpg"
-            alt=""
-            className="size-full object-cover opacity-70 blur-[1px]"
+            src={clinic.heroImage}
+            alt={`${clinic.name} interior`}
+            className="size-full object-cover opacity-100"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/80 to-cream/10" />
+          <div className="absolute inset-0 bg-gradient-to-r from-cream via-cream/70 to-cream/10" />
         </div>
         <Container>
           <Reveal>

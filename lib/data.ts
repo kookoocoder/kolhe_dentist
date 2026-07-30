@@ -21,6 +21,7 @@ export type Location = {
   phone: string
   phoneHref: string
   googleMaps: string
+  heroImage: string
   website?: string
   hours?: string
   page?: {
@@ -40,18 +41,19 @@ export type Location = {
 export const LOCATIONS: Location[] = [
   {
     slug: "ahmednagar",
-    name: "Smile Maker's – Ahmednagar",
+    name: "Smile Maker's Dental Care – Ahmednagar",
     address:
       "Flat No 1, Santkrupa Apartment, Pipeline Road, Nalegaon, Ahmednagar - 414001 (Opposite Morya Mangal Karyalay)",
     phone: "+91 98346 22525",
     phoneHref: "tel:+919834622525",
     googleMaps: "https://goo.gl/quEqiG",
+    heroImage: "/smile maker.png",
     hours: "Mon–Sat: 9:00 AM – 7:00 PM, Sunday: Closed",
     page: {
-      eyebrow: "Trusted Dental Care for Ahilyanagar & Across Maharashtra",
+      eyebrow: "Smile Maker's Dental Care in Ahilyanagar",
       headline: "Advanced Dental Care with 16+ Years of Experience",
       intro:
-        "Welcome to Dr Kolhe’s Dental Clinic – Ahilyanagar, one of the trusted destinations for advanced dental treatment in Maharashtra. For over 16 years, we have been helping patients from Ahilyanagar district and across Maharashtra restore healthy, confident smiles with modern and personalized dental care.",
+        "Welcome to Smile Maker's Dental Care in Ahilyanagar, a trusted destination for advanced dental treatment in Maharashtra. For over 16 years, we have been helping patients from Ahilyanagar district and across Maharashtra restore healthy, confident smiles with modern and personalized dental care.",
       highlights: [
         "16+ Years of Clinical Experience",
         "Led by Dr Kunal Kolhe, MDS Prosthodontist & Implantologist",
@@ -98,6 +100,7 @@ export const LOCATIONS: Location[] = [
     phone: "+91 96396 39950",
     phoneHref: "tel:+919639639950",
     googleMaps: "https://g.co/kgs/vTZQgj",
+    heroImage: "/clinic image.webp",
     page: {
       eyebrow: "International Dental Tourism – Dr Kolhe’s Dental Clinic, Viman Nagar, Pune",
       headline: "World-Class Dental Care for International Patients in India",
@@ -157,8 +160,9 @@ export const LOCATIONS: Location[] = [
     phone: "+91 72196 47495",
     phoneHref: "tel:+917219647495",
     googleMaps: "https://maps.app.goo.gl/usMnbkttiqV2dqV16?g_st=iwb",
+    heroImage: "/clinic.png",
     page: {
-      eyebrow: "Corporate & Family Dental Care in Kharadi",
+      eyebrow: "Dr. Kolhe's Dental Clinic in Kharadi",
       headline: "Trusted Dental Clinic for IT Professionals, Corporate Employees & Families",
       intro:
         "Welcome to Dr Kolhe’s Dental Clinic – Kharadi, your neighborhood dental clinic offering modern, comfortable, and personalized dental care. Conveniently located near EON IT Park, World Trade Center (WTC), Zensar Park, and major residential communities, we make it easy to fit dental care into your busy schedule.",
