@@ -15,8 +15,8 @@ const fadeUp = {
 
 const HERO_SLIDES = [
   { src: "/images/hero.png", alt: "Doctors at Dr. Kolhe's Dental Clinic" },
-  { src: "/images/dr-kunal-kolhe-closeup.png", alt: "Dr. Kunal Kolhe" },
-  { src: "/images/dr-kirti-kolhe-closeup.jpg", alt: "Dr. Kirti Kolhe" },
+  { src: "/images/Carusol1.png", alt: "Dr. Kunal Kolhe" },
+  { src: "/images/Carusol3.png", alt: "Dr. Kirti Kolhe" },
 ]
 
 export function HomeHero() {
