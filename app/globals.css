@@ -2,7 +2,7 @@
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
-@custom-variant dark (&:is(.dark *));
+
 
 :root {
   --background: oklch(1 0 0);
@@ -43,43 +43,7 @@
   --chart-pink: oklch(0.656 0.241 354.308);
 }
 
-.dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.424 0.199 265.638);
-  --primary-foreground: oklch(0.97 0.014 254.604);
-  --secondary: oklch(0.274 0.006 286.033);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.809 0.105 251.813);
-  --chart-2: oklch(0.623 0.214 259.815);
-  --chart-3: oklch(0.546 0.245 262.881);
-  --chart-4: oklch(0.488 0.243 264.376);
-  --chart-5: oklch(0.424 0.199 265.638);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.623 0.214 259.815);
-  --sidebar-primary-foreground: oklch(0.97 0.014 254.604);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
-  --success: oklch(0.595 0.145 149.213);
-  --success-foreground: oklch(0.723 0.191 149.579);
-  --chart-blue: oklch(0.546 0.245 262.881);
-  --chart-pink: oklch(0.656 0.241 354.308);
-}
+
 
 @theme inline {
   --font-sans: var(--font-sans);
@@ -140,8 +104,7 @@
 }
 
 /* Named visual directions for the public website. */
-:root,
-.classic {
+:root {
   --brand-surface: #f0f0ed;
   --brand-surface-strong: #e3e3df;
   --brand-ink: #1d1d1d;
@@ -153,81 +116,9 @@
   --radius: 0.625rem;
 }
 
-.dark {
-  --background: oklch(0.15 0.025 220);
-  --foreground: oklch(0.94 0.02 190);
-  --card: oklch(0.2 0.03 220);
-  --muted: oklch(0.25 0.035 220);
-  --border: oklch(0.34 0.04 220);
-  --brand-surface: #20353a;
-  --brand-surface-strong: #2c4a4f;
-  --brand-ink: #e5f5f0;
-  --brand-primary: #8fcaad;
-  --brand-primary-strong: #b2e3ca;
-  --brand-primary-soft: #375d59;
-  --brand-muted: #a8c2be;
-  --brand-line: #385358;
-  --radius: 0.625rem;
-}
 
-.dental {
-  --background: oklch(0.98 0.018 195);
-  --foreground: oklch(0.23 0.045 210);
-  --card: oklch(1 0.005 195);
-  --muted: oklch(0.94 0.025 195);
-  --border: oklch(0.86 0.045 195);
-  --brand-surface: #e7f7f6;
-  --brand-surface-strong: #cdecea;
-  --brand-ink: #153d46;
-  --brand-primary: #39b7b0;
-  --brand-primary-strong: #16827f;
-  --brand-primary-soft: #a9e1dc;
-  --brand-muted: #527278;
-  --brand-line: #c6e2e1;
-  --radius: 1rem;
-}
 
-.hospital {
-  --background: oklch(0.98 0.012 150);
-  --foreground: oklch(0.22 0.035 155);
-  --card: oklch(1 0.006 150);
-  --muted: oklch(0.94 0.025 150);
-  --border: oklch(0.86 0.04 150);
-  --brand-surface: #edf7ef;
-  --brand-surface-strong: #d6ecd9;
-  --brand-ink: #183d2b;
-  --brand-primary: #4ba66b;
-  --brand-primary-strong: #287a49;
-  --brand-primary-soft: #b9dfc2;
-  --brand-muted: #5c7865;
-  --brand-line: #cfe3d3;
-  --radius: 0.35rem;
-}
 
-.medical {
-  --background: oklch(0.98 0.012 260);
-  --foreground: oklch(0.2 0.045 265);
-  --card: oklch(1 0.004 260);
-  --muted: oklch(0.94 0.025 260);
-  --border: oklch(0.86 0.045 260);
-  --brand-surface: #eef2ff;
-  --brand-surface-strong: #dce4ff;
-  --brand-ink: #1c2b50;
-  --brand-primary: #5478d8;
-  --brand-primary-strong: #3456ae;
-  --brand-primary-soft: #b9c9f4;
-  --brand-muted: #647195;
-  --brand-line: #d3dcf5;
-  --radius: 1.35rem;
-}
-
-/* Keep legacy marketing surfaces responsive to the selected direction. */
-.dental .bg-white,
-.hospital .bg-white,
-.medical .bg-white,
-.dark .bg-white {
-  background-color: var(--background) !important;
-}
 
 @layer base {
   * {

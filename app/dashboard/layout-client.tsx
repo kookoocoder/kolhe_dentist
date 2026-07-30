@@ -3,6 +3,7 @@
 import { footerNavItems, navItems } from "@/components/dashboard/data"
 import { clearAuth, isAuthenticated } from "@/lib/auth"
 import { Bell, Calendar, Home, LogOut, MessageSquare, Settings, User } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
 import { useEffect, useRef, useState } from "react"
@@ -64,11 +65,14 @@ export function DashboardLayoutClient({ children }: { children: React.ReactNode 
 
         <div className="relative mt-6 shrink-0" ref={menuRef}>
           <div className="flex items-center rounded-full bg-card px-2 py-1.5 shadow-sm">
-            <div className="flex flex-1 items-center gap-2.5 rounded-full px-2 py-1">
-              <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-primary text-[10px] font-semibold text-primary-foreground">
-                D
-              </span>
-              <span className="text-sm font-medium">Kolhe Dentist</span>
+            <div className="flex flex-1 items-center rounded-full px-2 py-1">
+              <Image
+                src="/horizontal logo.svg"
+                alt="Dr. Kolhe's Dental Clinic"
+                width={136}
+                height={36}
+                className="h-8 w-auto"
+              />
             </div>
             <button
               type="button"

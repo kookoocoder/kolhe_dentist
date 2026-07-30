@@ -86,18 +86,13 @@ export function Footer() {
           <div className="grid gap-10 border-t border-line pt-12 md:grid-cols-2">
             <div>
               <Link href="/" className="inline-flex items-center">
-                <span className="text-[15px] font-bold leading-[1.05] tracking-tight">
-                  Dr. Kolhe&apos;s
-                  <br />
-                  Dental Clinic{" "}
-                  <Image
-                    src="/images/logo-tooth.png"
-                    alt=""
-                    width={12}
-                    height={12}
-                    className="inline-block -translate-y-px"
-                  />
-                </span>
+                <Image
+                  src="/horizontal logo.svg"
+                  alt="Dr. Kolhe's Dental Clinic"
+                  width={181}
+                  height={48}
+                  className="h-12 w-auto"
+                />
               </Link>
               <p className="mt-4 text-[13px] text-body">Healthy Smile, Healthy Life</p>
               <div className="mt-4 flex flex-col gap-1.5 text-[13px] text-ink">

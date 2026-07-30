@@ -60,7 +60,7 @@ export default function SettingsPage() {
   })
   const [currency, setCurrency] = useState("USD")
   const [dateFormat, setDateFormat] = useState("MM/DD/YYYY")
-  const [darkMode, setDarkMode] = useState(false)
+
 
   const handleSave = () => {
     setSaved(true)
@@ -183,13 +183,7 @@ export default function SettingsPage() {
                 </SelectContent>
               </Select>
             </div>
-            <div className="flex items-center justify-between gap-4 border-t border-border pt-4">
-              <div>
-                <p className="text-sm font-medium">Dark mode</p>
-                <p className="text-xs text-muted-foreground">Coming soon</p>
-              </div>
-              <Switch checked={darkMode} onCheckedChange={setDarkMode} />
-            </div>
+
           </div>
         </div>
       )}
