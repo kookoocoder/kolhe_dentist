@@ -46,9 +46,9 @@ export function HomeHero() {
             transition={{ duration: 0.7, delay: 0.08 }}
             className="mt-5 text-[44px] font-medium leading-[1.04] tracking-[-0.02em] md:text-[64px]"
           >
-            दात हैं…
+            दाँत हैं…
             <br />
-            तो बात हैं…..
+            तो बात है…
           </motion.h1>
           <motion.p
             {...fadeUp}

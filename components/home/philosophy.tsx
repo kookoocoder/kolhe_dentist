@@ -5,7 +5,7 @@ import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 const STATS = [
   { title: "3 Centres", text: "Ahmednagar & Pune" },
   { title: "1,000+", text: "Successful full mouth rehabilitations" },
-  { title: "Evidence-Based", text: "Modern, ethical dentistry" },
+  { title: "72 hrs", text: "Full mouth rehabilitation with basal implants", highlight: true },
 ]
 
 export function Philosophy() {
@@ -35,10 +35,10 @@ export function Philosophy() {
             {STATS.map((s, i) => (
               <div
                 key={s.title}
-                className="py-6 sm:px-8 sm:first:pl-2"
+                className={`py-6 sm:px-8 sm:first:pl-2 ${s.highlight ? "rounded-xl bg-cream px-5 sm:my-3 sm:py-3" : ""}`}
                 style={{ paddingLeft: i === 0 ? undefined : undefined }}
               >
-                <h3 className="text-[19px] font-semibold tracking-tight">{s.title}</h3>
+                <h3 className={`text-[19px] font-semibold tracking-tight ${s.highlight ? "text-sage-dark" : ""}`}>{s.title}</h3>
                 <p className="mt-1.5 text-[12px] text-body">{s.text}</p>
               </div>
             ))}
