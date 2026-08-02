@@ -16,7 +16,7 @@ export function AboutContent() {
               Dr. Kolhe&rsquo;s Dental Clinic
             </h1>
             <p className="mt-5 max-w-xl text-[14px] leading-relaxed text-body">
-              A leading dental clinic with three locations across Ahmednagar and Pune, led by
+              A leading dental clinic with three locations across Ahmednagar (Ahilyanagar) and Pune, led by
               Dr. Kunal Kolhe and Dr. Kirti Kolhe. Specialising in laser dentistry, implants, and
               comprehensive oral care with a commitment to the philosophy: &ldquo;दाँत हैं… तो बात है…&rdquo;
             </p>

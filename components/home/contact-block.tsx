@@ -15,7 +15,7 @@ export function ContactBlock() {
             Our Clinics
           </h2>
           <p className="mt-3 max-w-lg text-[14px] leading-relaxed text-body">
-            Visit us at any of our 3 locations across Ahmednagar and Pune.
+            Visit us at any of our 3 locations across Ahmednagar (Ahilyanagar) and Pune.
           </p>
         </Reveal>
 

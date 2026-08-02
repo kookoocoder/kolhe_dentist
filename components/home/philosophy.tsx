@@ -3,7 +3,7 @@
 import { Container, Reveal, SectionLabel } from "@/components/site/ui"
 
 const STATS = [
-  { title: "3 Centres", text: "Ahmednagar & Pune" },
+  { title: "3 Centres", text: "Ahmednagar (Ahilyanagar) & Pune" },
   { title: "1,000+", text: "Successful full mouth rehabilitations" },
   { title: "72 hrs", text: "Full mouth rehabilitation with basal implants", highlight: true },
 ]

@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 export const metadata: Metadata = {
   title: "Dr. Kolhe's Dental Clinic | Laser Dentistry, Implants & Cosmetic Care",
   description:
-    "Expert dental care in Ahmednagar & Pune. Laser dentistry, dental implants, full mouth rehabilitation, and cosmetic treatments by Dr. Kunal Kolhe and Dr. Kirti Kolhe.",
+    "Expert dental care in Ahmednagar (Ahilyanagar) & Pune. Laser dentistry, dental implants, full mouth rehabilitation, and cosmetic treatments by Dr. Kunal Kolhe and Dr. Kirti Kolhe.",
   icons: {
     icon: "/logo only without  wordmark.svg",
     shortcut: "/logo only without  wordmark.svg",

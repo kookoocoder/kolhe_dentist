@@ -39,9 +39,9 @@ export type Location = {
 export const LOCATIONS: Location[] = [
   {
     slug: "ahmednagar",
-    name: "Smile Maker's Dental Care – Ahmednagar",
+    name: "Smile Maker's Dental Care – Ahmednagar (Ahilyanagar)",
     address:
-      "Flat No 1, Santkrupa Apartment, Pipeline Road, Nalegaon, Ahmednagar - 414001 (Opposite Morya Mangal Karyalay)",
+      "Flat No 1, Santkrupa Apartment, Pipeline Road, Nalegaon, Ahmednagar (Ahilyanagar) - 414001 (Opposite Morya Mangal Karyalay)",
     phone: "+91 98346 22525",
     phoneHref: "tel:+919834622525",
     googleMaps: "https://goo.gl/quEqiG",
@@ -402,7 +402,7 @@ export const SERVICES: Service[] = [
       "Gentle first visits from age 3",
       "A team trained for nervous children",
       "Focus on prevention and good habits",
-      "Convenient locations across Ahmednagar and Pune",
+      "Convenient locations across Ahmednagar (Ahilyanagar) and Pune",
     ],
     expect: [
       "First visits are short and gentle, often just a look around and a chat, so your child leaves feeling good about the dentist.",
@@ -579,12 +579,12 @@ export const WHY_US = [
   {
     n: "02",
     title: "16+ Years Experience",
-    text: "Trusted by thousands of patients across Ahmednagar and Pune.",
+    text: "Trusted by thousands of patients across Ahmednagar (Ahilyanagar) and Pune.",
   },
   {
     n: "03",
     title: "Multiple Locations",
-    text: "3 conveniently located clinics in Ahmednagar and Pune for easy access.",
+    text: "3 conveniently located clinics in Ahmednagar (Ahilyanagar) and Pune for easy access.",
   },
   {
     n: "04",
@@ -600,7 +600,7 @@ export const FAQS = [
   },
   {
     q: "Which locations do you have?",
-    a: "We have three clinics: Smile Maker's in Ahmednagar, and Dr. Kolhe's Dental Clinic in Viman Nagar and Kharadi, Pune. All clinics are open Mon–Sat, 9 AM to 7 PM.",
+    a: "We have three clinics: Smile Maker's in Ahmednagar (Ahilyanagar), and Dr. Kolhe's Dental Clinic in Viman Nagar and Kharadi, Pune. All clinics are open Mon–Sat, 9 AM to 7 PM.",
   },
   {
     q: "What if I have dental anxiety?",

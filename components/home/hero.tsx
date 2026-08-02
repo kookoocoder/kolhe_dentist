@@ -55,7 +55,7 @@ export function HomeHero() {
             transition={{ duration: 0.7, delay: 0.16 }}
             className="mt-5 max-w-md text-[14px] leading-relaxed text-body"
           >
-            Expert dental care across Ahmednagar &amp; Pune. Advanced laser dentistry, implants, and cosmetic treatments by Dr. Kunal Kolhe and Dr. Kirti Kolhe.
+            Expert dental care across Ahmednagar (Ahilyanagar) &amp; Pune. Advanced laser dentistry, implants, and cosmetic treatments by Dr. Kunal Kolhe and Dr. Kirti Kolhe.
           </motion.p>
           <motion.div
             {...fadeUp}

@@ -47,7 +47,7 @@ export function ClinicsContent() {
             Expert care, wherever you are
           </h1>
           <p className="mt-5 max-w-xl text-[14px] leading-relaxed text-body">
-            Explore our three clinics across Ahmednagar and Pune. Choose a location to see its
+            Explore our three clinics across Ahmednagar (Ahilyanagar) and Pune. Choose a location to see its
             services, details, and how to get in touch.
           </p>
         </Reveal>

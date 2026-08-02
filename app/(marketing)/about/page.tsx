@@ -4,7 +4,7 @@ import type { Metadata } from "next"
 export const metadata: Metadata = {
   title: "About Us | Dr. Kolhe's Dental Clinic",
   description:
-    "Dr. Kolhe's Dental Clinic is a leading dental clinic with locations in Ahmednagar and Pune, led by Dr. Kunal Kolhe (MDS, Prosthodontist & Implantologist) and Dr. Kirti Kolhe (BDS, Laser Dentist). Specialising in laser dentistry, dental implants, full mouth rehabilitation, and comprehensive oral care.",
+    "Dr. Kolhe's Dental Clinic is a leading dental clinic with locations in Ahmednagar (Ahilyanagar) and Pune, led by Dr. Kunal Kolhe (MDS, Prosthodontist & Implantologist) and Dr. Kirti Kolhe (BDS, Laser Dentist). Specialising in laser dentistry, dental implants, full mouth rehabilitation, and comprehensive oral care.",
 }
 
 export default function AboutPage() {

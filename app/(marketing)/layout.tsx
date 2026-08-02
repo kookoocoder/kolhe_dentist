@@ -4,11 +4,11 @@ import { Navbar } from "@/components/site/navbar"
 
 export const metadata: Metadata = {
   title: {
-    default: "Dr. Kolhe's Dental Clinic | Ahmednagar & Pune",
+    default: "Dr. Kolhe's Dental Clinic | Ahmednagar (Ahilyanagar) & Pune",
     template: "%s | Dr. Kolhe's Dental Clinic",
   },
   description:
-    "Leading dental clinic with locations in Ahmednagar and Pune. Expert care in laser dentistry, dental implants, full mouth rehabilitation, and cosmetic dentistry by Dr. Kunal Kolhe and Dr. Kirti Kolhe.",
+    "Leading dental clinic with locations in Ahmednagar (Ahilyanagar) and Pune. Expert care in laser dentistry, dental implants, full mouth rehabilitation, and cosmetic dentistry by Dr. Kunal Kolhe and Dr. Kirti Kolhe.",
 }
 
 export default function MarketingLayout({
