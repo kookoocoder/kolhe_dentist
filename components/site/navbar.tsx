@@ -1,6 +1,6 @@
 "use client"
 
-import { LOCATIONS } from "@/lib/data"
+import { LOCATIONS, WHATSAPP_HREF } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import { AnimatePresence, motion } from "framer-motion"
 import { ArrowUpRight, ChevronDown, Menu, Phone, X } from "lucide-react"
@@ -8,6 +8,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { useState } from "react"
+import { WhatsAppIcon } from "./social-icons"
 
 export function Navbar() {
   const [servicesOpen, setServicesOpen] = useState(false)
@@ -110,6 +111,18 @@ export function Navbar() {
               <ArrowUpRight className="size-3 text-ink" strokeWidth={2.2} />
             </span>
           </Link>
+          <a
+            href={WHATSAPP_HREF}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Message us on WhatsApp"
+            className="group appointment-attention flex items-center gap-2.5 rounded-full border border-[#25D366]/30 bg-[#25D366] py-2 pl-5 pr-2 text-[11px] font-semibold uppercase tracking-[0.08em] text-white transition-colors duration-300 hover:bg-[#128C7E]"
+          >
+            WhatsApp
+            <span className="flex size-6 items-center justify-center rounded-full bg-white transition-transform duration-300 group-hover:rotate-45">
+              <WhatsAppIcon className="size-3 text-[#25D366]" />
+            </span>
+          </a>
           <a
             href="tel:+919923387272"
             aria-label="Call us"

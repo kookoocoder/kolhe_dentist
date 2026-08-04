@@ -1,14 +1,12 @@
 "use client"
 
-import { EMAIL, PHONE, PHONE_HREF } from "@/lib/data"
+import { EMAIL, PHONE, PHONE_HREF, WHATSAPP_HREF } from "@/lib/data"
 import { cn } from "@/lib/utils"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { WhatsAppIcon } from "./social-icons"
 import { Container, PillButton, Reveal, SectionLabel } from "./ui"
-const WHATSAPP_HREF =
-  "https://wa.me/919639639950?text=Hi%20Dr.%20Kolhe%27s%20Dental%20Clinic%21%20I%27d%20like%20to%20book%20an%20appointment.%20"
 
 const CTA_COPY: Record<string, { label: string; title: string; body: string; after?: string }> = {
   default: {

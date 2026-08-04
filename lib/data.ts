@@ -1,5 +1,7 @@
 export const PHONE = "+91 9639639950"
 export const PHONE_HREF = "tel:+919639639950"
+export const WHATSAPP_HREF =
+  "https://wa.me/919639639950?text=Hi%20Dr.%20Kolhe%27s%20Dental%20Clinic%21%20I%27d%20like%20to%20book%20an%20appointment.%20"
 export const EMAIL = "info@drkolhesdental.com"
 
 export const HOURS = [

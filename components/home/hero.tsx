@@ -2,11 +2,13 @@
 
 
 import { Container } from "@/components/site/ui"
+import { WhatsAppIcon } from "@/components/site/social-icons"
 import { motion } from "framer-motion"
 import { ArrowLeft, ArrowRight, ArrowUpRight, Phone } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
+import { WHATSAPP_HREF } from "@/lib/data"
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -71,6 +73,17 @@ export function HomeHero() {
                 <ArrowUpRight className="size-3.5" strokeWidth={2.2} />
               </span>
             </Link>
+            <a
+              href={WHATSAPP_HREF}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group appointment-attention flex items-center gap-2.5 rounded-full bg-[#25D366] py-2.5 pl-6 pr-2.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-white transition-[background-color,transform] duration-300 hover:bg-[#128C7E] active:scale-[0.96]"
+            >
+              WhatsApp
+              <span className="flex size-7 items-center justify-center rounded-full bg-white text-[#25D366] transition-transform duration-300 group-hover:rotate-45">
+                <WhatsAppIcon className="size-3.5" />
+              </span>
+            </a>
             <a
               href="tel:+919923387272"
               className="flex items-center gap-2.5 rounded-full border border-line bg-white px-6 py-3.5 text-[11px] font-semibold uppercase tracking-[0.08em] text-ink transition-colors duration-300 hover:bg-cream"

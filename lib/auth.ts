@@ -1,5 +1,5 @@
 const AUTH_KEY = "dental_auth"
-export const PASSWORD = "kolhe dentist"
+export const PASSWORD = "kohledenstist@admin"
 
 export function isAuthenticated(): boolean {
   if (typeof window === "undefined") return false
