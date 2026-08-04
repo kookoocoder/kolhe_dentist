@@ -1,7 +1,7 @@
 "use client"
 
 import { useQuery } from "convex/react"
-import { Calendar, CheckCircle2, Clock, MessageSquare } from "lucide-react"
+import { Calendar, CheckCircle2, Clock } from "lucide-react"
 import {
   Bar,
   BarChart,
@@ -25,7 +25,6 @@ const STATUS_COLORS = {
 
 export default function DashboardPage() {
   const apptCounts = useQuery(api.appointments.counts)
-  const inqCounts = useQuery(api.inquiries.counts)
   const monthlyData = useQuery(api.appointments.monthly)
   const recentAppointments = useQuery(api.appointments.list)
 
@@ -51,13 +50,6 @@ export default function DashboardPage() {
       color: "text-green-500",
       bg: "bg-green-50",
     },
-    {
-      label: "Total Inquiries",
-      value: inqCounts?.total ?? "—",
-      icon: MessageSquare,
-      color: "text-purple-500",
-      bg: "bg-purple-50",
-    },
   ]
 
   const pieData = apptCounts
@@ -75,7 +67,7 @@ export default function DashboardPage() {
     <>
       <h1 className="text-xl font-bold">Overview</h1>
 
-      <div className="grid grid-cols-4 gap-5">
+      <div className="grid grid-cols-3 gap-5">
         {stats.map((stat) => (
           <div key={stat.label} className="rounded-[20px] bg-card p-5 shadow-sm">
             <div className="flex items-center justify-between">

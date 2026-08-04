@@ -1,8 +1,8 @@
 "use client"
 
-import { footerNavItems, navItems } from "@/components/dashboard/data"
+import { navItems } from "@/components/dashboard/data"
 import { clearAuth, isAuthenticated } from "@/lib/auth"
-import { Bell, Calendar, Home, LogOut, MessageSquare, Settings, User } from "lucide-react"
+import { Bell, Calendar, Home, LogOut, User } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname, useRouter } from "next/navigation"
@@ -11,8 +11,6 @@ import { useEffect, useRef, useState } from "react"
 const iconMap: Record<string, typeof Home> = {
   home: Home,
   calendar: Calendar,
-  "message-square": MessageSquare,
-  settings: Settings,
 }
 
 export function DashboardLayoutClient({ children }: { children: React.ReactNode }) {
@@ -58,10 +56,7 @@ export function DashboardLayoutClient({ children }: { children: React.ReactNode 
 
   return (
     <div className="flex min-h-screen">
-      <aside className="fixed left-0 top-0 z-20 flex h-screen w-[232px] flex-col overflow-y-auto bg-sidebar p-5">
-        <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-muted">
-          <User size={18} className="text-muted-foreground" strokeWidth={1.8} />
-        </div>
+      <aside className="fixed left-0 top-0 z-20 flex h-screen w-58 flex-col overflow-y-auto bg-sidebar p-5">
 
         <div className="relative mt-6 shrink-0" ref={menuRef}>
           <div className="flex items-center rounded-full bg-card px-2 py-1.5 shadow-sm">
@@ -118,24 +113,6 @@ export function DashboardLayoutClient({ children }: { children: React.ReactNode 
         </nav>
 
         <nav className="mt-auto flex shrink-0 flex-col gap-1 pt-6">
-          {footerNavItems.map((item) => {
-            const Icon = iconMap[item.icon] || Home
-            const isActive = pathname === item.href
-            return (
-              <Link
-                key={item.label}
-                href={item.href}
-                className={`flex items-center gap-3 rounded-full px-4 py-2.5 text-sm transition-colors ${
-                  isActive
-                    ? "bg-card font-semibold text-foreground shadow-sm"
-                    : "text-muted-foreground hover:bg-card/70 hover:text-foreground"
-                }`}
-              >
-                <Icon size={18} strokeWidth={1.8} />
-                <span>{item.label}</span>
-              </Link>
-            )
-          })}
           <button
             type="button"
             onClick={handleLogout}
